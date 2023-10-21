@@ -1,0 +1,17 @@
+$background-color_1: #f4aa2a;
+$background-color_2: #f9f5ec;
+$background-color_3: #a72020;
+$background-color_4: #611a1a;
+$background-color_5: #918d8d;
+
+.header-search-bar__container {
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+.header-search-bar__container.opened {
+  opacity: 1;
+  visibility: visible;
+}
+
+.heading-option-product {
+  border-top: 0.5px solid #e0e0e0;
+}

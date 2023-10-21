@@ -1,113 +1,265 @@
-import Image from 'next/image'
+"use client";
+import React, { useState, useRef, useEffect, CSSProperties } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
+import Link from "next/link";
+import ImgIntro from "../assets/image/Image-Intro-H&B.png";
+import imgHomeProduct3 from "../assets/image/ImageHomeProduct3.png";
+import imgHomeProduct4 from "../assets/image/ImageHomeProduct4.jpeg";
+import imgHomeProduct2 from "../assets/image/ImageHomeProduct2.jpg";
+import imgHomeProduct1 from "../assets/image/ImageHomeProduct1.jpg";
+import imgHomeBottom from "../assets/image/ImageHomepageBottom (2).png";
+import imgHomeBottomLogo from "../assets/image/ImageHomepageBottomLogo.png";
+import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
+import { CommentUsers } from "@/data/data";
+import { CommentCardTypes } from "@/types/Interface";
+const HomePageHAB = () => {
+  const progressCircle = useRef<HTMLDivElement>(null);
+  const progressContent = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isDragging, setDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const [dragDistance, setDragDistance] = useState(0);
+  const [transitionDirection, setTransitionDirection] = useState<
+    "slide-out" | "slide-in"
+  >("slide-in");
+  const commentsPerPage = 3;
+  const startIndex = (currentPage - 1) * commentsPerPage;
+  const endIndex = startIndex + commentsPerPage;
+  const handlePrevClick = () => {
+    setTransitionDirection("slide-out");
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  };
+  const handleNextClick = () => {
+    setTransitionDirection("slide-in");
+    const totalPages = Math.ceil(CommentUsers.length / commentsPerPage);
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  };
+  const totalPages = Math.ceil(CommentUsers.length / commentsPerPage);
+  const pageNumbers = Array.from(
+    { length: totalPages },
+    (_, index) => index + 1
+  );
+  const handleMouseDown = (event: React.MouseEvent) => {
+    setDragging(true);
+    setDragStartX(event.clientX);
+  };
 
-export default function Home() {
+  const handleMouseUp = () => {
+    if (isDragging) {
+      handleDragEnd();
+    }
+  };
+
+  const handleMouseMove = (event: React.MouseEvent) => {
+    if (isDragging) {
+      const distance = event.clientX - dragStartX;
+      setDragDistance(distance);
+    }
+  };
+
+  const handleDragEnd = () => {
+    setDragging(false);
+    if (Math.abs(dragDistance) > 50) {
+      if (dragDistance > 0) {
+        handlePrevClick();
+      } else {
+        handleNextClick();
+      }
+    }
+    setDragDistance(0);
+  };
+  // const onAutoplayTimeLeft = (s: number, time: number, progress: number) => {
+  //   if (progressCircle.current) {
+  //     progressCircle.current.style.setProperty(
+  //       "--progress",
+  //       String(1 - progress)
+  //     );
+  //   }
+  //   if (progressContent.current) {
+  //     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  //   }
+  // };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <div className="pb-[70px] bg-[#611a1a] homepage-H-B__container max-w-[2000px] screen">
+        <div className="homepage-H-B-header__container">
+          <div className="h-[500px] relative flex items-center justify-center">
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+            >
+              <SwiperSlide>
+                <Image src={imgHomeProduct3} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={imgHomeProduct4} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={imgHomeProduct2} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={imgHomeProduct1} alt="" />
+              </SwiperSlide>
+            </Swiper>
+            <div className="absolute mt-[300px] z-[10] flex flex-col items-center justify-center">
+              <Link
+                href="/product"
+                className="bg-white text-[#a72020] w-fit pt-[15px] pr-[25px] pl-[25px] cursor-pointer pb-[15px] "
+              >
+                <p className="font-[550] text-[18px]">Mua hàng ngay</p>
+              </Link>
+              <div className="flex text-[16px] justify-center items-center mt-[30px] font-[550] text-white">
+                Charm Charm Saffron 100% hàng chính hãng
+              </div>
+            </div>
+          </div>
+          <div className=" mt-[70px] flex items-center justify-center relative">
+            <div className="flex gap-[100px] leading-[1.8] items-center justify-center homepage-H-B-header">
+              <div className=" homepage-H-B-header-content">
+                <p className="text-[#f4aa2a] text-[40px] ">Saffron</p>
+                <p className="text-[#f4aa2a] text-[40px]">
+                  The Gold Of Middle East
+                </p>
+                <p className="mt-[10px] text-xl text-white">
+                  NHÀ NHẬP KHẨU VÀ PHÂN KHỐI ĐỘC QUYỀN <br /> DÒNG CAO CẤP
+                  SAFFRON EXTRA SUPER <br /> NEGIN IRAN
+                </p>
+              </div>
+              <div>
+                <video
+                  controls
+                  width={500}
+                  height={400}
+                  src="https://res.cloudinary.com/dkfg3xljc/video/upload/v1697625924/BeautyProject/Ti%C3%AAu_d%C3%B9ng_24-7_Nh%E1%BB%A5y_hoa_Ngh%E1%BB%87_t%C3%A2y_Charm_Charm_Saffron_efhjaz.mp4"
+                ></video>
+              </div>
+            </div>
+          </div>
+          <div className="header-comment__container max-w-[2000px]">
+            <div className="text-[28px] text-white flex items-center justify-center pt-[70px]">
+              <p>Khách hàng nói gì về chúng tôi</p>
+            </div>
+            <div
+              ref={containerRef}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              className="flex px-[100px] pt-[80px] max-w-[2000px] slide-container"
+            >
+              {CommentUsers.slice(startIndex, endIndex).map(
+                (commentUser: CommentCardTypes, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="h-[400px] w-[350px] ml-[70px] max-w-[2000px] "
+                    >
+                      <div className="bg-white flex flex-col mt-[20px] relative rounded-[10px] max-w-[2000px] p-[20px] h-[100%]">
+                        <div className="bg-black w-[100px] h-[100px] absolute z-[100] mt-[-70px] ml-[100px] border-2 border-solid rounded-[50%]"></div>
+                        <div className="mt-[50px] flex items-start text-start justify-start">
+                          {commentUser.comment.slice(0, 300) + " xem thêm..."}
+                        </div>
+                        <div className="mt-auto flex items-start">
+                          {commentUser.name}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+              )}
+            </div>
+            <div className="flex justify-center mt-[40px] ">
+              {pageNumbers.map((pageNumber) => (
+                <button
+                  key={pageNumber}
+                  onClick={() => setCurrentPage(pageNumber)}
+                  className={` ml-[6px] h-[15px] w-[15px] rounded-full transition duration-300 ${
+                    currentPage === pageNumber ? "bg-white" : "bg-[#ab9e9e]"
+                  }`}
+                ></button>
+              ))}
+            </div>
+            <div className="flex justify-center mt-[20px]">
+              <button
+                onClick={handlePrevClick}
+                disabled={currentPage === 1}
+                className={`bg-white p-[10px] mr-[15px] rounded-full ${
+                  currentPage === 1
+                    ? "opacity-50 cursor-not-allowed"
+                    : "opacity-100"
+                }`}
+              >
+                <GrLinkPrevious size={20} />
+              </button>
+              <button
+                onClick={handleNextClick}
+                disabled={
+                  currentPage ===
+                  Math.ceil(CommentUsers.length / commentsPerPage)
+                }
+                className={`bg-white p-[10px]  rounded-full  ${
+                  currentPage ===
+                  Math.ceil(CommentUsers.length / commentsPerPage)
+                    ? "opacity-50 cursor-not-allowed"
+                    : "opacity-100"
+                }`}
+              >
+                <GrLinkNext size={20} />
+              </button>
+            </div>
+          </div>
+          <div className="mt-[70px] flex  w-[100%]">
+            <div className="bg-white p-[70px] flex flex-col items-center justify-center h-[600px] w-[60%]">
+              <p className="text-[#611a1a] font-[550] text-[35px] ">
+                Charm Charm Saffron
+              </p>
+              <p className="font-[500] text-[25px] text-[#a72020] flex">
+                Đã được{" "}
+                <Link
+                  href="https://suckhoedoisong.vn/bao-ve-suc-khoe-bang-cac-san-pham-co-chat-chong-oxy-hoa-manh-me-169188383.htm"
+                  className="text-[#a72020] font-[650] ml-[3px] mr-[3px] cursor-pointer"
+                >
+                  báo Sức Khỏe & Đời Sống
+                </Link>{" "}
+                nhắc đến
+              </p>
+              <p className="w-[600px] mt-[50px] text-center italic text-[24px]">
+                {`"`}Charm Charm Saffron là nhà nhập khẩu nhụy hoa nghệ tây loại
+                Extra Super Negin cao cấp, có đầy đủ giấy tờ chứng minh nguồn
+                gốc, chất lượng và đây là địa chỉ tín cậy để khách hàng tim mua.
+                {`"`}
+              </p>
+              <p>
+                <Image src={imgHomeBottomLogo} alt="" />
+              </p>
+            </div>
+            <div className="ml-auto w-[900px] h-[700px] object-fill">
+              <Image
+                src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618377/BeautyProject/2_dyaogx.jpg"
+                alt=" "
+                width={900}
+                height={700}
+                className="w-[900px] h-[600px]"
+              />
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+    </div>
+  );
+};
+export default HomePageHAB;
