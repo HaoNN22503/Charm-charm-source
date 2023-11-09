@@ -11,7 +11,118 @@ $background-color_5: #918d8d;
   opacity: 1;
   visibility: visible;
 }
-
+.header-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 100%;
+  background-color: white;
+  z-index: 999;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform linear 0.2s;
+}
+.header-input-check {
+  display: none;
+}
+.header-input-check:checked ~ .header-overlay {
+  display: block;
+}
+.header-input-check:checked ~ .header-mobile {
+  transform: translateX(0%);
+}
+.header-mobile-option {
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  padding: 0;
+  align-items: flex-start;
+  gap: 0;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+.header-mobile-btn-close {
+  margin-left: auto;
+  margin-right: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.header-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0, 0.3);
+  display: none;
+  z-index: 99;
+  animation: fadeIn linear 0.2s;
+}
 .heading-option-product {
   border-top: 0.5px solid #e0e0e0;
+}
+@media (max-width: 1023px) {
+  .header-option {
+    display: none;
+  }
+  .header-option-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    position: relative;
+    padding: 0;
+  }
+
+  .header-option-bar-logo {
+    height: 100px;
+    width: 150px;
+  }
+  .header-option-bar-search {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-left: auto;
+  }
+  .header-cart {
+    padding: 0;
+    margin-left: 0;
+    margin-left: 10px;
+  }
+  .nav-bar-icon {
+    display: block;
+    margin-left: 10px;
+  }
+  .option-intro {
+    cursor: pointer;
+    padding: 10px;
+
+    width: 100%;
+    &:hover {
+      background-color: #f1ecec;
+    }
+  }
+  .header-search-bar__container {
+    width: 100%;
+  }
+  .header-mobile {
+    width: 100%;
+    max-width: 430px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

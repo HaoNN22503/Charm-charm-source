@@ -1,0 +1,74 @@
+@media (max-width: 1023px) {
+  .Cuisine-profile-nomal__container {
+    width: 100%;
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0;
+  }
+  .Cuisine-profile-return {
+    padding-left: 20px;
+    width: 100%;
+  }
+  .Cuisine-profile-tittle {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .Cuisine-profile-types {
+    font-size: 14px;
+  }
+  .Cuisine-profile-image {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .Cuisine-porfile-nomal-content {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+  .Cuisine-profile-nomal-info {
+    width: 100%;
+    font-size: 14px;
+  }
+  .Cuisine-profile-nomal-tittle {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .Cuisine-profile-detail-content-header {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+  }
+  .Cuisine-profile-detail {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 14px;
+  }
+  .Cuisine-profile-detail-content-container {
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+  .Cuisine-profile-detail-content {
+    width: 100%;
+    font-size: 14px;
+    gap: 0;
+    padding: 10px;
+    margin: 0;
+    text-align: justify;
+  }
+}

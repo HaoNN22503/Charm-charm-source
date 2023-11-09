@@ -3,7 +3,7 @@ import { ProductList } from "@/data/data";
 export const handleAddToCart = (
   cart: any,
   setCart: any,
-  productId: number,
+  productId: string,
   quantity: number
 ) => {
   const selectedProduct = ProductList.find(

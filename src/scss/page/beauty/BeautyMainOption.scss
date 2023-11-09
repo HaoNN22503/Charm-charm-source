@@ -1,0 +1,53 @@
+@media (max-width: 1023px) {
+  .beauty-profile__container {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .beauty-profile-main-return {
+    width: 100%;
+    padding-left: 20px;
+  }
+  .beauty-profile-main-tittle {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .beauty-profile-main-types {
+    padding-left: 20px;
+    font-size: 14px;
+  }
+  .beauty-profile-main-detail {
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .beauty-profile-main-detail-content {
+    flex-direction: column-reverse;
+    padding: 0;
+    width: 100%;
+    gap: 0;
+    margin: 0;
+  }
+  .beauty-profile-main-detail-image {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .beauty-profile-main-detail-profile {
+    width: 100%;
+    font-size: 14px;
+    padding: 20px;
+    padding-top: 0;
+  }
+  .beauty-profile-main-detail-content-2 {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    gap: 0;
+    margin: 0;
+  }
+}

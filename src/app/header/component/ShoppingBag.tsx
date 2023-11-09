@@ -8,8 +8,10 @@ import { CartContext } from "@/context/CartContext";
 import Image from "next/image";
 const ShoppingBag = ({
   hideShoppingCart,
+  orderShow,
 }: {
   hideShoppingCart: () => void;
+  orderShow: () => void;
 }) => {
   const [closeShoppingBag, setCloseShoppingBag] = useState(true);
   const [returnHomePage, setReturnHomePage] = useState(false);
@@ -39,7 +41,7 @@ const ShoppingBag = ({
     // If cart is undefined, return 0 or handle it as needed
     return 0;
   };
-  const removeFromCart = (productId: number) => {
+  const removeFromCart = (productId: string) => {
     // Remove the item from the cart
     const updatedCart = cart.filter((item) => item.idProduct !== productId);
     setCart(updatedCart);
@@ -48,6 +50,7 @@ const ShoppingBag = ({
     setCloseShoppingBag(!closeShoppingBag);
   };
 
+  const isCartEmpty = cart.length === 0;
   return (
     <div>
       {closeShoppingBag && (
@@ -75,23 +78,24 @@ const ShoppingBag = ({
                 </div>
               )}
             </div>
-            {cart &&
+            {cart.length > 0 ? (
               cart.map((item) => (
                 <div
                   key={item.idProduct}
                   className="mb-[40px] option-cart-product-buying"
                 >
                   <div className="mt-[20px] flex items-start gap-[10px]">
-                    <p className="w-[130px] h-[140px] bg-slate-300">
+                    <div className="w-[130px] h-[140px] bg-slate-300 option-cart-profile">
                       <Image
                         src={item.imgProfile.imgProfile1.src}
                         alt={item.imgProfile.imgProfile1.alt}
                         width={item.imgProfile.imgProfile1.width}
                         height={item.imgProfile.imgProfile1.height}
-                        className="w-[130px] h-[140px] object-fill"
+                        loading="lazy"
+                        className="w-[130px] h-[140px] object-fill option-cart-profile-image"
                       />
-                    </p>
-                    <div className="flex flex-col">
+                    </div>
+                    <div className="flex flex-col option-cart-profile-product">
                       <p>{item.nameProduct}</p>
                       <div className="flex gap-[40px] mt-[95px]">
                         <div className="flex gap-[10px] items-center text-[14px]">
@@ -99,8 +103,6 @@ const ShoppingBag = ({
                             <AiOutlineMinus />
                           </p>
                           <p>{item.quantity}</p>
-
-                          <p></p>
                           <p onClick={() => plusNum(item)}>
                             <AiOutlinePlus />
                           </p>
@@ -109,46 +111,54 @@ const ShoppingBag = ({
                           onClick={() => removeFromCart(item.idProduct)}
                           className="cursor-pointer hover:underline"
                         >
-                          Remove
+                          Xóa
                         </p>
                         <div className="text-[14px]">
                           <p>{item.priceProduct.toLocaleString("vi-VN")}đ</p>
-
-                          <p></p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
-
+              ))
+            ) : (
+              <div className="text-center mt-4">
+                <p>Bạn chưa có sản phẩm nào trong giỏ hàng.</p>
+                <div className="w-[100%] flex justify-center items-center">
+                  <Link
+                    onClick={() => {
+                      setCloseShoppingBag(false);
+                    }}
+                    href="/product"
+                    className=" p-[10px] mt-[20px] font-[550] rounded-[5px]  cursor-pointer text-[#611a1a] flex items-center justify-center border border-[#611a1a] "
+                  >
+                    Tiếp tục mua sắm
+                  </Link>
+                </div>
+              </div>
+            )}
             <div className="flex font-[550] text-[18px] pl-[40px] pr-[40px] pt-[20px] pb-[40px] items-center option-cart-sum">
               <p>Tổng cộng</p>
               <p className="ml-auto ">
                 {calculateTotal().toLocaleString("vi-VN")}đ
               </p>
+            </div>{" "}
+            <div className="flex justify-center items-center flex-col">
+              <Link
+                onClick={() => {
+                  hideShoppingCart();
+                  orderShow(); // Hide the shopping cart when navigating to the order page
+                }}
+                href="/order"
+                className={`option-cart-buying-btn h-[50px] w-[330px] ml-[45px] font-[550] text-white text-[18px] rounded-[5px] cursor-pointer flex items-center justify-center  ${
+                  isCartEmpty
+                    ? "bg-gray-400 pointer-events-none"
+                    : "bg-[#611a1a]"
+                }`}
+              >
+                <p>Đặt đơn</p>
+              </Link>
             </div>
-            <Link
-              onClick={() => {
-                hideShoppingCart(); // Hide the shopping cart when navigating to the order page
-              }}
-              href="/order"
-              //   onClick={() => {
-              //     setOrderShow(true);
-              //     setHomepageShow(false);
-              //     setIntroShow(false);
-              //     setOptionProduct(false);
-              //     setProductShow(false);
-              //     setOptionShoppingBag(false);
-              //     setOrderNoneShow(false);
-              //     setBeautyShow(false);
-              //     setContactShow(false);
-              //     setCuisineShow(false);
-              //   }}
-              className=" h-[50px] w-[330px] ml-[45px] font-[550] text-white bg-[#611a1a] text-[18px] rounded-[5px] cursor-pointer flex items-center justify-center option-cart-buying-btn"
-            >
-              <p>Đặt đơn</p>
-            </Link>
           </div>
         </div>
       )}

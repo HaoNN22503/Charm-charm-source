@@ -1,13 +1,12 @@
 "use client";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import Image from "next/image";
-
 import { CartContext } from "@/context/CartContext";
 import { ProductList } from "@/data/data";
-import { CommentTypes, ProductListTypes, Review } from "@/types/Interface";
+import { CommentTypes, ProductListTypes, ReviewTypes } from "@/types/Interface";
 import { useRouter } from "next/navigation";
 import Rating from "@mui/material/Rating";
-import { BsArrowLeft, BsStarFill, BsStar } from "react-icons/bs";
+import { BsArrowLeft, BsStarFill } from "react-icons/bs";
 import { BiMessageAltEdit } from "react-icons/bi";
 import {
   AiOutlineMinus,
@@ -21,12 +20,11 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
   const router = useRouter();
   const { cart, setCart } = useContext(CartContext);
   const [commentShow, setCommentShow] = useState(false);
-  const [valueRating, setValueRating] = useState("");
   const [rating, setRating] = useState<number | null>(null);
   const [name, setName] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [comment, setComment] = useState<string>("");
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [reviews, setReviews] = useState<ReviewTypes[]>([]);
   const [recommendation, setRecommendation] = useState<boolean | null>(null);
 
   const handleRatingChange = (value: number | null) => {
@@ -52,7 +50,7 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
     const currentDate = new Date(); // Get the current date and time
     const formattedDate = currentDate.toLocaleDateString(); // Format the date as a string
 
-    const newReview: Review = {
+    const newReview: ReviewTypes = {
       id: reviews.length + 1,
       name,
       rating: rating as number,
@@ -74,6 +72,7 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
     setTitle("");
     setComment("");
     setRecommendation(null);
+    setCommentShow(false);
   };
   const minNum = (item: ProductListTypes) => {
     if (item.quantity > 1) {
@@ -89,7 +88,7 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
     setCart([...cart]);
   };
   return (
-    <div className="bg-[#611a1a] py-[50px] product-detail-HAB__container">
+    <div className="bg-[#a72020] py-[50px] product-detail-HAB__container">
       <div
         onClick={() => {
           router.back();
@@ -102,7 +101,7 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
         <p>Quay lại</p>
       </div>
       {ProductList.filter((profileItems: ProductListTypes) => {
-        return profileItems.urlProduct === params.url;
+        return profileItems.idProduct === params.url;
       }).map((profileItems: ProductListTypes) => {
         const totalPrice = profileItems.priceProduct * profileItems.quantity;
         return (
@@ -110,88 +109,105 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
             key={profileItems.idProduct}
             className="bg-white gap-[120px] flex items-start justify-center mt-[20px] px-[100px] py-[40px] text-[#a72020] product-detail-HAB-content__container"
           >
-            <div className="w-[80px] h-[80px]">
-              <Image
-                alt=""
-                src={profileItems.imgProfile.imgProfile1.src}
-                width={70}
-                height={70}
-                className="w-[70px] h-[70px] rounded-[50%] border-2 cursor-pointer"
-              />
+            <div
+              className="product-detail-HAB-image flex items-start justify-start w-[100%]
+            "
+            >
+              <div className="w-[25%] mr-[40px] product-detail-HAB-image-small">
+                <Image
+                  alt=""
+                  src={profileItems.imgProfile.imgProfile1.src}
+                  width={70}
+                  height={70}
+                  className="w-[70px] h-[70px] rounded-[50%] border-2 cursor-pointer product-detail-HAB-image-small-detail"
+                />
 
-              <Image
-                src={profileItems.imgProfile.imgProfile1.src}
-                alt={profileItems.imgProfile.imgProfile1.alt}
-                width={profileItems.imgProfile.imgProfile1.width}
-                height={profileItems.imgProfile.imgProfile1.height}
-                className="w-[70px] h-[70px] rounded-[50%] border-2 mt-[20px] cursor-pointer "
-              />
-              <Image
-                src={profileItems.imgProfile.imgProfile2.src}
-                alt={profileItems.imgProfile.imgProfile2.alt}
-                width={profileItems.imgProfile.imgProfile2.width}
-                height={profileItems.imgProfile.imgProfile2.height}
-                className="w-[70px] h-[70px] rounded-[50%] border-2 mt-[20px] cursor-pointer "
-              />
-              <Image
-                src={profileItems.imgProfile.imgProfile3.src}
-                alt={profileItems.imgProfile.imgProfile3.alt}
-                width={profileItems.imgProfile.imgProfile3.width}
-                height={profileItems.imgProfile.imgProfile3.height}
-                className="w-[70px] h-[70px] rounded-[50%] border-2 mt-[20px] cursor-pointer "
-              />
+                <Image
+                  src={profileItems.imgProfile.imgProfile4.src}
+                  alt={profileItems.imgProfile.imgProfile4.alt}
+                  width={profileItems.imgProfile.imgProfile4.width}
+                  height={profileItems.imgProfile.imgProfile4.height}
+                  loading="lazy"
+                  className="w-[70px] h-[70px] rounded-[50%] border-2 mt-[20px] cursor-pointer product-detail-HAB-image-small-detail"
+                />
+                <Image
+                  src={profileItems.imgProfile.imgProfile2.src}
+                  alt={profileItems.imgProfile.imgProfile2.alt}
+                  width={profileItems.imgProfile.imgProfile2.width}
+                  height={profileItems.imgProfile.imgProfile2.height}
+                  loading="lazy"
+                  className="w-[70px] h-[70px] rounded-[50%] border-2 mt-[20px] cursor-pointer product-detail-HAB-image-small-detail"
+                />
+                <Image
+                  src={profileItems.imgProfile.imgProfile3.src}
+                  alt={profileItems.imgProfile.imgProfile3.alt}
+                  width={profileItems.imgProfile.imgProfile3.width}
+                  height={profileItems.imgProfile.imgProfile3.height}
+                  loading="lazy"
+                  className="w-[70px] h-[70px] rounded-[50%] border-2 mt-[20px] cursor-pointer product-detail-HAB-image-small-detail"
+                />
+              </div>
+              <div className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]">
+                <Image
+                  src={profileItems.imgProfile.imgProfile1.src}
+                  alt={profileItems.imgProfile.imgProfile1.alt}
+                  height={400}
+                  width={350}
+                  loading="lazy"
+                  className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]"
+                />
+              </div>
             </div>
-            {/* <div>
-              <Image
-                src={profileItems.imgProduct.src}
-                alt={profileItems.imgProduct.alt}
-                height={400}
-                width={350}
-              />
-            </div> */}
 
-            <div className="product-detail-HAB-content">
-              <p className="font-[550] text-[30px] w-[400px]">
+            <div className="product-detail-HAB-content w-[100%]">
+              <p className="font-[550] text-[30px] w-[100%] product-detail-HAB-name">
                 {profileItems.nameProduct}
               </p>
-              <p className="text-black mt-[50px] w-[400px] pb-[50px]  text-[15.5px]">
-                {profileItems.profileProduct}
-              </p>
-              <p className="mt-[20px] font-[550] text-[25px] text-black">
-                {totalPrice.toLocaleString("vi-VN")}đ
-              </p>
-              <div className="flex items-center mt-[20px]">
-                <div className="text-[25px]">
-                  <div className="flex items-center gap-[20px]">
-                    <p
-                      onClick={() => minNum(profileItems)}
-                      className="cursor-pointer detail-product-minNum"
-                    >
-                      <AiOutlineMinus />
-                    </p>
-                    <p className="detail-product-number">
-                      {profileItems.quantity}
-                    </p>
-                    <p
-                      onClick={() => plusNum(profileItems)}
-                      className="cursor-pointer detail-product-plusNum"
-                    >
-                      <AiOutlinePlus />
-                    </p>
-                  </div>
+              <div className="product-detail-HAB-content-provide">
+                <div className="mt-[50px] text-[15.5px] text-black w-[100%] pb-[50px] product-detail-HAB-content-descreption">
+                  <div className="font-[550] text-[17px] ">Mô tả sản phẩm</div>
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct}
+                  </p>
                 </div>
-                <div
-                  onClick={() => {
-                    handleAddToCart(
-                      cart,
-                      setCart,
-                      profileItems.idProduct,
-                      profileItems.quantity
-                    );
-                  }}
-                  className="ml-auto pt-[10px] pr-[40px] pl-[40px] pb-[10px] bg-[#611a1a] rounded-[5px] text-white cursor-pointer detail-product-add"
-                >
-                  <p>Cho vào giỏ hàng</p>
+                <div className="product-detail-HAB-price-quanlity">
+                  <p className="mt-[20px] font-[550] text-[25px] text-black product-detail-HAB-price">
+                    {totalPrice.toLocaleString("vi-VN")}đ
+                  </p>
+                  <div className="flex items-center mt-[20px] product-detail-HAB-addtoCart">
+                    <div className="text-[25px] product-detail-HAB-btn-number">
+                      <div className="flex items-center gap-[20px]">
+                        <p
+                          onClick={() => minNum(profileItems)}
+                          className="cursor-pointer detail-product-minNum"
+                        >
+                          <AiOutlineMinus />
+                        </p>
+                        <p className="detail-product-number">
+                          {profileItems.quantity}
+                        </p>
+                        <p
+                          onClick={() => plusNum(profileItems)}
+                          className="cursor-pointer detail-product-plusNum"
+                        >
+                          <AiOutlinePlus />
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      onClick={() => {
+                        handleAddToCart(
+                          cart,
+                          setCart,
+                          profileItems.idProduct,
+                          profileItems.quantity
+                        );
+                      }}
+                      className="ml-auto pt-[10px] pr-[40px] pl-[40px] pb-[10px] bg-[#611a1a] rounded-[5px] text-white cursor-pointer detail-product-add"
+                    >
+                      <p>Cho vào giỏ hàng</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -201,10 +217,12 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
 
       <div className="mt-[50px] detail-product-comment__container p-[100px]">
         <div className="text-white flex items-center pb-[10px] detail-product-comment-tittle">
-          <p className="font-[550] text-[20px]">Cảm nhận về sản phẩm</p>
+          <p className="font-[550] text-[20px] detail-product-HAB-comment-tittle">
+            Cảm nhận về sản phẩm
+          </p>
           <div
             onClick={() => {
-              setCommentShow(true);
+              setCommentShow(!commentShow);
             }}
             className="cursor-pointer flex items-center gap-[5px] ml-auto bg-white text-[#a72020] p-[5px] rounded-[5px] text-[18px] font-[500]"
           >
@@ -217,54 +235,61 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
         {commentShow && (
           <div className="bg-white rounded-[10px] mt-[20px] pl-[200px] pr-[200px] pt-[80px] pb-[80px] detail-product-comment-table__container">
             <div className="flex flex-col">
-              <div className="flex items-center ">
-                <p className="underline text-[18px] font-[500] w-[30%]">
+              <div className="flex items-center product-detail-HAB-comment-rating">
+                <p className="underline text-[18px] font-[500] w-[30%] product-detail-HAB-comment-rating-tittle">
                   Đánh giá cảm nhận
                 </p>
-                <p className="flex gap-[5px] ml-[140px] text-[#a72020] ">
+                <p className="flex gap-[5px] ml-[140px] text-[#a72020] product-detail-HAB-comment-rating">
                   <Rating
                     name="simple-controlled"
                     value={rating}
                     onChange={(event, newValue) => {
                       handleRatingChange(newValue);
                     }}
-                    // value={valueRating}
-                    // onChange={(event, newValue) => {
-                    //   setValueRating(newValue);
-                    // }}
                   />
                 </p>
               </div>
-              <div className="flex text-[18px] font-[500] h-[40px] mt-[30px]">
-                <p className="underline w-[30%] ">Tên của bạn</p>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={handleNameChange}
-                  className="border-2 border-solid border-[#a72020] w-[500px] p-[5px] pl-[5px] text-[15px] rounded-[5px] ml-[auto] focus:outline-1 outline-[#a72020]"
-                />
+              <div className="">
+                {" "}
+                <div className="flex text-[18px] font-[500] h-[40px] mt-[30px] product-detail-HAB-comment-name">
+                  <p className="underline w-[30%] product-detail-HAB-comment-name-tittle">
+                    Tên của bạn
+                  </p>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={handleNameChange}
+                    className="border-2 border-solid border-[#a72020] w-[500px] p-[5px] pl-[5px] text-[15px] rounded-[5px] ml-[auto] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-name"
+                  />
+                </div>
+                <div className="flex text-[18px] font-[500] h-[40px] mt-[30px] product-detail-HAB-comment-topic">
+                  <p className="underline w-[30%] product-detail-HAB-comment-topic-tittle">
+                    Tiêu đề{" "}
+                  </p>
+                  <input
+                    type="text"
+                    value={title}
+                    onChange={handleTitleChange}
+                    className="border-2 border-solid border-[#a72020] w-[500px] p-[5px] pl-[5px] text-[15px] rounded-[5px] ml-[auto] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-topic"
+                  />
+                </div>
+                <div className="flex text-[18px] font-[500] mt-[20px] product-detail-HAB-comment-decreption">
+                  <p className="underline w-[30%] product-detail-HAB-comment-decreption-tittle">
+                    Cảm nhận
+                  </p>
+                  <textarea
+                    value={comment}
+                    onChange={handleCommentChange}
+                    className="h-[120px] border-2 border-solid border-[#a72020] resize-none w-[500px] p-[5px] pl-[5px] text-[15px] ml-[auto] rounded-[5px] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-decreption"
+                    id=""
+                  ></textarea>
+                </div>
               </div>
-              <div className="flex text-[18px] font-[500] h-[40px] mt-[30px]">
-                <p className="underline w-[30%]">Tiêu đề </p>
-                <input
-                  type="text"
-                  value={title}
-                  onChange={handleTitleChange}
-                  className="border-2 border-solid border-[#a72020] w-[500px] p-[5px] pl-[5px] text-[15px] rounded-[5px] ml-[auto] focus:outline-1 outline-[#a72020]"
-                />
-              </div>
-              <div className="flex text-[18px] font-[500] mt-[20px] ">
-                <p className="underline w-[30%]">Cảm nhận</p>
-                <textarea
-                  value={comment}
-                  onChange={handleCommentChange}
-                  className="h-[120px] border-2 border-solid border-[#a72020] resize-none w-[500px] p-[5px] pl-[5px] text-[15px] ml-[auto] rounded-[5px] focus:outline-1 outline-[#a72020]"
-                  id=""
-                ></textarea>
-              </div>
-              <div className="flex text-[18px] font-[500] h-[40px] mt-[30px] ">
-                <p className="underline w-[30%]">Lời giới thiệu</p>
-                <div className="ml-[140px] mb-[40px]">
+              <div className="flex text-[18px] font-[500] h-[40px] mt-[30px] product-detail-HAB-comment-share">
+                <p className="underline w-[30%] product-detail-HAB-comment-share-tittle ">
+                  Lời giới thiệu
+                </p>
+                <div className="ml-[140px] mb-[40px] product-detail-HAB-comment-share">
                   <label
                     className="flex items-center gap-[7px] "
                     htmlFor="like"
@@ -301,7 +326,9 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
                     <p className="bg-black text-white p-[7] rounded-[50%] ml-[10px]">
                       <AiFillDislike size={20} />
                     </p>
-                    <p>Tôi sẽ không giới thiệu cho bạn bè</p>
+                    <p className="w-[235px] product-detail-HAB-comment-share-option">
+                      Tôi sẽ không giới thiệu cho bạn bè
+                    </p>
                   </label>
                 </div>
               </div>
@@ -319,14 +346,14 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
             key={review.id}
             className="bg-white flex mt-[50px] rounded-[10px] p-[20px] detail-product-comment"
           >
-            <div className="w-[320px] flex flex-col items-center justify-center detail-product-comment-left">
-              <div className="flex items-center gap-[15px]">
-                <div className="w-[100px] h-[100px] border-2 border-black border-solid rounded-[50%] bg-white"></div>
-                <div className="text-[20px] font-[500] w-[130px] ">
+            <div className="w-[320px] pr-[15px] flex flex-col items-center justify-center detail-product-comment-left">
+              <div className="flex items-center gap-[15px] detail-product-comment-left-profile">
+                <div className="w-[100px] h-[100px] border-2 border-black border-solid rounded-[50%] bg-white detail-product-comment-left-image"></div>
+                <div className="text-[20px] font-[500] w-[130px] detail-product-comment-left-name">
                   {review.name}
                 </div>
               </div>
-              <div className="flex items-center gap-[5px] mt-[20px]">
+              <div className="flex items-start mt-[20px] detail-product-comment-left-share">
                 <p
                   className={`bg-black text-white p-[7] rounded-[50%] ${
                     review.recommendation ? "like" : "dislike"
@@ -338,7 +365,7 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
                     <AiFillDislike size={20} />
                   )}
                 </p>
-                <p className="text-[15px]">
+                <p className="text-[15px] ml-[7px] detail-product-comment-left-share">
                   {review.recommendation
                     ? "Tôi sẽ giới thiệu cho bạn bè"
                     : "Tôi sẽ không giới thiệu cho bạn bè"}
@@ -346,49 +373,23 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
               </div>
             </div>
             <div className="w-[960px] pl-[20px] detail-product-comment-right">
-              <div>{review.date}</div>
+              <div className="detail-product-comment-right-date text-[16px] italic text-[#611a1a] font-[550] mb-[10px]">
+                {review.date}
+              </div>
               <div className="flex gap-[5px] text-yellow-600">
                 {[...Array(review.rating)].map((_, index) => (
                   <BsStarFill key={index} />
                 ))}
               </div>
-              <div className="font-[550] text-[20px] mt-[20px]">
+              <div className="font-[550] text-[20px] mt-[20px] detail-product-comment-right-tittle">
                 {review.title}
               </div>
-              <div className="mt-[20px]">{review.comment}</div>
+              <div className="mt-[20px] detail-product-comment-right-content">
+                {review.comment}
+              </div>
             </div>
           </div>
         ))}
-        <div className="bg-white flex mt-[50px] rounded-[10px] p-[20px] detail-product-comment">
-          <div className="w-[45%] flex flex-col items-center justify-center detail-product-comment-left">
-            <div className="flex items-center gap-[15px]">
-              <div className="w-[100px] h-[100px] border-2 border-black border-solid rounded-[50%] bg-white"></div>
-              <div className="text-[20px] font-[500] w-[130px]">
-                Nguyen Nhat Hao
-              </div>
-            </div>
-            <div className="flex items-center gap-[5px] mt-[20px]">
-              <p className="bg-black text-white p-[7] rounded-[50%]">
-                <AiFillLike size={20} />
-              </p>
-              <p className="text-[15px]">Tôi sẽ giới thiệu cho bạn bè</p>
-            </div>
-          </div>
-          <div className="detail-product-comment-right">
-            <div>##/##/####</div>
-            <div className="flex gap-[5px] text-yellow-600">
-              <BsStarFill /> <BsStarFill /> <BsStarFill /> <BsStarFill />{" "}
-              <BsStarFill />
-            </div>
-            <div className="font-[550] text-[20px] mt-[20px]">tittle</div>
-            <div className="mt-[20px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              corporis laborum nesciunt praesentium vitae? Adipisci voluptatem
-              illum nam. Laudantium quam minus aut, reprehenderit aliquam magnam
-              perspiciatis vero ex saepe eum!
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

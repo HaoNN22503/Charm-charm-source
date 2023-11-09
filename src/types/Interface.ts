@@ -6,15 +6,15 @@ export interface CommentCardTypes {
   name: string;
   comment: string;
 }
+export interface AdditionalItemTypes {
+  id: number;
+  quantity: number;
+  name: string;
+  price: number;
+}
 export interface ProductListTypes {
-  idProduct: number;
-  urlProduct: string;
-  // imgProduct: {
-  //   src: string;
-  //   alt: string;
-  //   width: number;
-  //   height: number;
-  // };
+  idProduct: string;
+
   nameProduct: string;
   priceProduct: number;
   profileProduct: string;
@@ -49,8 +49,7 @@ export interface ProductListTypes {
   selected: boolean;
 }
 export interface BeautyListMainTypes {
-  idBeauty: number;
-  urlBeautyMain: string;
+  idBeauty: string;
   imgBeauty: {
     imgBeauty1: {
       src: string;
@@ -83,8 +82,7 @@ export interface BeautyListMainTypes {
   typeBeauty: string;
 }
 export interface BeautyListTypes {
-  idBeauty: number;
-  urlBeauty: string;
+  idBeauty: string;
   imgBeauty: {
     imgBeauty1: {
       src: string;
@@ -186,7 +184,7 @@ export interface CuisineListTypes {
   };
   typeCuisine: string;
 }
-export interface Review {
+export interface ReviewTypes {
   id: number;
   name: string;
   rating: number;
@@ -194,4 +192,12 @@ export interface Review {
   comment: string;
   recommendation: boolean;
   date: string;
+}
+export interface CommentFeedbackTypes {
+  idComment: string;
+  nameComment: string;
+  contentComment: string;
+  starComment: number;
+  imgComment: string;
+  timeComment: string;
 }

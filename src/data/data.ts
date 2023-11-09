@@ -1,12 +1,13 @@
 import {
+  AdditionalItemTypes,
   BeautyListMainTypes,
   BeautyListTypes,
-  CommentTypes,
   CuisineListMainTypes,
   CuisineListTypes,
+  CommentFeedbackTypes,
 } from "./../types/Interface";
 import { CommentCardTypes, ProductListTypes } from "@/types/Interface";
-import image from "../assets/image/Image-Intro-H&B.png";
+
 export const CommentUsers: CommentCardTypes[] = [
   {
     idComment: 1,
@@ -65,18 +66,27 @@ export const CommentUsers: CommentCardTypes[] = [
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
   },
 ];
+export const AdditionalItemsList: AdditionalItemTypes[] = [
+  { id: 1, quantity: 1, name: "Saffron (1gr)", price: 500000 },
+  { id: 2, quantity: 1, name: "Saffron mật ong", price: 700000 },
+  {
+    id: 3,
+    quantity: 1,
+    name: "Saffron mật ong và nấm đông trùng hạ thảo",
+    price: 1500000,
+  },
+];
 export const ProductList: ProductListTypes[] = [
   {
-    idProduct: 1,
-
+    idProduct: "1",
     nameProduct: "Saffron",
-    urlProduct: "saffron",
+
     priceProduct: 500000,
     profileProduct:
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
     imgProfile: {
       imgProfile1: {
-        src: "",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698905807/BeautyProject/z4841465291140_3d89f9512e17d12765d5c84fe716c549_onrp3c.jpg",
         alt: "",
         width: 60,
         height: 60,
@@ -94,7 +104,7 @@ export const ProductList: ProductListTypes[] = [
         height: 60,
       },
       imgProfile4: {
-        src: "",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698905807/BeautyProject/z4841465282887_41df4eba9991a02b2ea496b32b817076_q1cax9.jpg",
         alt: "",
         width: 200,
         height: 210,
@@ -108,14 +118,8 @@ export const ProductList: ProductListTypes[] = [
     selected: true,
   },
   {
-    idProduct: 2,
-    // imgProduct: {
-    //   src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712146/BeautyProject/z4798448939394_272c826a106a6c0f227fe09b64cd94db_rbsxwr.jpg",
-    //   alt: "",
-    //   width: 200,
-    //   height: 210,
-    // },
-    urlProduct: "bot-saffron",
+    idProduct: "2",
+
     nameProduct: "Bột Saffron",
     priceProduct: 1000000,
     profileProduct:
@@ -140,7 +144,7 @@ export const ProductList: ProductListTypes[] = [
         height: 60,
       },
       imgProfile4: {
-        src: "",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698906449/BeautyProject/z4841491698674_2ccd8de59f30e7a74bc2ece224d3e42d_x4h19k.jpg",
         alt: "",
         width: 200,
         height: 210,
@@ -154,21 +158,14 @@ export const ProductList: ProductListTypes[] = [
     selected: true,
   },
   {
-    idProduct: 3,
-    // imgProduct: {
-    //   src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712788/BeautyProject/z4798483461896_89375d3d121094cc1f9aaf590b26a478_mmkb55.jpg",
-    //   alt: "",
-    //   width: 200,
-    //   height: 210,
-    // },
-    urlProduct: "saffron-mat-ong",
+    idProduct: "3",
     nameProduct: "Saffron mật ong",
     priceProduct: 700000,
     profileProduct:
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
     imgProfile: {
       imgProfile1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712789/BeautyProject/z4798483483836_df606b56d5b1fb9a3a13164f2ee27ee3_kdflrc.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618380/BeautyProject/SSFF-10_rgpfzl.jpg",
         alt: "",
         width: 60,
         height: 60,
@@ -186,7 +183,7 @@ export const ProductList: ProductListTypes[] = [
         height: 60,
       },
       imgProfile4: {
-        src: "",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698906646/BeautyProject/z4841498416028_9de5159b45cd5fc66569d295f2914621_mwkitt.jpg",
         alt: "",
         width: 200,
         height: 210,
@@ -201,14 +198,7 @@ export const ProductList: ProductListTypes[] = [
   },
 
   {
-    idProduct: 4,
-    urlProduct: "saffron-mat-ong-va-dong-trung-ha-thao",
-    // imgProduct: {
-    //   src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697713021/BeautyProject/z4798494595251_d339c4e5dea9ee6bee1075414f95055c_bp3bdp.jpg",
-    //   alt: "",
-    //   width: 200,
-    //   height: 210,
-    // },
+    idProduct: "4",
     nameProduct: "Saffron mật ong & Đông Trùng Hạ Thảo",
     priceProduct: 1500000,
     profileProduct:
@@ -233,7 +223,7 @@ export const ProductList: ProductListTypes[] = [
         height: 60,
       },
       imgProfile4: {
-        src: "",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698906867/BeautyProject/z4841508653122_be25891b91c2435accfaa077cf49c4cd_gyapb5.jpg",
         alt: "",
         width: 200,
         height: 210,
@@ -249,9 +239,7 @@ export const ProductList: ProductListTypes[] = [
 ];
 export const BeautyListMain: BeautyListMainTypes[] = [
   {
-    idBeauty: 1,
-    urlBeautyMain:
-      "vi-sao-phu-nu-nen-tim-hieu-va-su-dung-saffron-tu-khi-con-tre",
+    idBeauty: "1",
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618376/BeautyProject/SF6_pw3jlr.jpg",
@@ -293,8 +281,8 @@ export const BeautyListMain: BeautyListMainTypes[] = [
 ];
 export const BeautyList: BeautyListTypes[] = [
   {
-    idBeauty: 1,
-    urlBeauty: "lam-dep-da-bang-cach-pha-che-hon-hop-saffron-mat-ong",
+    idBeauty: "1",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856415/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img2_yfgtix.png",
@@ -350,8 +338,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 2,
-    urlBeauty: "cong-cu-cua-saffron-cai-thien-suc-khoe",
+    idBeauty: " 2",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856418/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img3_eyqgqn.png",
@@ -410,8 +398,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 3,
-    urlBeauty: "saffron-mix-hat-chia-bi-kip-giu-thanh-xuan-cua-phai-dep",
+    idBeauty: "3",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856417/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img5_oqbozd.png",
@@ -467,8 +455,7 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 4,
-    urlBeauty: "3-ly-giai-cho-do-hot-cua-saffron-trong-nhung-nam-gan-day",
+    idBeauty: "4",
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856415/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img6_rkbqi0.png",
@@ -528,8 +515,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 5,
-    urlBeauty: "saffron-nguyen-lieu-thiet-yeu-cho-nhung-chiec-mat-na-home-made",
+    idBeauty: "5",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856414/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img7_nmk2fa.png",
@@ -589,8 +576,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 6,
-    urlBeauty: "cach-de-thu-gian-cung-mat-ong-bac-ha-saffron",
+    idBeauty: "6",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856414/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img9_wrrm3f.png",
@@ -655,8 +642,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 7,
-    urlBeauty: "saffron-huu-ichj-nhu-the-nao-cho-lan-da-trong-muaa-he",
+    idBeauty: " 7",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856424/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img13_oi7szt.png",
@@ -716,9 +703,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 8,
-    urlBeauty:
-      "mat-ong-bac-ha-saffron-bo-phe-mat-gan-san-pham-dac-biet-cua-mua-he",
+    idBeauty: "8",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856425/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img0_ny89fx.png",
@@ -777,8 +763,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 9,
-    urlBeauty: "saffron-bao-ve-ban-khoi-nang-gat-nhu-the-nao",
+    idBeauty: "9",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856422/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img14_s80ecm.png",
@@ -837,8 +823,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 10,
-    urlBeauty: "saffron-giup-giam-mun-nhu-the-nao",
+    idBeauty: "10",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856416/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img12_m4hozb.png  ",
@@ -892,9 +878,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 11,
-    urlBeauty:
-      "tai-sao-ngay-cang-nhieu-chi-em-su-dung-saffron-thay-cho-cac-loai-mat-na-va-kem-duong",
+    idBeauty: "11",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856424/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img13_oi7szt.png",
@@ -950,8 +935,8 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 12,
-    urlBeauty: "lam-the-nao-de-thoat-khoi-noi-so-ngay-den-do",
+    idBeauty: "12",
+
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856422/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img14_s80ecm.png",
@@ -1007,9 +992,7 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: 13,
-    urlBeauty:
-      "moi-ngay-mot-ly-tra-tao-mat-ong-saffron-se-giup-ban-tuoi-tre-dai-lau",
+    idBeauty: "13",
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856422/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img15_vlwz5k.png",
@@ -1256,5 +1239,79 @@ export const CuisineList: CuisineListTypes[] = [
         "Bạn có thể rắc thêm hạt ngũ cốc hoặc hoa quả cho món ăn thêm bắt mắt hơn!",
     },
     typeCuisine: "Ẩm thực",
+  },
+];
+export const commentsData: CommentFeedbackTypes[] = [
+  {
+    idComment: "1",
+    nameComment: "Nguyen Nhat Hao",
+    contentComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis laborum nesciunt...",
+    starComment: 5,
+    imgComment: "",
+    timeComment: "2023-11-08",
+  },
+  {
+    idComment: "2",
+    nameComment: "John Doe",
+    contentComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis laborum nesciunt...",
+    starComment: 4,
+    imgComment: "",
+    timeComment: "2023-11-07",
+  },
+  {
+    idComment: "3",
+    nameComment: "Bali",
+    contentComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis laborum nesciunt...",
+    starComment: 1,
+    imgComment: "",
+    timeComment: "2023-11-06",
+  },
+  {
+    idComment: "4",
+    nameComment: "John Milk",
+    contentComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis laborum nesciunt...",
+    starComment: 2,
+    imgComment: "",
+    timeComment: "2023-10-07",
+  },
+  {
+    idComment: "5",
+    nameComment: "Neyja",
+    contentComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis laborum nesciunt...",
+    starComment: 3,
+    imgComment: "",
+    timeComment: "2023-09-07",
+  },
+  {
+    idComment: "6",
+    nameComment: "Buling",
+    contentComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis laborum nesciunt...",
+    starComment: 4,
+    imgComment: "",
+    timeComment: "2023-11-22",
+  },
+  {
+    idComment: "7",
+    nameComment: "Mout",
+    contentComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis laborum nesciunt...",
+    starComment: 2,
+    imgComment: "",
+    timeComment: "2023-12-07",
+  },
+  {
+    idComment: "8",
+    nameComment: "Alibaba",
+    contentComment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia corporis laborum nesciunt...",
+    starComment: 1,
+    imgComment: "",
+    timeComment: "2023-12-24",
   },
 ];

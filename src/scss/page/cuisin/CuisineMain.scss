@@ -1,0 +1,51 @@
+@media (max-width: 1023px) {
+  .Cuisine-profile-main__container {
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+  .Cuisine-profile-main-return {
+    width: 100%;
+    padding-left: 20px;
+  }
+  .Cuisine-profile-main-tittle {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .Cuisine-profile-main-types {
+    padding-left: 20px;
+    font-size: 14px;
+  }
+  .Cuisine-profile-main-detail {
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .Cuisine-profile-main-detail-content {
+    padding: 0;
+    width: 100%;
+    gap: 0;
+    margin: 0;
+    flex-direction: column;
+  }
+  .Cuisine-profile-main-detail-image {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .Cuisine-profile-tittle {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .Cuisine-profile-content {
+    font-size: 14px;
+  }
+  .Cuisine-profile-content-all {
+    width: 100%;
+  }
+}

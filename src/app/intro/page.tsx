@@ -3,9 +3,11 @@ import Image from "next/image";
 import imageIntro from "../../assets/image/ImageIntro.png";
 const IntroHABPage = () => {
   return (
-    <div className="flex items-center justify-center p-[50px] gap-[150px] bg-[#611a1a] text-white  intro-HAB__container">
+    <div className="flex items-center justify-center p-[50px] gap-[150px] bg-[#a72020] text-white  intro-HAB__container">
       <div className="w-[600px] intro-HAB-content">
-        <p className="font-[550] text-[30px]">Về chúng tôi</p>
+        <p className="font-[550] text-[30px] intro-HAB-content-tittle">
+          Về chúng tôi
+        </p>
         <p className="mt-[30px]">
           Công ty TNHH Đức Thành Phát là một trong những công ty hàng đầu tại
           Việt Nam chuyên nhập khẩu và phân phối các sản phẩm cao cấp, đặc biệt
@@ -41,13 +43,14 @@ const IntroHABPage = () => {
           cấp và chất lượng tốt nhất.
         </p>
       </div>
-      <div className="w-[445px] h-[600px] object-contain">
+      <div className="w-[445px] h-[600px] object-contain intro-HAB-img">
         <Image
           src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618388/BeautyProject/SFT-14_op6e08.jpg"
           alt=""
           width={445}
           height={600}
-          className="w-[445px] h-[600px] object-fill"
+          loading="lazy"
+          className="w-[445px] h-[600px] object-fill intro-HAB-img"
         />
       </div>
     </div>

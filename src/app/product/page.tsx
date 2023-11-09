@@ -1,15 +1,12 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import DetailProduct from "./[url]/page";
 import { ProductList } from "@/data/data";
 import { ProductListTypes } from "@/types/Interface";
 import ShoppingBag from "../header/component/ShoppingBag"; // Import the ShoppingBag component
-import HeaderHAB from "../header/page";
 import { CartContext } from "@/context/CartContext";
 import { handleAddToCart } from "@/utils/function";
 import { useRouter } from "next/navigation";
-import { it } from "node:test";
 
 const ProductHAB = () => {
   const { cart, setCart } = useContext(CartContext);
@@ -24,33 +21,37 @@ const ProductHAB = () => {
   }, [cart]);
   return (
     <div>
-      <div className="bg-[#611a1a] product-HAB__container">
+      <div className="bg-[#a72020] product-HAB__container">
         <div>
           <div className=" pt-[30px] flex items-center justify-center font-[400] text-[25px] text-white">
             Tất cả sản phẩm
           </div>
-          <div className="text-white p-[50px] flex-wrap gap-[100px] flex">
+          <div className="text-white p-[50px] flex-wrap gap-[100px] flex product-HAB-items-container w-[100%] justify-center ">
             {ProductList.map((items: ProductListTypes) => {
               return (
-                <div key={items.idProduct} className="w-[200px] leading-[2] ">
-                  <p
+                <div
+                  key={items.idProduct}
+                  className="w-[200px] leading-[2] product-HAB-items-container-show"
+                >
+                  <div
                     onClick={() => {
-                      router.push(`/product/${items.urlProduct}`);
+                      router.push(`/product/${items.idProduct}`);
                     }}
-                    className="w-[200px] h-[210px] bg-slate-500 cursor-pointer"
+                    className="w-[200px] h-[210px] bg-slate-500 cursor-pointer product-HAB-items"
                   >
                     <Image
                       src={items.imgProfile.imgProfile1.src}
                       alt={items.imgProfile.imgProfile1.alt}
                       width={items.imgProfile.imgProfile1.width}
                       height={items.imgProfile.imgProfile1.height}
-                      className="h-[210px] w-[200px] object-fill"
+                      loading="lazy"
+                      className="h-[210px] w-[200px] object-fill product-HAB-items-image"
                     />
-                  </p>
-                  <p className="text-center flex items-center justify-center font-[550] mt-3">
+                  </div>
+                  <p className="text-center flex items-center justify-center font-[550] mt-3 product-HAB-items-name">
                     {items.nameProduct}
                   </p>
-                  <div className="flex text-sm mt-3">
+                  <div className="flex text-sm mt-3 product-HAB-items-btn">
                     <p
                       onClick={() => {
                         handleAddToCart(
@@ -65,7 +66,7 @@ const ProductHAB = () => {
                       Thêm vào túi
                     </p>
 
-                    <p className="ml-auto">
+                    <p className="ml-auto product-HAB-items-price">
                       {items.priceProduct.toLocaleString("vi-VN")}đ
                     </p>
                   </div>
@@ -75,7 +76,12 @@ const ProductHAB = () => {
           </div>
         </div>
       </div>
-      {cartVisible && <ShoppingBag hideShoppingCart={hideShoppingCart} />}
+      {cartVisible && (
+        <ShoppingBag
+          hideShoppingCart={hideShoppingCart}
+          orderShow={hideShoppingCart}
+        />
+      )}
     </div>
   );
 };

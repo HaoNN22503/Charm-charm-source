@@ -6,7 +6,7 @@ import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 import { BeautyList, BeautyListMain } from "@/data/data";
 import { BeautyListMainTypes, BeautyListTypes } from "@/types/Interface";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
 const BeautyHABPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -64,11 +64,11 @@ const BeautyHABPage = () => {
     setDragDistance(0);
   };
   return (
-    <div className="bg-[#611a1a] beauty-container ">
+    <div className="bg-[#a72020] beauty-container ">
       <div className="flex items-center justify-center font-[400] text-[35px] pt-[40px] pb-[20px] text-white beauty-tittle">
         <p>Làm đẹp</p>
       </div>
-      <div className="flex items-center justify-center p-[5px] text-white text-[16px] gap-[100px] beauty-option-tittle">
+      <div className="flex items-center p-[5px] text-white text-[16px] justify-evenly beauty-option-tittle">
         <p className="cursor-pointer">Xem tất cả</p>
         <p className="cursor-pointer">Xu hướng</p>
         <p className="cursor-pointer">Sức khỏe</p>
@@ -76,27 +76,33 @@ const BeautyHABPage = () => {
       </div>
       {BeautyListMain.map((items: BeautyListMainTypes) => {
         return (
-          <div key={items.idBeauty} className="flex pt-[40px]">
-            <div className="w-[913px] h-[513px] object-fill">
+          <div
+            key={items.idBeauty}
+            className="flex pt-[40px] w-[100%] beauty-HAB-main-option"
+          >
+            <div className="w-[913px] h-[513px] object-fill beauty-HAB-main-option-image">
               {" "}
               <Image
                 src={items.imgBeauty.imgBeauty1.src}
                 alt={items.imgBeauty.imgBeauty1.alt}
                 width={items.imgBeauty.imgBeauty1.width}
                 height={items.imgBeauty.imgBeauty1.height}
-                className="w-[913px] h-[513px] bg-blue-100 object-fill"
+                loading="lazy"
+                className="w-[913px] h-[513px] bg-blue-100 object-fill beauty-HAB-main-option-image"
               />
             </div>
-            <div className="w-[40%] bg-white p-[20px] ml-auto text-[#a72020] px-[60px] py-[80px] beauty-info">
-              <p className="text-[30px] font-[550] ">{items.tittleBeauty}</p>
-              <p className="pt-[50px] text-[17px] text-[#611a1a]">
-                {items.contentBeauty.content1.slice(0, 183) + " ..."}
+            <div className="w-[40%] bg-white h-[513px] p-[20px] ml-auto text-[#a72020] px-[40px] py-[60px] beauty-info">
+              <p className="text-[30px] font-[550] beauty-info-tittle">
+                {items.tittleBeauty}
+              </p>
+              <p className="pt-[50px] text-[17px] text-[#611a1a] beauty-info-content">
+                {items.contentBeauty.content1.slice(0, 184) + " ..."}
               </p>
               <div
                 onClick={() => {
-                  router.push(`/beauty/beautyMain/${items.urlBeautyMain}`);
+                  router.push(`/beauty/beautyMain/${items.idBeauty}`);
                 }}
-                className="mt-[50px] pt-[7px] pr-[15px] pb-[7px] pl-[15px] cursor-pointer bg-transparent border-solid border-2 border-[#a72020] h-fit w-fit rounded-[7px]"
+                className="mt-[50px] pt-[7px] pr-[15px] pb-[7px] pl-[15px] cursor-pointer bg-transparent border-solid border-2 border-[#a72020] h-fit w-fit rounded-[7px] beauty-info-btn"
               >
                 <p>Tiếp tục đọc</p>
               </div>
@@ -109,22 +115,22 @@ const BeautyHABPage = () => {
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className="p-[50px] flex flex-wrap "
+        className="p-[50px] flex flex-wrap beauty-HAB-nomal-option"
       >
         {BeautyList.slice(startIndex, endIndex).map(
           (items: BeautyListTypes) => {
             return (
               <div
                 key={items.idBeauty}
-                className="bg-white w-[300px] h-[450px] mt-[40px] p-[15px] rounded-[7px] flex flex-col mr-[25px] ml-[25px]"
+                className="bg-white w-[300px] h-[450px] mt-[40px] p-[15px] rounded-[7px] flex flex-col mr-[25px] ml-[25px] beauty-HAB-nomal"
               >
-                <div className="w-[270px] h-[250px] mb-[10px] flex justify-center items-center">
+                <div className="w-[270px] h-[250px] mb-[10px] flex justify-center items-center beauty-HAB-nomal-image">
                   <Image
                     src={items.imgBeauty.imgBeauty1.src}
                     alt={items.imgBeauty.imgBeauty1.alt}
                     width={270}
                     height={250}
-                    className="h-[250px] w-[270px] object-fill"
+                    className="h-[250px] w-[270px] object-fill beauty-HAB-nomal-image"
                   />
                 </div>
                 <div>
@@ -134,7 +140,7 @@ const BeautyHABPage = () => {
 
                   {items.contentBeauty.contentHead1.length > 125 ? (
                     <p className="text-[13px]">
-                      {items.contentBeauty.contentHead1.slice(0, 125) + " ..."}
+                      {items.contentBeauty.contentHead1.slice(0, 80) + " ..."}
                     </p>
                   ) : (
                     <p className="text-[13px]">
@@ -142,14 +148,12 @@ const BeautyHABPage = () => {
                     </p>
                   )}
                 </div>
-                <div
-                  onClick={() => {
-                    router.push(`/beauty/beautyNomal/${items.urlBeauty}`);
-                  }}
+                <Link
+                  href={`/beauty/beautyNomal/${items.idBeauty}`}
                   className="mt-[auto] text-[14px] pt-[5px] pr-[10px] pb-[5px] pl-[10px] cursor-pointer bg-transparent border-solid border-2 border-[#a72020] h-fit w-fit text-[#a72020] rounded-[7px]"
                 >
                   <p>Tiếp tục đọc</p>
-                </div>
+                </Link>
               </div>
             );
           }
