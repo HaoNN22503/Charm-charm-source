@@ -4,7 +4,7 @@ import imageIntro from "../../assets/image/ImageIntro.png";
 const IntroHABPage = () => {
   return (
     <div className="flex items-center justify-center p-[50px] gap-[150px] bg-[#a72020] text-white  intro-HAB__container">
-      <div className="w-[600px] intro-HAB-content">
+      <div className="w-[600px] intro-HAB-content text-justify">
         <p className="font-[550] text-[30px] intro-HAB-content-tittle">
           Về chúng tôi
         </p>

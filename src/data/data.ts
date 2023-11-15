@@ -276,13 +276,12 @@ export const BeautyListMain: BeautyListMainTypes[] = [
       content6:
         "Như vẫn gọi là {'triệt để từ trong ra ngoài'}, bạn có thể sử dụng Saffron làm gia vị nêm nếm tạo màu sắc cho món ăn có màu vàng tươi đẹp tự nhiên. Như vậy bạn sẽ được {'chăm sóc'} cả ngày bằng Saffron.",
     },
-    typeBeauty: "Sực khỏe",
+    typeBeauty: "Sức khỏe",
   },
 ];
 export const BeautyList: BeautyListTypes[] = [
   {
     idBeauty: "1",
-
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856415/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img2_yfgtix.png",
@@ -338,8 +337,7 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: " 2",
-
+    idBeauty: "2",
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856418/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img3_eyqgqn.png",
@@ -399,7 +397,6 @@ export const BeautyList: BeautyListTypes[] = [
   },
   {
     idBeauty: "3",
-
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856417/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img5_oqbozd.png",
@@ -516,7 +513,6 @@ export const BeautyList: BeautyListTypes[] = [
   },
   {
     idBeauty: "5",
-
     imgBeauty: {
       imgBeauty1: {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856414/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img7_nmk2fa.png",
@@ -642,7 +638,7 @@ export const BeautyList: BeautyListTypes[] = [
     typeBeauty: "Sức khỏe",
   },
   {
-    idBeauty: " 7",
+    idBeauty: "7",
 
     imgBeauty: {
       imgBeauty1: {

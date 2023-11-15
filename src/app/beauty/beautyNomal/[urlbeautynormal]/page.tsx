@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { BeautyList } from "@/data/data";
 import { BeautyListTypes } from "@/types/Interface";
 
-const BeautyProfile = ({ params }: { params: { urlbeautynormal: string } }) => {
+const BeautyProfile = ({ params }: { params: { urlbeautyNormal: string } }) => {
   const router = useRouter();
   return (
     <div className=" text-white bg-[#a72020] beauty-profile__container max-w-[2000px]">
@@ -22,7 +22,7 @@ const BeautyProfile = ({ params }: { params: { urlbeautynormal: string } }) => {
         <p>Quay lại</p>
       </div>
       {BeautyList.filter((items: BeautyListTypes) => {
-        return items.idBeauty === params.urlbeautynormal;
+        return items.idBeauty === params.urlbeautyNormal;
       }).map((items: BeautyListTypes) => {
         return (
           <div key={items.idBeauty}>

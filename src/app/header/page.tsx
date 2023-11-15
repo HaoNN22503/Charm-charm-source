@@ -181,7 +181,7 @@ const HeaderHAB = () => {
                   </p>
                 </div>
                 {isDropdownOpen && searchTerm !== "" && (
-                  <div className="dropdown-container absolute w-full p-[5px] z-[9] ">
+                  <div className="dropdown-container absolute w-full p-[5px] z-[9] flex flex-col ">
                     {filterResults().map((result, index) => (
                       <Link
                         href={`/product/${result.idProduct}`}
@@ -207,7 +207,7 @@ const HeaderHAB = () => {
                 {" "}
                 <HiOutlineShoppingBag size={25} />
               </p>
-              <p className="absolute h-[auto] w-[auto] p-[5px] text-[10px] mt-[-35px] ml-[13px] rounded-full bg-amber-200 header-show-total">
+              <p className="absolute flex items-center justify-center p-[5px] text-[14px] mt-[-35px] ml-[13px] rounded-full bg-amber-200 header-show-total">
                 {cart.length > 0 && (
                   <p>
                     {cart.reduce((total, item) => total + item.quantity, 0)}{" "}
@@ -300,10 +300,10 @@ const HeaderHAB = () => {
             }}
             className={
               optionProduct
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro" && productShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer"
+                : "option-intro cursor-pointer" && productShow
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer"
+                : "option-intro cursor-pointer"
             }
           >
             Sản phẩm

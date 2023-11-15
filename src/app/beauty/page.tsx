@@ -91,20 +91,17 @@ const BeautyHABPage = () => {
                 className="w-[913px] h-[513px] bg-blue-100 object-fill beauty-HAB-main-option-image"
               />
             </div>
-            <div className="w-[40%] bg-white h-[513px] p-[20px] ml-auto text-[#a72020] px-[40px] py-[60px] beauty-info">
+            <div className="w-[40%] h-[auto] bg-white p-[20px] ml-auto text-[#a72020] px-[40px] py-[60px] beauty-info">
               <p className="text-[30px] font-[550] beauty-info-tittle">
                 {items.tittleBeauty}
               </p>
               <p className="pt-[50px] text-[17px] text-[#611a1a] beauty-info-content">
                 {items.contentBeauty.content1.slice(0, 184) + " ..."}
               </p>
-              <div
-                onClick={() => {
-                  router.push(`/beauty/beautyMain/${items.idBeauty}`);
-                }}
-                className="mt-[50px] pt-[7px] pr-[15px] pb-[7px] pl-[15px] cursor-pointer bg-transparent border-solid border-2 border-[#a72020] h-fit w-fit rounded-[7px] beauty-info-btn"
-              >
-                <p>Tiếp tục đọc</p>
+              <div className="mt-[50px] p-[10px] border border-solid border-[#a72020] w-fit rounded-[7px]  beauty-info-btn">
+                <Link href={`/beauty/beautyMain/${items.idBeauty}`}>
+                  <p>Tiếp tục đọc</p>
+                </Link>
               </div>
             </div>
           </div>
