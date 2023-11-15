@@ -12,7 +12,7 @@ const FooterHAB = () => {
         <div className="w-[350px] footer-contact">
           <p className="h-[40px] text-xl footer-contact-tittle">GIỮ LIÊN LẠC</p>
           <p className="text-sm h-[70px] footer-contact-content">
-            Đăng kí để nhận thông tin khuyến mãi mới nhất từ Charm Charm Saffron
+            Đăng ký để nhận thông tin khuyến mãi mới nhất từ Charm Charm Saffron
           </p>
           <div className="w-full footer-contact-input">
             {" "}
@@ -23,7 +23,7 @@ const FooterHAB = () => {
             />
           </div>
           <p className="flex justify-center mt-3 text-base underline cursor-pointer ">
-            Đăng kí
+            Đăng ký
           </p>
         </div>
         <div className="text-[14px] leading-[2.2] footer-hotline-container">
