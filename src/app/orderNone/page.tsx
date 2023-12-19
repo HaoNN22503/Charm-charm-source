@@ -8,8 +8,8 @@ const OrderNonePage = () => {
         <div className="flex items-center justify-center w-[100%] pb-[20px] order-none-tittle">
           <p className="font-[550] text-white text-[25px]">Đơn của bạn</p>
         </div>
-        <div className="flex gap-[200px] py-[50px] order-none-infor-bag">
-          <div>
+        <div className="flex py-[50px] order-none-infor-bag">
+          <div className="mr-[200px]">
             <div className="pt-[50px] order-none-background-info-user">
               <div className="order-none-product-buying-left">
                 <p className="text-[18px] font-[500] text-white order-none-background-info-user-name">
@@ -44,18 +44,18 @@ const OrderNonePage = () => {
                   Phương thức thanh toán{" "}
                 </p>
                 <div className="ml-[5px]">
-                  <div className="flex items-end gap-[10px] text-white mt-[30px] text-[14px]">
+                  <div className="flex items-end text-white mt-[30px] text-[14px]">
                     <input
                       type="checkbox"
-                      className="h-[20px] w-[20px] "
+                      className="h-[20px] w-[20px] mr-[10px]"
                       id=""
                     />
                     <p>Chuyển khoản</p>
                   </div>
-                  <div className="flex items-center gap-[10px] text-white text-[14px] mt-[15px]">
+                  <div className="flex items-center text-white text-[14px] mt-[15px]">
                     <input
                       type="checkbox"
-                      className="h-[20px] w-[20px]"
+                      className="h-[20px] w-[20px] mr-[10px]"
                       id=""
                     />
                     <p>COD</p>

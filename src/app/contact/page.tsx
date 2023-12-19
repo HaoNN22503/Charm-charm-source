@@ -14,20 +14,20 @@ const ContactHABPage = () => {
         <div className="w-[100%]">Liên hệ</div>
         <div className="flex flex-col items-center justify-center w-[100%]">
           <div>Kết nối với Charm Charm Saffron</div>
-          <div className="mt-[15px] flex gap-[15px] items-center justify-center">
+          <div className="mt-[15px] flex items-center justify-center">
             <Link
               href="https://www.facebook.com/Charmcharm.Saffronhn"
-              className="cursor-pointer"
+              className="cursor-pointer mr-[15px]"
             >
               <IoLogoFacebook size={40} />
             </Link>
             <Link
               href="https://www.facebook.com/messages/t/103055238233853"
-              className="cursor-pointer"
+              className="cursor-pointer mr-[15px]"
             >
               <FaFacebookMessenger size={40} />
             </Link>
-            <p className="cursor-pointer">
+            <p className="cursor-pointer mr-[15px]">
               <SiZalo size={40} />
             </p>
           </div>

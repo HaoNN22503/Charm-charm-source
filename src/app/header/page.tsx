@@ -16,6 +16,8 @@ import { AiOutlineClose } from "react-icons/ai";
 const HeaderHAB = () => {
   const router = useRouter();
   const [homepageShow, setHomepageShow] = useState(false);
+  const [optionSecret, setOptionSecret] = useState(false);
+  const [optionSecretMobile, setOptionSecretMobile] = useState(false);
   const [aboutUsShow, setAboutUsShow] = useState(true);
   const [introShow, setIntroShow] = useState(false);
   const [productShow, setProductShow] = useState(false);
@@ -41,6 +43,8 @@ const HeaderHAB = () => {
 
   const toggleShoppingBag = () => {
     setShowShoppingBag(!showShoppingBag);
+    setOptionProduct(false);
+    setOptionSecret(false);
   };
   const toggleBuying = () => {
     setAboutUsShow(false);
@@ -135,6 +139,7 @@ const HeaderHAB = () => {
               setCuisineShow(false);
               setFeedbackShow(false);
               setPromotionShow(false);
+              setOptionSecret(false);
             }}
             className="w-[200px] h-[100px] cursor-pointer header-option-bar-logo"
           >
@@ -235,30 +240,52 @@ const HeaderHAB = () => {
           </label>
           <label
             htmlFor="nav-mobile-input"
-            className="mt-[20px] flex justify-center items-center gap-[70px] text-[#611a1a] text-[17px] font-[550] header-mobile-option"
+            className="mt-[20px] flex justify-center items-center text-[#611a1a] text-[17px] font-[550] header-mobile-option"
           >
-            <Link href="/intro" className="option-intro">
+            <Link href="/" className="option-intro mr-[70px]">
+              Trang chủ
+            </Link>
+            <Link href="/intro" className="option-intro mr-[70px]">
               Giới thiệu
             </Link>
-            <Link href="/product" className="option-intro">
+            <Link href="/product" className="option-intro mr-[70px]">
               Sản phẩm
             </Link>
-            <Link href="/beauty" className="option-intro">
-              Làm đẹp
-            </Link>
+            <div
+              onClick={() => {
+                setOptionSecretMobile(true);
+              }}
+              className="option-intro mr-[70px]"
+            >
+              Bí quyết
+            </div>
+            {optionSecretMobile && (
+              <div className="w-[100%] bg-[white] flex-col flex mr-[70px]">
+                <Link
+                  href="/beauty"
+                  className="option-intro text-[#611a1a] text-[15px] font-[550] mr-[70px]"
+                >
+                  Làm đẹp
+                </Link>
+                <Link
+                  href="/cuisine"
+                  className="option-intro text-[#611a1a] text-[15px] font-[550] mr-[70px]"
+                >
+                  Ẩm thực
+                </Link>
+              </div>
+            )}
             {/* <Link href="/orderNone" className="option-intro-buying">
               Đặt mua
             </Link> */}
-            <Link href="/promotion" className="option-intro">
+            <Link href="/promotion" className="option-intro mr-[70px]">
               Khuyến mãi
             </Link>
-            {/* <Link href="/cuisine" className="option-intro">
-              Ẩm thực
-            </Link> */}
-            <Link href="/contact" className="option-intro">
+
+            <Link href="/contact" className="option-intro mr-[70px]">
               Liên hệ
             </Link>
-            <Link href="/feedback" className="option-intro">
+            <Link href="/feedback" className="option-intro mr-[70px]">
               Feedback
             </Link>
           </label>
@@ -269,7 +296,31 @@ const HeaderHAB = () => {
             orderShow={toggleBuying}
           />
         )}
-        <div className="mt-[20px] flex justify-center items-center gap-[70px] text-[#611a1a] text-[17px] font-[550] header-option">
+        <div className="mt-[20px] flex justify-center items-center text-[#611a1a] text-[17px] font-[550] header-option">
+          <Link
+            href="/"
+            onClick={() => {
+              setIntroShow(false);
+              setHomepageShow(true);
+              setOptionProduct(false);
+              setOptionSecret(false);
+              setProductShow(false);
+              setOrderShow(false);
+              setOrderNoneShow(false);
+              setBeautyShow(false);
+              setContactShow(false);
+              setCuisineShow(false);
+              setFeedbackShow(false);
+              setPromotionShow(false);
+            }}
+            className={
+              homepageShow
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
+                : "option-intro mr-[70px]"
+            }
+          >
+            Trang chủ
+          </Link>
           <Link
             href="/intro"
             onClick={() => {
@@ -283,12 +334,13 @@ const HeaderHAB = () => {
               setContactShow(false);
               setCuisineShow(false);
               setFeedbackShow(false);
+              setOptionSecret(false);
               setPromotionShow(false);
             }}
             className={
               introShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
+                : "option-intro mr-[70px]"
             }
           >
             Giới thiệu
@@ -296,61 +348,37 @@ const HeaderHAB = () => {
           <p
             onClick={() => {
               setOptionProduct(!optionProduct);
-              console.log(optionProduct);
+              setOptionSecret(false);
             }}
             className={
               optionProduct
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer"
-                : "option-intro cursor-pointer" && productShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer"
-                : "option-intro cursor-pointer"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer mr-[70px]"
+                : "option-intro cursor-pointer mr-[70px]" && productShow
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer mr-[70px]"
+                : "option-intro cursor-pointer mr-[70px]"
             }
           >
             Sản phẩm
           </p>
-          <Link
-            href="/beauty"
+          <p
             onClick={() => {
-              setIntroShow(false);
-              setHomepageShow(false);
+              setOptionSecret(!optionSecret);
               setOptionProduct(false);
-              setProductShow(false);
-              setOrderShow(false);
-              setOrderNoneShow(false);
-              setBeautyShow(true);
-              setContactShow(false);
-              setCuisineShow(false);
-              setFeedbackShow(false);
-              setPromotionShow(false);
             }}
             className={
-              beautyShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro"
+              optionSecret
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
+                : "option-intro mr-[70px]"
             }
           >
-            Làm đẹp
-          </Link>
+            Bí quyết
+          </p>
           {orderShow && (
             <div
-              // onClick={() => {
-              //   setOrderNoneShow(true);
-              //   setOrderShow(false);
-              //   setHomepageShow(false);
-              //   setIntroShow(false);
-              //   setOptionProduct(false);
-              //   setProductShow(false);
-              //   setOptionShoppingBag(false);
-              //   setBeautyShow(false);
-              //   setContactShow(false);
-              //   setCuisineShow(false);
-              //   setFeedbackShow(false);
-              //   setPromotionShow(false);
-              // }}
               className={
                 orderShow
-                  ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                  : "option-intro-buying"
+                  ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
+                  : "option-intro-buying mr-[70px]"
               }
             >
               Đặt mua
@@ -370,39 +398,18 @@ const HeaderHAB = () => {
               setBeautyShow(false);
               setContactShow(false);
               setCuisineShow(false);
+              setOptionSecret(false);
               setFeedbackShow(false);
             }}
             className={
               promotionShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
+                : "option-intro mr-[70px]"
             }
           >
             Khuyến mãi
           </Link>
-          {/* <Link
-            href="/cuisine"
-            onClick={() => {
-              setContactShow(false);
-              setIntroShow(false);
-              setHomepageShow(false);
-              setOptionProduct(false);
-              setProductShow(false);
-              setOrderShow(false);
-              setOrderNoneShow(false);
-              setBeautyShow(false);
-              setCuisineShow(true);
-              setFeedbackShow(false);
-              setPromotionShow(false);
-            }}
-            className={
-              cuisineShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro"
-            }
-          >
-            Ẩm thực
-          </Link> */}
+
           <Link
             href="/contact"
             onClick={() => {
@@ -416,12 +423,13 @@ const HeaderHAB = () => {
               setBeautyShow(false);
               setCuisineShow(false);
               setFeedbackShow(false);
+              setOptionSecret(false);
               setPromotionShow(false);
             }}
             className={
               contactShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
+                : "option-intro mr-[70px]"
             }
           >
             Liên hệ
@@ -439,12 +447,13 @@ const HeaderHAB = () => {
               setOrderNoneShow(false);
               setBeautyShow(false);
               setPromotionShow(false);
+              setOptionSecret(false);
               setCuisineShow(false);
             }}
             className={
               feedbackShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
+                : "option-intro mr-[70px]"
             }
           >
             Feedback
@@ -453,15 +462,14 @@ const HeaderHAB = () => {
       </div>
       {optionProduct && (
         <div className=" health-and-beauty-homepage-option-product__container absolute w-[100%] bg-white z-[9999]">
-          <div className="p-[20px] flex items-center justify-center gap-[350px] leading-[2.2] heading-option-product">
-            <div className="text-[#611a1a] flex flex-col  text-[19px] font-[400]">
+          <div className="p-[20px] flex items-center justify-center leading-[2.2] heading-option-product">
+            <div className="text-[#611a1a] flex flex-col  text-[19px] font-[400] mr-[350px]">
               {ProductList.map((items: ProductListTypes) => (
                 <Link
                   href={`/product/${items.idProduct}`}
                   key={items.idProduct}
                   className="cursor-pointer hover:underline"
                   onClick={() => {
-                    // router.push(`/product/${items.urlProduct}`);
                     setOptionProduct(false);
                   }}
                 >
@@ -501,6 +509,139 @@ const HeaderHAB = () => {
               Trang chủ sản phẩm <IoIosArrowForward />
             </Link>
           </div>
+        </div>
+      )}
+      {optionSecret && (
+        <div className=" health-and-beauty-homepage-option-product__container absolute w-[100%] bg-white z-[9999] border-solid border border-t-[#e8e6e6] border-x-0 border-b-0 ">
+          <div className="justify-evenly items-center flex">
+            <div className="flex w-[100%] justify-evenly items-center px-[200px]">
+              <div className="w-fit">
+                <div className="w-[100%] flex flex-col items-center justify-center leading-[1.8] p-[10px] ">
+                  <div className="flex w-[100%] items-center">
+                    <Image
+                      src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702918236/BeautyProject/2_nksjpk.svg"
+                      alt=""
+                      width={50}
+                      height={50}
+                      className="mr-[5px] w-[45px] h-[45px] font-[550]"
+                    />
+                    <p className="font-[550] text-[25px] text-[#611a1a]">
+                      Làm đẹp
+                    </p>
+                  </div>
+                  <div className="w-[100%] flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
+                    <div className="cursor-pointer hover:underline">
+                      Câu chuyện lịch sử
+                    </div>
+                    <div className="cursor-pointer hover:underline">
+                      {" "}
+                      9 công dụng sức khỏe
+                    </div>
+                    <div className="cursor-pointer hover:underline">
+                      Thông tin tổng hợp
+                    </div>
+                    <Link
+                      href="/beauty"
+                      onClick={() => {
+                        setIntroShow(false);
+                        setHomepageShow(false);
+                        setOptionProduct(false);
+                        setProductShow(false);
+                        setOrderShow(false);
+                        setOrderNoneShow(false);
+                        setBeautyShow(true);
+                        setContactShow(false);
+                        setCuisineShow(false);
+                        setFeedbackShow(false);
+                        setPromotionShow(false);
+                        setOptionSecret(false);
+                      }}
+                      className="cursor-pointer hover:underline"
+                    >
+                      Xem thêm
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="w-fit">
+                <div className="w-[100%] flex flex-col items-center justify-center p-[10px] ">
+                  <div className="flex w-[100%] items-center">
+                    <Image
+                      src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702918236/BeautyProject/1_aqwncd.svg"
+                      alt=""
+                      width={50}
+                      height={50}
+                      className="mr-[5px] w-[45px] h-[45px] font-[550]"
+                    />
+                    <p className="font-[550] text-[25px] text-[#611a1a]">
+                      Món ngon
+                    </p>
+                  </div>
+                  <div className="w-[100%]  flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
+                    <div className="cursor-pointer hover:underline">
+                      Câu chuyện lịch sử
+                    </div>
+                    <div className="cursor-pointer hover:underline">
+                      9 công dụng sức khỏe
+                    </div>
+                    <div className="cursor-pointer hover:underline">
+                      Thông tin tổng hợp
+                    </div>
+                    <Link
+                      href="/cuisine"
+                      onClick={() => {
+                        setContactShow(false);
+                        setOptionSecret(false);
+                        setIntroShow(false);
+                        setHomepageShow(false);
+                        setOptionProduct(false);
+                        setProductShow(false);
+                        setOrderShow(false);
+                        setOrderNoneShow(false);
+                        setBeautyShow(false);
+                        setCuisineShow(true);
+                        setFeedbackShow(false);
+                        setPromotionShow(false);
+                      }}
+                      className="cursor-pointer hover:underline"
+                    >
+                      Xem thêm
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="w-fit">
+                <div className="w-[100%] flex flex-col items-center justify-center p-[10px] ">
+                  <div className="flex w-[100%] items-center">
+                    <Image
+                      src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702918235/BeautyProject/3_blxuwo.svg"
+                      alt=""
+                      width={50}
+                      height={50}
+                      className="mr-[5px] w-[45px] h-[45px] font-[550]"
+                    />
+                    <p className="font-[550] text-[25px] text-[#611a1a]">
+                      Tìm hiểu
+                    </p>
+                  </div>
+                  <div className="w-[100%]  flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
+                    <div className="cursor-pointer hover:underline">
+                      Câu chuyện lịch sử
+                    </div>
+                    <div className="cursor-pointer hover:underline">
+                      {" "}
+                      9 công dụng sức khỏe
+                    </div>
+                    <div className="cursor-pointer hover:underline">
+                      Thông tin tổng hợp
+                    </div>
+                    <div className="cursor-pointer hover:underline">Video</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="p-[10px] bg-[#efece3] text-sm option-product"></div>
         </div>
       )}
     </div>

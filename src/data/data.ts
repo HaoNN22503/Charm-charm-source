@@ -86,25 +86,25 @@ export const ProductList: ProductListTypes[] = [
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
     imgProfile: {
       imgProfile1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698905807/BeautyProject/z4841465291140_3d89f9512e17d12765d5c84fe716c549_onrp3c.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958349/BeautyProject/9_kz4icd.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712469/BeautyProject/z4798468313570_985f75e06ddfd0fbe7d785a38599a98a_hztahs.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958349/BeautyProject/9_kz4icd.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712469/BeautyProject/z4798468307721_5f4bd99f30418c5f0b3b4793322679ab_inbqak.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958339/BeautyProject/11_wnsoxc.svg",
         alt: "../../",
         width: 60,
         height: 60,
       },
       imgProfile4: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698905807/BeautyProject/z4841465282887_41df4eba9991a02b2ea496b32b817076_q1cax9.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960547/BeautyProject/12_w9rfow.svg",
         alt: "",
         width: 200,
         height: 210,
@@ -126,25 +126,25 @@ export const ProductList: ProductListTypes[] = [
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
     imgProfile: {
       imgProfile1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712146/BeautyProject/z4798449530821_bbc736f2325ffaeda0e61b9073a6d9f3_xsdmfk.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958346/BeautyProject/4_zdvcpb.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712145/BeautyProject/z4798449829350_e2f80ba3daa484d979e056258867f864_x2chmi.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960570/BeautyProject/15_ingeih.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712146/BeautyProject/z4798450203115_f17f6c140a7b21c615b4eaff4337246c_t3gpyb.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960568/BeautyProject/14_p3wu6c.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile4: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698906449/BeautyProject/z4841491698674_2ccd8de59f30e7a74bc2ece224d3e42d_x4h19k.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960566/BeautyProject/13_hpzbfn.svg",
         alt: "",
         width: 200,
         height: 210,
@@ -165,25 +165,25 @@ export const ProductList: ProductListTypes[] = [
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
     imgProfile: {
       imgProfile1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618380/BeautyProject/SSFF-10_rgpfzl.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958337/BeautyProject/6_izqknm.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712789/BeautyProject/z4798483475435_3a94f855d444c7219f143741f88c9675_jxrutz.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958348/BeautyProject/5_ph03yf.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712789/BeautyProject/z4798483486185_8b696eb0bb726574b1040ceaa1d0b311_r93rr3.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960565/BeautyProject/17_y5gttz.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile4: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698906646/BeautyProject/z4841498416028_9de5159b45cd5fc66569d295f2914621_mwkitt.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960545/BeautyProject/16_eum4x1.svg",
         alt: "",
         width: 200,
         height: 210,
@@ -205,25 +205,25 @@ export const ProductList: ProductListTypes[] = [
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
     imgProfile: {
       imgProfile1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697713020/BeautyProject/z4798494585905_caad88f27e8bac4caf8b297550060e36_eftwao.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958328/BeautyProject/1_bwzcj3.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697713022/BeautyProject/z4798494596618_8c13444a9a9b8bb0b0ca611beb6ae2d7_l8zlvm.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958345/BeautyProject/3_vuctbe.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697713024/BeautyProject/z4798494603212_d436874f18c1537c9b310c549112c14c_ggckhq.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958355/BeautyProject/2_w3obkb.svg",
         alt: "",
         width: 60,
         height: 60,
       },
       imgProfile4: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1698906867/BeautyProject/z4841508653122_be25891b91c2435accfaa077cf49c4cd_gyapb5.jpg",
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960543/BeautyProject/18_v86c6s.svg",
         alt: "",
         width: 200,
         height: 210,

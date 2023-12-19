@@ -62,12 +62,12 @@ const ShoppingBag = ({
                   toggleShoppingBag();
                   setReturnHomePage(true);
                 }}
-                className="mt-[50px] gap-[5px] flex items-center text-[14px]"
+                className="mt-[50px] flex items-center text-[14px]"
               >
                 <p>
                   <HiOutlineArrowUturnLeft size={20} />
                 </p>
-                <p>Tiếp tục mua sắm</p>
+                <p className="ml-[5px]">Tiếp tục mua sắm</p>
               </div>
               {cart.length > 0 && (
                 <div className="mt-[50px] flex items-center text-xl option-cart-number">
@@ -84,8 +84,8 @@ const ShoppingBag = ({
                   key={item.idProduct}
                   className="mb-[40px] option-cart-product-buying"
                 >
-                  <div className="mt-[20px] flex items-start gap-[10px]">
-                    <div className="w-[130px] h-[140px] bg-slate-300 option-cart-profile">
+                  <div className="mt-[20px] flex items-start">
+                    <div className="w-[130px] h-[140px] bg-slate-300 option-cart-profile mr-[10px]">
                       <Image
                         src={item.imgProfile.imgProfile1.src}
                         alt={item.imgProfile.imgProfile1.alt}
@@ -97,19 +97,19 @@ const ShoppingBag = ({
                     </div>
                     <div className="flex flex-col option-cart-profile-product">
                       <p>{item.nameProduct}</p>
-                      <div className="flex gap-[40px] mt-[95px]">
-                        <div className="flex gap-[10px] items-center text-[14px]">
-                          <p onClick={() => minNum(item)}>
+                      <div className="flex mt-[95px]">
+                        <div className="flex items-center text-[14px] mr-[40px]">
+                          <p className="mr-[10px]" onClick={() => minNum(item)}>
                             <AiOutlineMinus />
                           </p>
-                          <p>{item.quantity}</p>
+                          <p className="mr-[10px]">{item.quantity}</p>
                           <p onClick={() => plusNum(item)}>
                             <AiOutlinePlus />
                           </p>
                         </div>
                         <p
                           onClick={() => removeFromCart(item.idProduct)}
-                          className="cursor-pointer hover:underline"
+                          className="cursor-pointer hover:underline mr-[40px]"
                         >
                           Xóa
                         </p>

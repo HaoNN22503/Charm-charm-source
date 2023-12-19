@@ -14,12 +14,12 @@ const BeautyProfile = ({ params }: { params: { urlbeautyNormal: string } }) => {
         onClick={() => {
           router.back();
         }}
-        className="pt-[50px] pl-[140px] cursor-pointer flex items-center gap-[5px]  beauty-profile-return hover:underline"
+        className="pt-[50px] pl-[140px] cursor-pointer flex items-center beauty-profile-return hover:underline"
       >
         <p>
           <BsArrowLeft />
         </p>
-        <p>Quay lại</p>
+        <p className="ml-[5px]">Quay lại</p>
       </div>
       {BeautyList.filter((items: BeautyListTypes) => {
         return items.idBeauty === params.urlbeautyNormal;

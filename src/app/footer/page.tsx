@@ -8,8 +8,8 @@ import { SiZalo } from "react-icons/si";
 const FooterHAB = () => {
   return (
     <div className="max-w-[2000px] footer__container">
-      <div className="flex items-start justify-center pl-[120px] pt-[60px] pr-[120px] pb-[30px] border-b-[#611a1a] border-solid border-[0.5px] gap-[80px] text-[#611a1a] footer-info__container">
-        <div className="w-[350px] footer-contact">
+      <div className="flex items-start justify-center pl-[120px] pt-[60px] pr-[120px] pb-[30px] border-b-[#611a1a] border-solid border-[0.5px] text-[#611a1a] footer-info__container">
+        <div className="w-[350px] footer-contact mr-[80px]">
           <p className="h-[40px] text-xl footer-contact-tittle">GIỮ LIÊN LẠC</p>
           <p className="text-sm h-[70px] footer-contact-content">
             Đăng ký để nhận thông tin khuyến mãi mới nhất từ Charm Charm Saffron
@@ -26,7 +26,7 @@ const FooterHAB = () => {
             Đăng ký
           </p>
         </div>
-        <div className="text-[14px] leading-[2.2] footer-hotline-container">
+        <div className="text-[14px] leading-[2.2] footer-hotline-container mr-[80px]">
           <p className="h-[40px] text-[16px] font-[550]">CHARM CHARM SAFFRON</p>
           <p>Giới thiệu</p>
           <p>Làm đẹp</p>
@@ -61,16 +61,16 @@ const FooterHAB = () => {
             Hà Nội
           </p>
         </div>
-        <div className="flex gap-[20px] ml-auto mr-[150px] footer-icon-url">
+        <div className="flex ml-auto mr-[150px] footer-icon-url">
           <Link
             href="https://www.facebook.com/Charmcharm.Saffronhn"
-            className="cursor-pointer"
+            className="cursor-pointer mr-[20px]"
           >
             <BsFacebook size={30} />
           </Link>
           <Link
             href="https://www.facebook.com/messages/t/103055238233853"
-            className="cursor-pointer"
+            className="cursor-pointer mr-[20px]"
           >
             <FaFacebookMessenger size={30} />
           </Link>

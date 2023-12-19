@@ -90,23 +90,21 @@ const HomePageHAB = () => {
         >
           <SwiperSlide>
             <Image
-              src={imgHomeProduct3}
+              src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702971690/BeautyProject/20_tvus7z.svg"
               alt=""
+              width={500}
+              height={500}
               loading="lazy"
-              className="object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
-            <Image src={imgHomeProduct4} alt="" loading="lazy" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={imgHomeProduct2} alt="" loading="lazy" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={imgHomeProduct1} alt="" loading="lazy" />
-          </SwiperSlide>{" "}
-          <SwiperSlide>
-            <Image src={imgHomeProduct5} alt="" loading="lazy" />
+            <Image
+              src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702971679/BeautyProject/19_opam5s.svg"
+              alt=""
+              width={500}
+              height={500}
+              loading="lazy"
+            />
           </SwiperSlide>
         </Swiper>
         <div className="absolute mt-[300px] z-[10] flex flex-col items-center justify-center homepage-HAB-swiper-action">
@@ -122,8 +120,8 @@ const HomePageHAB = () => {
         </div>
       </div>
       <div className=" mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
-        <div className="flex gap-[100px] leading-[1.8] items-center justify-center homepage-H-B-header">
-          <div className="w-[600px] homepage-H-B-header-content">
+        <div className="flex leading-[1.8] items-center justify-center homepage-H-B-header">
+          <div className="w-[600px] mr-[100px] homepage-H-B-header-content">
             <p className="text-[#f4aa2a] text-[40px] ">Saffron</p>
             <p className="text-[#f4aa2a] text-[40px]">
               The Gold Of Middle East
@@ -141,6 +139,55 @@ const HomePageHAB = () => {
               src="https://res.cloudinary.com/dkfg3xljc/video/upload/v1698317144/BeautyProject/6699873123557280070_gaj8kv.mp4"
             ></video>
           </div>
+        </div>
+      </div>
+      <div className=" mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
+        <div className="flex leading-[1.8] items-center justify-center homepage-H-B-header">
+          <div className="w-[600px] mr-[100px] homepage-H-B-header-content">
+            <p className="text-[#f4aa2a] text-[40px]">VỀ SẢN PHẨM</p>
+            <p className="mt-[10px] text-xl text-white homepage-HAB-intro-content">
+              Saffron được ví như “Viên kim cương quý nhất của chiếc nhẫn” (The
+              diamond on a ring) - Món quà “vàng đỏ” quý giá của thiên nhiên ban
+              tặng. Nhuỵ hoa nghệ tây là sự lựa chọn hàng đầu cho sức khỏe và
+              sắc đẹp mỗi người.
+            </p>
+          </div>
+          <div className="homepage-HAB-intro-video w-[500px]"></div>
+        </div>
+      </div>
+      <div className="mt-[70px] flex w-[100%] homepage-HAB-QC">
+        <div className="bg-white p-[70px] flex flex-col items-center justify-center h-[600px] w-[60%] homepage-HAB-QC-left">
+          <p className="text-[#611a1a] font-[550] text-[35px] homepage-HAB-QC-left-name">
+            Charm Charm Saffron
+          </p>
+          <p className="font-[500] text-[25px] text-[#a72020] flex homepage-HAB-QC-left-tittle">
+            Đã được
+            <Link
+              href="https://suckhoedoisong.vn/bao-ve-suc-khoe-bang-cac-san-pham-co-chat-chong-oxy-hoa-manh-me-169188383.htm"
+              className="text-[#a72020] font-[650] ml-[3px] mr-[3px] cursor-pointer"
+            >
+              báo Sức Khỏe & Đời Sống
+            </Link>
+            nhắc đến
+          </p>
+          <p className="w-[600px] mt-[50px] text-center italic text-[24px] homepage-HAB-QC-left-content">
+            {`"`}Charm Charm Saffron là nhà nhập khẩu nhụy hoa nghệ tây loại
+            Extra Super Negin cao cấp, có đầy đủ giấy tờ chứng minh nguồn gốc,
+            chất lượng và đây là địa chỉ tín cậy để khách hàng tim mua.
+            {`"`}
+          </p>
+          <p>
+            <Image src={imgHomeBottomLogo} alt="" />
+          </p>
+        </div>
+        <div className="ml-auto w-[900px] h-[700px] object-fill homepage-HAB-QC-right">
+          <Image
+            src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618377/BeautyProject/2_dyaogx.jpg"
+            alt=" "
+            width={900}
+            height={700}
+            className="w-[900px] h-[600px] homepage-HAB-QC-right-image"
+          />
         </div>
       </div>
       <div className="header-comment__container max-w-[2000px]">
@@ -213,41 +260,6 @@ const HomePageHAB = () => {
           >
             <GrLinkNext size={20} />
           </button>
-        </div>
-      </div>
-      <div className="mt-[70px] flex w-[100%] homepage-HAB-QC">
-        <div className="bg-white p-[70px] flex flex-col items-center justify-center h-[600px] w-[60%] homepage-HAB-QC-left">
-          <p className="text-[#611a1a] font-[550] text-[35px] homepage-HAB-QC-left-name">
-            Charm Charm Saffron
-          </p>
-          <p className="font-[500] text-[25px] text-[#a72020] flex homepage-HAB-QC-left-tittle">
-            Đã được
-            <Link
-              href="https://suckhoedoisong.vn/bao-ve-suc-khoe-bang-cac-san-pham-co-chat-chong-oxy-hoa-manh-me-169188383.htm"
-              className="text-[#a72020] font-[650] ml-[3px] mr-[3px] cursor-pointer"
-            >
-              báo Sức Khỏe & Đời Sống
-            </Link>{" "}
-            nhắc đến
-          </p>
-          <p className="w-[600px] mt-[50px] text-center italic text-[24px] homepage-HAB-QC-left-content">
-            {`"`}Charm Charm Saffron là nhà nhập khẩu nhụy hoa nghệ tây loại
-            Extra Super Negin cao cấp, có đầy đủ giấy tờ chứng minh nguồn gốc,
-            chất lượng và đây là địa chỉ tín cậy để khách hàng tim mua.
-            {`"`}
-          </p>
-          <p>
-            <Image src={imgHomeBottomLogo} alt="" />
-          </p>
-        </div>
-        <div className="ml-auto w-[900px] h-[700px] object-fill homepage-HAB-QC-right">
-          <Image
-            src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618377/BeautyProject/2_dyaogx.jpg"
-            alt=" "
-            width={900}
-            height={700}
-            className="w-[900px] h-[600px] homepage-HAB-QC-right-image"
-          />
         </div>
       </div>
     </div>

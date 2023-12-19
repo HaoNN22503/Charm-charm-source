@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import imageIntro from "../../assets/image/ImageIntro.png";
+
 const IntroHABPage = () => {
   return (
-    <div className="flex items-center justify-center p-[50px] gap-[150px] bg-[#a72020] text-white  intro-HAB__container">
-      <div className="w-[600px] intro-HAB-content text-justify">
+    <div className="flex items-center justify-center p-[50px] bg-[#a72020] text-white  intro-HAB__container">
+      <div className="w-[600px] intro-HAB-content text-justify mr-[150px]">
         <p className="font-[550] text-[30px] intro-HAB-content-tittle">
           Về chúng tôi
         </p>
@@ -37,15 +37,15 @@ const IntroHABPage = () => {
           và trải nghiệm sản phẩm saffron chất lượng cao.
         </p>
         <p className="mt-[20px]">
-          {" "}
-          Với tất cả những điều trên, Charm Charm Saffron là một thương hiệu
-          đáng tin cậy cho khách hàng mong muốn tìm kiếm sản phẩm saffron cao
-          cấp và chất lượng tốt nhất.
+          Chúng tôi tự hào là thương hiệu đem sự uy tín trong mỗi sản phẩm tới
+          quý khách hàng với chứng nhận nhập khẩu chính ngạch từ Iran, công nhận
+          của Bộ Y tế, Kiểm Dịch Thực vật, Cục Quản lý Chất lượng Nông, Lâm Sản
+          & Thuỷ sản.
         </p>
       </div>
       <div className="w-[445px] h-[600px] object-contain intro-HAB-img">
         <Image
-          src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618388/BeautyProject/SFT-14_op6e08.jpg"
+          src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702953470/BeautyProject/Thi%E1%BA%BFt_k%E1%BA%BF_ch%C6%B0a_c%C3%B3_t%C3%AAn_1_utrexr.svg"
           alt=""
           width={445}
           height={600}

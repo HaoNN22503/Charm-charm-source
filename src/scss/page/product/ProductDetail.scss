@@ -38,17 +38,17 @@ input[type="radio"]:checked::before {
   background: #a72020;
   margin: 4px;
 }
+
 .swiper-button-next {
   color: black !important;
 }
 .swiper-button-prev {
   color: black !important;
 }
-  :root {
-    --swiper-theme-color: white !important;
-
-    --swiper-navigation-size: 30px !important;
-  }
+:root {
+  --swiper-theme-color: white !important;
+  --swiper-navigation-size: 30px !important;
+}
 .swiper-pagination-bullet {
   width: 15px !important;
   height: 15px !important;
@@ -383,5 +383,10 @@ input[type="radio"]:checked::before {
     padding: 0;
     margin-top: 40px;
     justify-content: space-evenly;
+  }
+}
+@media (max-width: 769px) {
+  .product-detail-HAB-image-small {
+    width: 100%;
   }
 }

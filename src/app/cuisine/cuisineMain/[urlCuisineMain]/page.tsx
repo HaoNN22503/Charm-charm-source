@@ -15,12 +15,12 @@ const CuisineMain = ({ params }: { params: { urlCuisineMain: string } }) => {
         onClick={() => {
           router.back();
         }}
-        className="cursor-pointer flex items-center gap-[5px] Cuisine-profile-main-return hover:underline"
+        className="cursor-pointer flex items-center Cuisine-profile-main-return hover:underline"
       >
         <p>
           <BsArrowLeft />
         </p>
-        <p>Quay lại</p>
+        <p className="ml-[5px]">Quay lại</p>
       </div>
       {CuisineListMain.filter((items: CuisineListMainTypes) => {
         return items.urlCuisineMain === params.urlCuisineMain;
@@ -36,8 +36,8 @@ const CuisineMain = ({ params }: { params: { urlCuisineMain: string } }) => {
               </p>
             </div>
             <div className="flex flex-col items-center mt-[50px] Cuisine-profile-main-detail">
-              <div className="flex gap-[80px] Cuisine-profile-main-detail-content">
-                <div className="Cuisine-profile-main-detail-image">
+              <div className="flex Cuisine-profile-main-detail-content">
+                <div className="Cuisine-profile-main-detail-image mr-[80px]">
                   <Image
                     src={items.imgCuisine.src}
                     alt={items.imgCuisine.alt}

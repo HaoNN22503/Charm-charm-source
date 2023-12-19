@@ -93,8 +93,8 @@ const OrderPage = () => {
       <div className="flex items-center justify-center w-[100%] pb-[20px] order-tittle">
         <p className="font-[550] text-white text-[25px]">Đơn của bạn</p>
       </div>
-      <div className="flex gap-[200px] py-[50px]  border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none-bag order-background">
-        <div>
+      <div className="flex py-[50px]  border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none-bag order-background">
+        <div className="mr-[200px]">
           <div className="pt-[50px] order-background-info-user">
             <div className="order-product-buying-left">
               <p className="text-[18px] font-[500] text-white order-background-info-user-name">
@@ -240,9 +240,9 @@ const OrderPage = () => {
                   return (
                     <div
                       key={items.idProduct}
-                      className="mt-[40px] w-[100%] flex items-start gap-[10px] order-option-cart-product-buying-option-all"
+                      className="mt-[40px] w-[100%] flex items-start order-option-cart-product-buying-option-all"
                     >
-                      <p className="w-[130px] h-[140px] bg-slate-300 order-option-cart-product-buying-image">
+                      <p className="w-[130px] h-[140px] mr-[10px] bg-slate-300 order-option-cart-product-buying-image">
                         <Image
                           src={items.imgProfile.imgProfile1.src}
                           alt={items.imgProfile.imgProfile1.alt}
@@ -252,16 +252,19 @@ const OrderPage = () => {
                           className="w-[130px] h-[140px] object-fill order-option-cart-product-buying-image"
                         />
                       </p>
-                      <div className="flex flex-col order-option-cart-product-buying-option w-full">
+                      <div className="flex flex-col mr-[10px] order-option-cart-product-buying-option w-full">
                         <p className="order-option-cart-product-buying-option-name">
                           {items.nameProduct}
                         </p>
                         <div className="flex mt-[95px] w-[100%] order-option-cart-product-buying-option-price-quantity">
-                          <div className="flex gap-[10px] items-center text-[14px] order-option-cart-product-buying-option-quantity">
-                            <p onClick={() => minNum(items)}>
+                          <div className="flex items-center text-[14px] order-option-cart-product-buying-option-quantity">
+                            <p
+                              className="mr-[10px]"
+                              onClick={() => minNum(items)}
+                            >
                               <AiOutlineMinus />
                             </p>
-                            <p>{items.quantity}</p>
+                            <p className="mr-[10px]">{items.quantity}</p>
                             <p onClick={() => plusNum(items)}>
                               <AiOutlinePlus />
                             </p>

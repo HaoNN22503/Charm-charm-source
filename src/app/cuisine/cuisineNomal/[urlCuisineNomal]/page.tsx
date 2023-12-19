@@ -13,12 +13,12 @@ const CuisineNomal = ({ params }: { params: { urlCuisineNomal: string } }) => {
         onClick={() => {
           router.back();
         }}
-        className="cursor-pointer flex items-center gap-[5px] Cuisine-profile-nomal-return hover:underline"
+        className="cursor-pointer flex items-center Cuisine-profile-nomal-return hover:underline"
       >
         <p>
           <BsArrowLeft />
         </p>
-        <p>Quay lại</p>
+        <p className="ml-[5px]">Quay lại</p>
       </div>
       {CuisineList.filter((items: CuisineListTypes) => {
         return items.urlCuisine === params.urlCuisineNomal;
@@ -34,8 +34,8 @@ const CuisineNomal = ({ params }: { params: { urlCuisineNomal: string } }) => {
               </p>
             </div>
             <div className="flex flex-col items-center mt-[50px] Cuisine-profile-main-detail">
-              <div className="flex gap-[80px] Cuisine-porfile-nomal-content">
-                <div className=" h-[500px] screen mt-[20px] max-w-[2000px] Cuisine-profile-image">
+              <div className="flex Cuisine-porfile-nomal-content">
+                <div className=" h-[500px] screen mt-[20px] max-w-[2000px] Cuisine-profile-image mr-[80px]">
                   <Image
                     src={items.imgCuisine.src}
                     alt={items.imgCuisine.alt}

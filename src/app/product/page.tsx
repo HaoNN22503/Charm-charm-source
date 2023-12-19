@@ -26,12 +26,12 @@ const ProductHAB = () => {
           <div className=" pt-[30px] flex items-center justify-center font-[400] text-[25px] text-white">
             Tất cả sản phẩm
           </div>
-          <div className="text-white p-[50px] flex-wrap gap-[100px] flex product-HAB-items-container w-[100%] justify-center ">
+          <div className="text-white p-[50px] flex-wrap flex product-HAB-items-container w-[100%] justify-center ">
             {ProductList.map((items: ProductListTypes) => {
               return (
                 <div
                   key={items.idProduct}
-                  className="w-[200px] leading-[2] product-HAB-items-container-show"
+                  className="w-[200px] leading-[2] product-HAB-items-container-show mr-[100px]"
                 >
                   <div
                     onClick={() => {

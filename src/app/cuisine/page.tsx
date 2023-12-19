@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import CuisineMain from "./cuisineMain/[urlCuisineMain]/page";
+import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { CuisineList, CuisineListMain } from "@/data/data";
@@ -13,8 +12,8 @@ const CuisineHABPage = () => {
       <div className="flex items-center justify-center font-[400] text-[35px] pt-[40px] pb-[20px] text-white cuisine-tittle">
         <p>Ẩm thực</p>
       </div>
-      <div className="flex items-center justify-center p-[5px] text-white text-[16px] gap-[100px]  cuisine-option-tittle">
-        <p className="cursor-pointer">Xem tất cả</p>
+      <div className="flex items-center justify-center p-[5px] text-white text-[16px] cuisine-option-tittle">
+        <p className="cursor-pointer mr-[100px]">Xem tất cả</p>
         <p className="cursor-pointer">Xu hướng</p>
       </div>
       {CuisineListMain.map((items: CuisineListMainTypes) => {
@@ -44,15 +43,14 @@ const CuisineHABPage = () => {
               <p className=" mt-[10px] text-[19px] text-[#611a1a] cuisine-info-content">
                 Hôm nay sẽ là một món ngon tráng miệng cực hợp mùa hè!
               </p>
-              <Link
-                href={`/cuisine/cuisineMain/${items.urlCuisineMain}`}
-                // onClick={() => {
-                //   router.push(`/cuisine/cuisineMain/${items.urlCuisineMain}`);
-                // }}
+              <div
+                onClick={() => {
+                  router.push(`/cuisine/cuisineMain/${items.urlCuisineMain}`);
+                }}
                 className="mt-[40px] pt-[7px] pr-[15px] pb-[7px] pl-[15px] cursor-pointer bg-transparent border-solid border-2 border-[#a72020] h-fit w-fit rounded-[7px] cuisine-info-btn"
               >
                 <p>Tiếp tục đọc</p>
-              </Link>
+              </div>
             </div>
           </div>
         );
@@ -86,9 +84,6 @@ const CuisineHABPage = () => {
               </div>
               <Link
                 href={`/cuisine/cuisineNomal/${items.urlCuisine}`}
-                // onClick={() => {
-                //   router.push(`/cuisine/cuisineNomal/${items.urlCuisine}`);
-                // }}
                 className="mt-[auto] text-[14px] pt-[5px] pr-[10px] pb-[5px] pl-[10px] cursor-pointer bg-transparent border-solid border-2 border-[#a72020] h-fit w-fit text-[#a72020] rounded-[7px]"
               >
                 <p>Tiếp tục đọc</p>

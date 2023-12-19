@@ -14,12 +14,12 @@ const BeautyProfile = ({ params }: { params: { urlbeautyMain: string } }) => {
         onClick={() => {
           router.back();
         }}
-        className="pl-[140px] cursor-pointer flex items-center gap-[5px]  beauty-profile-main-return hover:underline"
+        className="pl-[140px] cursor-pointer flex items-center beauty-profile-main-return hover:underline"
       >
         <p>
           <BsArrowLeft />
         </p>
-        <p>Quay lại</p>
+        <p className="ml-[5px]">Quay lại</p>
       </div>
       {BeautyListMain.filter((items: BeautyListMainTypes) => {
         return items.idBeauty === params.urlbeautyMain;
@@ -36,8 +36,8 @@ const BeautyProfile = ({ params }: { params: { urlbeautyMain: string } }) => {
             </div>
 
             <div className="pl-[120px] pr-[50px] pb-[50px] mt-[70px] flex items-center flex-col beauty-profile-main-detail">
-              <div className="flex gap-[80px] beauty-profile-main-detail-content">
-                <div className="beauty-profile-main-detail-image">
+              <div className="flex beauty-profile-main-detail-content">
+                <div className="beauty-profile-main-detail-image mr-[80px]">
                   {" "}
                   <Image
                     src={items.imgBeauty.imgBeauty2.src}
@@ -54,8 +54,8 @@ const BeautyProfile = ({ params }: { params: { urlbeautyMain: string } }) => {
                   <p className="mt-[30px]">{items.contentBeauty.content3}</p>
                 </div>
               </div>
-              <div className="flex gap-[80px] mt-[40px] beauty-profile-main-detail-content-2">
-                <div className="w-[700px] text-[23px] beauty-profile-main-detail-profile">
+              <div className="flex mt-[40px] beauty-profile-main-detail-content-2">
+                <div className="w-[700px] text-[23px] beauty-profile-main-detail-profile mr-[80px]">
                   {" "}
                   <p className="mt-[30px]">{items.contentBeauty.content4}</p>
                   <p className="mt-[30px]">{items.contentBeauty.content5}</p>
