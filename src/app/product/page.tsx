@@ -22,58 +22,56 @@ const ProductHAB = () => {
   return (
     <div>
       <div className="bg-[#a72020] product-HAB__container">
-        <div>
-          <div className=" pt-[30px] flex items-center justify-center font-[400] text-[25px] text-white">
-            Tất cả sản phẩm
-          </div>
-          <div className="text-white p-[50px] flex-wrap flex product-HAB-items-container w-[100%] justify-center ">
-            {ProductList.map((items: ProductListTypes) => {
-              return (
+        <div className=" pt-[30px] flex items-center justify-center font-[400] text-[25px] text-white">
+          Tất cả sản phẩm
+        </div>
+        <div className="text-white p-[50px] flex-wrap flex product-HAB-items-container w-[100%] justify-center ">
+          {ProductList.map((items: ProductListTypes) => {
+            return (
+              <div
+                key={items.idProduct}
+                className="w-[200px] leading-[2] product-HAB-items-container-show mr-[100px]"
+              >
                 <div
-                  key={items.idProduct}
-                  className="w-[200px] leading-[2] product-HAB-items-container-show mr-[100px]"
+                  onClick={() => {
+                    router.push(`/product/${items.idProduct}`);
+                  }}
+                  className="w-[200px] h-[210px]  cursor-pointer product-HAB-items"
                 >
-                  <div
-                    onClick={() => {
-                      router.push(`/product/${items.idProduct}`);
-                    }}
-                    className="w-[200px] h-[210px] bg-slate-500 cursor-pointer product-HAB-items"
-                  >
-                    <Image
-                      src={items.imgProfile.imgProfile1.src}
-                      alt={items.imgProfile.imgProfile1.alt}
-                      width={items.imgProfile.imgProfile1.width}
-                      height={items.imgProfile.imgProfile1.height}
-                      loading="lazy"
-                      className="h-[210px] w-[200px] object-fill product-HAB-items-image"
-                    />
-                  </div>
-                  <p className="text-center flex items-center justify-center font-[550] mt-3 product-HAB-items-name">
-                    {items.nameProduct}
-                  </p>
-                  <div className="flex text-sm mt-3 product-HAB-items-btn">
-                    <p
-                      onClick={() => {
-                        handleAddToCart(
-                          cart,
-                          setCart,
-                          items.idProduct,
-                          items.quantity
-                        );
-                      }}
-                      className="cursor-pointer hover:underline product-HAB-add"
-                    >
-                      Thêm vào túi
-                    </p>
-
-                    <p className="ml-auto product-HAB-items-price">
-                      {items.priceProduct.toLocaleString("vi-VN")}đ
-                    </p>
-                  </div>
+                  <Image
+                    src={items.imgProfile.imgProfile1.src}
+                    alt={items.imgProfile.imgProfile1.alt}
+                    width={items.imgProfile.imgProfile1.width}
+                    height={items.imgProfile.imgProfile1.height}
+                    loading="lazy"
+                    className="h-[210px] w-[200px] object-fill product-HAB-items-image"
+                  />
                 </div>
-              );
-            })}
-          </div>
+                <p className="text-center flex items-center justify-center font-[550] mt-3 product-HAB-items-name">
+                  {items.nameProduct}
+                </p>
+                <div className="flex text-sm mt-3 product-HAB-items-btn">
+                  <p
+                    onClick={() => {
+                      handleAddToCart(
+                        cart,
+                        setCart,
+                        items.idProduct,
+                        items.quantity
+                      );
+                    }}
+                    className="cursor-pointer hover:underline product-HAB-add"
+                  >
+                    Thêm vào túi
+                  </p>
+
+                  <p className="ml-auto product-HAB-items-price">
+                    {items.priceProduct.toLocaleString("vi-VN")}đ
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       {cartVisible && (

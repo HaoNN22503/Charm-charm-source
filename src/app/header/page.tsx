@@ -12,7 +12,7 @@ import { CartContext } from "@/context/CartContext";
 import { ProductList } from "@/data/data";
 import { useRouter } from "next/navigation";
 import { FaBars } from "react-icons/fa6";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 const HeaderHAB = () => {
   const router = useRouter();
   const [homepageShow, setHomepageShow] = useState(false);
@@ -122,7 +122,7 @@ const HeaderHAB = () => {
 
   return (
     <div>
-      <div className="p-[20px] max-w-[2000px]  header__container">
+      <div className="p-[20px] w-[100%] header__container">
         <div className=" flex px-[230px] items-center header-option-bar">
           <Link
             href="/"
@@ -232,6 +232,8 @@ const HeaderHAB = () => {
           type="checkbox"
           className="header-input-check w-[30px] h-[30px]"
           id="nav-mobile-input"
+
+          // onChange={() => setOptionSecretMobile(!optionSecretMobile)} // Toggle the state when checkbox is clicked
         />
         <label htmlFor="nav-mobile-input" className="header-overlay"></label>
         <div className="header-mobile">
@@ -253,14 +255,14 @@ const HeaderHAB = () => {
             </Link>
             <div
               onClick={() => {
-                setOptionSecretMobile(true);
+                setOptionSecretMobile(!optionSecretMobile);
               }}
-              className="option-intro mr-[70px]"
+              className="option-intro mr-[70px] flex items-center"
             >
-              Bí quyết
+              Bí quyết <AiOutlineDown size={15} className="ml-[10px]" />
             </div>
             {optionSecretMobile && (
-              <div className="w-[100%] bg-[white] flex-col flex mr-[70px]">
+              <div className="w-[100%] bg-[white] flex-col flex mr-[70px] transition-all">
                 <Link
                   href="/beauty"
                   className="option-intro text-[#611a1a] text-[15px] font-[550] mr-[70px]"
@@ -461,7 +463,7 @@ const HeaderHAB = () => {
         </div>
       </div>
       {optionProduct && (
-        <div className=" health-and-beauty-homepage-option-product__container absolute w-[100%] bg-white z-[9999]">
+        <div className=" health-and-beauty-homepage-option-product__container absolute max-w-[2000px] w-[100%] bg-white z-[9999]">
           <div className="p-[20px] flex items-center justify-center leading-[2.2] heading-option-product">
             <div className="text-[#611a1a] flex flex-col  text-[19px] font-[400] mr-[350px]">
               {ProductList.map((items: ProductListTypes) => (

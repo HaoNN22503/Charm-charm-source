@@ -7,15 +7,14 @@ import { SiZalo } from "react-icons/si";
 
 const FooterHAB = () => {
   return (
-    <div className="max-w-[2000px] footer__container">
-      <div className="flex items-start justify-center pl-[120px] pt-[60px] pr-[120px] pb-[30px] border-b-[#611a1a] border-solid border-[0.5px] text-[#611a1a] footer-info__container">
-        <div className="w-[350px] footer-contact mr-[80px]">
+    <div className="w-[100%] footer__container">
+      <div className="flex items-start justify-center py-[30px] border-b-[#611a1a] border-solid border-[0.5px] text-[#611a1a] footer-info__container w-[100%]">
+        <div className="w-[fit] footer-contact mr-[80px]">
           <p className="h-[40px] text-xl footer-contact-tittle">GIỮ LIÊN LẠC</p>
           <p className="text-sm h-[70px] footer-contact-content">
             Đăng ký để nhận thông tin khuyến mãi mới nhất từ Charm Charm Saffron
           </p>
           <div className="w-full footer-contact-input">
-            {" "}
             <input
               type="text"
               placeholder="Địa chỉ Email"
@@ -26,7 +25,7 @@ const FooterHAB = () => {
             Đăng ký
           </p>
         </div>
-        <div className="text-[14px] leading-[2.2] footer-hotline-container mr-[80px]">
+        <div className="text-[14px] leading-[2.2] footer-hotline-container w-[fit] mr-[80px]">
           <p className="h-[40px] text-[16px] font-[550]">CHARM CHARM SAFFRON</p>
           <p>Giới thiệu</p>
           <p>Làm đẹp</p>
@@ -35,16 +34,14 @@ const FooterHAB = () => {
           <p>Email: charmcharm.saffron@gmail.com</p>
           <p>Website: http://www.charmcharm-saffron.com</p>
         </div>
-        <div className="text-[14px] footer-address">
+        <div className="text-[14px] w-fit footer-address">
           <p className="h-[40px] font-[500] text-[15px]">ĐỊA CHỈ SHOWROOM</p>
 
-          <p>
-            26/1/7 Đỗ Quang phường Trung <br /> Hòa quận Cầu Giấy Hà Nội
-          </p>
+          <p>26/1/7 Đỗ Quang phường Trung Hòa quận Cầu Giấy Hà Nội</p>
         </div>
       </div>
-      <div className=" flex items-center pl-[240px] pt-[40px] pr-[120px] text-[#611a1a] pb-[30px] footer-address__container">
-        <div className="text-[14px] footer-address-profile">
+      <div className=" flex items-center w-[100%] p-[50px] text-[#611a1a] footer-address__container">
+        <div className="text-[14px] pl-[40px] footer-address-profile">
           <p className="text-base footer-address-tittle">
             Công ty TNHH Global Trading Đức Thành Phát
           </p>
@@ -61,7 +58,7 @@ const FooterHAB = () => {
             Hà Nội
           </p>
         </div>
-        <div className="flex ml-auto mr-[150px] footer-icon-url">
+        <div className="flex ml-auto footer-icon-url">
           <Link
             href="https://www.facebook.com/Charmcharm.Saffronhn"
             className="cursor-pointer mr-[20px]"

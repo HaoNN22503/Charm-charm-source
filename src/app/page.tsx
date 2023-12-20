@@ -73,7 +73,7 @@ const HomePageHAB = () => {
   };
 
   return (
-    <div className="py-[70px] bg-[#a72020] homepage-H-B__container max-w-[2000px] h-[auto]">
+    <div className="py-[70px] bg-[#a72020] homepage-H-B__container h-[auto]">
       <div className="h-[500px] relative flex items-center justify-center homepage-HAB-swiper">
         <Swiper
           spaceBetween={30}
@@ -119,7 +119,7 @@ const HomePageHAB = () => {
           </div>
         </div>
       </div>
-      <div className=" mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
+      <div className="mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
         <div className="flex leading-[1.8] items-center justify-center homepage-H-B-header">
           <div className="w-[600px] mr-[100px] homepage-H-B-header-content">
             <p className="text-[#f4aa2a] text-[40px] ">Saffron</p>
@@ -155,7 +155,7 @@ const HomePageHAB = () => {
           <div className="homepage-HAB-intro-video w-[500px]"></div>
         </div>
       </div>
-      <div className="mt-[70px] flex w-[100%] homepage-HAB-QC">
+      <div className="mt-[70px] flex homepage-HAB-QC w-[100%]">
         <div className="bg-white p-[70px] flex flex-col items-center justify-center h-[600px] w-[60%] homepage-HAB-QC-left">
           <p className="text-[#611a1a] font-[550] text-[35px] homepage-HAB-QC-left-name">
             Charm Charm Saffron
@@ -180,17 +180,17 @@ const HomePageHAB = () => {
             <Image src={imgHomeBottomLogo} alt="" />
           </p>
         </div>
-        <div className="ml-auto w-[900px] h-[700px] object-fill homepage-HAB-QC-right">
+        <div className="w-[600px] h-[600px] object-fill homepage-HAB-QC-right">
           <Image
             src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618377/BeautyProject/2_dyaogx.jpg"
             alt=" "
-            width={900}
+            width={600}
             height={700}
-            className="w-[900px] h-[600px] homepage-HAB-QC-right-image"
+            className="homepage-HAB-QC-right-image"
           />
         </div>
       </div>
-      <div className="header-comment__container max-w-[2000px]">
+      <div className="header-comment__container ">
         <div className="text-[28px] text-white flex items-center justify-center pt-[70px] header-comment--tittle">
           <p>Khách hàng nói gì về chúng tôi</p>
         </div>
@@ -199,16 +199,16 @@ const HomePageHAB = () => {
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
-          className="flex px-[100px] pt-[80px] max-w-[2000px] slide-container"
+          className="flex justify-center pt-[80px] slide-container"
         >
           {CommentUsers.slice(startIndex, endIndex).map(
             (commentUser: CommentCardTypes, index) => {
               return (
                 <div
                   key={index}
-                  className="h-[400px] w-[350px] ml-[70px] max-w-[2000px] slide-container-comment"
+                  className="h-[400px] w-[350px] mr-[70px] slide-container-comment"
                 >
-                  <div className="bg-white flex flex-col mt-[20px] relative rounded-[10px] max-w-[2000px] p-[20px] h-[100%] slide-container-comment-show">
+                  <div className="bg-white flex flex-col mt-[20px] relative rounded-[10px] p-[20px] h-[100%] slide-container-comment-show">
                     <div className="bg-black w-[100px] h-[100px] absolute z-[100] mt-[-70px] ml-[100px] border-2 border-solid rounded-[50%] slide-container-comment-img"></div>
                     <div className="mt-[50px] flex items-start text-start justify-start slide-container-comment-content">
                       {commentUser.comment.slice(0, 300) + " xem thêm..."}

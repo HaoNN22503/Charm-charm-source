@@ -23,12 +23,11 @@ export default function RootLayout({
     <html lang="en">
       <AppProviders>
         <body className={inter.className}>
-          <header>
+          <header className="max-w-[2000px]">
             <HeaderHAB />
           </header>
-          <div>{children}</div>
-
-          <footer>
+          <div className="max-w-[2000px]">{children}</div>
+          <footer className="max-w-[2000px]">
             <FooterHAB />
           </footer>
         </body>

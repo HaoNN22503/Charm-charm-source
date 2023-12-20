@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const IntroHABPage = () => {
   return (
-    <div className="flex items-center justify-center p-[50px] bg-[#a72020] text-white  intro-HAB__container">
-      <div className="w-[600px] intro-HAB-content text-justify mr-[150px]">
+    <div className="flex items-center justify-around p-[50px] bg-[#a72020] text-white  intro-HAB__container  w-[100%]">
+      <div className="w-[50%] intro-HAB-content text-justify">
         <p className="font-[550] text-[30px] intro-HAB-content-tittle">
           Về chúng tôi
         </p>
@@ -43,14 +43,14 @@ const IntroHABPage = () => {
           & Thuỷ sản.
         </p>
       </div>
-      <div className="w-[445px] h-[600px] object-contain intro-HAB-img">
+      <div className="w-[50%] object-contain flex justify-center items-center intro-HAB-img">
         <Image
           src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702953470/BeautyProject/Thi%E1%BA%BFt_k%E1%BA%BF_ch%C6%B0a_c%C3%B3_t%C3%AAn_1_utrexr.svg"
           alt=""
           width={445}
           height={600}
           loading="lazy"
-          className="w-[445px] h-[600px] object-fill intro-HAB-img"
+          className="w-[445px] object-fill intro-HAB-img"
         />
       </div>
     </div>
