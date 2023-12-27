@@ -11,39 +11,40 @@ export interface AdditionalItemTypes {
   quantity: number;
   name: string;
   price: number;
+  image: { src: string; alt: string; width: number; height: number };
 }
 export interface ProductListTypes {
   idProduct: string;
-
   nameProduct: string;
   priceProduct: number;
   profileProduct: string;
-  imgProfile: {
-    imgProfile1: {
+  imgProfileThumbNails: [
+    {
       src: string;
       alt: string;
       width: number;
       height: number;
-    };
-    imgProfile2: {
+    },
+    {
       src: string;
       alt: string;
       width: number;
       height: number;
-    };
-    imgProfile3: {
+    },
+    {
       src: string;
       alt: string;
       width: number;
       height: number;
-    };
-    imgProfile4: {
+    },
+    {
       src: string;
       alt: string;
       width: number;
       height: number;
-    };
-  };
+    }
+  ];
+
   quantity: number;
   orders: { productId: number; quantity: number }[];
   selected: boolean;

@@ -8,7 +8,7 @@ const ContactHABPage = () => {
   return (
     <div className="pb-[50px] flex flex-col items-center text-white bg-[#a72020] contact-HAB__container">
       <div className="pt-[80px] items-center text-[23px] w-[880px] contact-HAB-tittle">
-        <p>Chăm sóc khách hàng</p>
+        <p>Ghé thăm showroom</p>
       </div>
       <div className="flex pt-[50px] text-[20px] w-[880px] contact-HAB-profile">
         <div className="w-[100%]">Liên hệ</div>

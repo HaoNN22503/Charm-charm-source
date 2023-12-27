@@ -347,6 +347,20 @@ const HeaderHAB = () => {
           >
             Giới thiệu
           </Link>
+
+          <p
+            onClick={() => {
+              setOptionSecret(!optionSecret);
+              setOptionProduct(false);
+            }}
+            className={
+              optionSecret
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
+                : "option-intro mr-[70px]"
+            }
+          >
+            Bí quyết
+          </p>
           <p
             onClick={() => {
               setOptionProduct(!optionProduct);
@@ -361,19 +375,6 @@ const HeaderHAB = () => {
             }
           >
             Sản phẩm
-          </p>
-          <p
-            onClick={() => {
-              setOptionSecret(!optionSecret);
-              setOptionProduct(false);
-            }}
-            className={
-              optionSecret
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
-                : "option-intro mr-[70px]"
-            }
-          >
-            Bí quyết
           </p>
           {orderShow && (
             <div
@@ -518,20 +519,20 @@ const HeaderHAB = () => {
           <div className="justify-evenly items-center flex">
             <div className="flex w-[100%] justify-evenly items-center px-[200px]">
               <div className="w-fit">
-                <div className="w-[100%] flex flex-col items-center justify-center leading-[1.8] p-[10px] ">
+                <div className="w-[100%] flex flex-col items-center justify-center p-[10px] ">
                   <div className="flex w-[100%] items-center">
                     <Image
-                      src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702918236/BeautyProject/2_nksjpk.svg"
+                      src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702918235/BeautyProject/3_blxuwo.svg"
                       alt=""
                       width={50}
                       height={50}
                       className="mr-[5px] w-[45px] h-[45px] font-[550]"
                     />
                     <p className="font-[550] text-[25px] text-[#611a1a]">
-                      Làm đẹp
+                      Tìm hiểu
                     </p>
                   </div>
-                  <div className="w-[100%] flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
+                  <div className="w-[100%]  flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
                     <div className="cursor-pointer hover:underline">
                       Câu chuyện lịch sử
                     </div>
@@ -542,26 +543,7 @@ const HeaderHAB = () => {
                     <div className="cursor-pointer hover:underline">
                       Thông tin tổng hợp
                     </div>
-                    <Link
-                      href="/beauty"
-                      onClick={() => {
-                        setIntroShow(false);
-                        setHomepageShow(false);
-                        setOptionProduct(false);
-                        setProductShow(false);
-                        setOrderShow(false);
-                        setOrderNoneShow(false);
-                        setBeautyShow(true);
-                        setContactShow(false);
-                        setCuisineShow(false);
-                        setFeedbackShow(false);
-                        setPromotionShow(false);
-                        setOptionSecret(false);
-                      }}
-                      className="cursor-pointer hover:underline"
-                    >
-                      Xem thêm
-                    </Link>
+                    <div className="cursor-pointer hover:underline">Video</div>
                   </div>
                 </div>
               </div>
@@ -613,20 +595,20 @@ const HeaderHAB = () => {
                 </div>
               </div>
               <div className="w-fit">
-                <div className="w-[100%] flex flex-col items-center justify-center p-[10px] ">
+                <div className="w-[100%] flex flex-col items-center justify-center leading-[1.8] p-[10px] ">
                   <div className="flex w-[100%] items-center">
                     <Image
-                      src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702918235/BeautyProject/3_blxuwo.svg"
+                      src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1702918236/BeautyProject/2_nksjpk.svg"
                       alt=""
                       width={50}
                       height={50}
                       className="mr-[5px] w-[45px] h-[45px] font-[550]"
                     />
                     <p className="font-[550] text-[25px] text-[#611a1a]">
-                      Tìm hiểu
+                      Làm đẹp
                     </p>
                   </div>
-                  <div className="w-[100%]  flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
+                  <div className="w-[100%] flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
                     <div className="cursor-pointer hover:underline">
                       Câu chuyện lịch sử
                     </div>
@@ -637,7 +619,26 @@ const HeaderHAB = () => {
                     <div className="cursor-pointer hover:underline">
                       Thông tin tổng hợp
                     </div>
-                    <div className="cursor-pointer hover:underline">Video</div>
+                    <Link
+                      href="/beauty"
+                      onClick={() => {
+                        setIntroShow(false);
+                        setHomepageShow(false);
+                        setOptionProduct(false);
+                        setProductShow(false);
+                        setOrderShow(false);
+                        setOrderNoneShow(false);
+                        setBeautyShow(true);
+                        setContactShow(false);
+                        setCuisineShow(false);
+                        setFeedbackShow(false);
+                        setPromotionShow(false);
+                        setOptionSecret(false);
+                      }}
+                      className="cursor-pointer hover:underline"
+                    >
+                      Xem thêm
+                    </Link>
                   </div>
                 </div>
               </div>

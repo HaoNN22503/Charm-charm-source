@@ -7,6 +7,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import Image from "next/image";
 import { BiErrorCircle } from "react-icons/bi";
 import { AdditionalItemsList } from "@/data/data";
+
 const OrderPage = () => {
   const { cart, setCart } = useContext(CartContext);
   const [popUpDelete, setPopUpDelete] = useState(false);
@@ -89,13 +90,13 @@ const OrderPage = () => {
   };
 
   return (
-    <div className="bg-[#a72020] px-[200px] py-[50px] order__container">
+    <div className="bg-[#a72020] px-[100px] py-[50px] order__container">
       <div className="flex items-center justify-center w-[100%] pb-[20px] order-tittle">
         <p className="font-[550] text-white text-[25px]">Đơn của bạn</p>
       </div>
-      <div className="flex py-[50px]  border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none-bag order-background">
-        <div className="mr-[200px]">
-          <div className="pt-[50px] order-background-info-user">
+      <div className="flex justify-between items-start w-full py-[50px] border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none-bag order-background">
+        <div className="flex flex-col items-start">
+          <div className="order-background-info-user w-[100%]">
             <div className="order-product-buying-left">
               <p className="text-[18px] font-[500] text-white order-background-info-user-name">
                 Thông tin giao hàng
@@ -115,13 +116,13 @@ const OrderPage = () => {
                       setNameError(true);
                     }
                   }}
-                  className="pl-[10px] p-[10px] text-[14px] mt-[25px] w-[300px] bg-white border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none order-background-info-user-input"
+                  className="pl-[10px] p-[10px] text-[14px] mt-[25px] w-[70%] bg-white border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none order-background-info-user-input"
                   id=""
                   placeholder="Tên của bạn *"
                 />
               </div>
               {nameError && (
-                <div className="bg-[#fff9e7] p-[7px] mt-[7px] text-[14px] text-[#a72020] flex items-center w-[75%] order-background-info-user-input">
+                <div className="bg-[#fff9e7] p-[7px] mt-[7px] text-[14px] text-[#a72020] flex items-center w-[70%] order-background-info-user-input">
                   <BiErrorCircle size={20} className=" mr-[5]" /> Anh Chị chưa
                   nhập tên.
                 </div>
@@ -143,12 +144,12 @@ const OrderPage = () => {
                       setPhoneError(true);
                     }
                   }}
-                  className="order-background-info-user-input pl-[10px] p-[10px] text-[14px] mt-[25px] w-[300px] bg-white  border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none"
+                  className="order-background-info-user-input pl-[10px] p-[10px] text-[14px] mt-[25px] w-[70%] bg-white  border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none"
                   placeholder="Số điện thoại *"
                 />
               </div>
               {phoneError && (
-                <div className="bg-[#fff9e7] p-[7px] mt-[7px] text-[14px] text-[#a72020] flex items-center w-[75%] order-background-info-user-input">
+                <div className="bg-[#fff9e7] p-[7px] mt-[7px] text-[14px] text-[#a72020] flex items-center w-[70%] order-background-info-user-input">
                   <BiErrorCircle size={20} className=" mr-[5]" /> Anh Chị chưa
                   nhập số điện thoại.
                 </div>
@@ -156,7 +157,7 @@ const OrderPage = () => {
               <div>
                 <input
                   type="text"
-                  className="order-background-info-user-input pl-[10px] p-[13px] text-[14px] mt-[25px] w-[400px]  bg-white border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none"
+                  className="order-background-info-user-input pl-[10px] p-[13px] text-[14px] mt-[25px] w-[90%] bg-white border-none rounded-[5px] placeholder:text-[#a72020] focus:outline-none"
                   id=""
                   value={address}
                   onChange={(e) => {
@@ -174,7 +175,7 @@ const OrderPage = () => {
                 />
               </div>
               {addressError && (
-                <div className="bg-[#fff9e7] p-[7px] mt-[7px] w-[100%] text-[14px] text-[#a72020] flex items-center order-background-info-user-input">
+                <div className="bg-[#fff9e7] p-[7px] mt-[7px] w-[90%] text-[14px] text-[#a72020] flex items-center order-background-info-user-input">
                   <BiErrorCircle size={20} className=" mr-[5]" /> Anh Chị chưa
                   nhập địa chỉ.
                 </div>
@@ -217,15 +218,17 @@ const OrderPage = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[40px] h-[50px] w-[400px]  font-[550] text-[#a72020] bg-white text-[18px] rounded-[7px] cursor-pointer flex items-center justify-center order-background-accept-buying">
-            <p>Xác nhận</p>
+          <div className="w-[100%] flex flex-col justify-center items-center">
+            <div className="mt-[40px] h-[50px] w-[80%] font-[550] text-[#a72020] bg-white text-[18px] rounded-[7px] cursor-pointer flex items-center justify-center order-background-accept-buying">
+              <p>Xác nhận</p>
+            </div>
+            <p className="text-white text-[12px] mt-[10px] order-product-cart-note flex justify-center items-center px-[25px]">
+              * SAU KHI CLICK XÁC NHẬN THÌ TRONG ZALO / TIN NHẮN ĐT SẼ CÓ TIN
+              NHẮN ĐẶT HÀNG
+            </p>
           </div>
-          <p className="text-white  text-[12px] mt-[10px] order-product-cart-note">
-            * SAU KHI CLICK XÁC NHẬN THÌ TRONG ZALO / TIN NHẮN ĐT SẼ CÓ TIN NHẮN
-            ĐẶT HÀNG
-          </p>
         </div>
-        <div className="bg-white w-[650px] p-[30px] rounded-[7px] order-option-cart__container">
+        <div className="bg-white w-[50%] p-[30px] rounded-[7px] order-option-cart__container">
           <div className="order-option-cart">
             <div className="cursor-pointer order-option-cart-return-btn">
               <div className="mt-[10px]  text-xl pb-[10px] order-option-cart-number">
@@ -234,30 +237,31 @@ const OrderPage = () => {
                 </p>
               </div>
             </div>
-            <div className="order-option-cart-product-buying w-[100%]">
+            <div className="order-option-cart-product-buying w-[100%] h-fit">
               {cart &&
                 cart.map((items) => {
                   return (
                     <div
                       key={items.idProduct}
-                      className="mt-[40px] w-[100%] flex items-start order-option-cart-product-buying-option-all"
+                      className="mt-[30px] w-[100%] h-[150px] flex items-start order-option-cart-product-buying-option-all"
                     >
-                      <p className="w-[130px] h-[140px] mr-[10px] bg-slate-300 order-option-cart-product-buying-image">
+                      <p className="w-[40%] mr-[10px] order-option-cart-product-buying-image">
                         <Image
-                          src={items.imgProfile.imgProfile1.src}
-                          alt={items.imgProfile.imgProfile1.alt}
-                          width={items.imgProfile.imgProfile1.width}
-                          height={items.imgProfile.imgProfile1.height}
+                          src={items.imgProfileThumbNails[0].src}
+                          alt={items.imgProfileThumbNails[0].alt}
+                          width={items.imgProfileThumbNails[0].width}
+                          height={items.imgProfileThumbNails[0].height}
                           loading="lazy"
-                          className="w-[130px] h-[140px] object-fill order-option-cart-product-buying-image"
+                          className="w-full h-[150px] order-option-cart-product-buying-image-btn object-cover rounded-[5px]"
                         />
                       </p>
-                      <div className="flex flex-col mr-[10px] order-option-cart-product-buying-option w-full">
-                        <p className="order-option-cart-product-buying-option-name">
+
+                      <div className="flex flex-col order-option-cart-product-buying-option w-full h-[100%]">
+                        <p className="order-option-cart-product-buying-option-name font-[600] text-[18px]">
                           {items.nameProduct}
                         </p>
-                        <div className="flex mt-[95px] w-[100%] order-option-cart-product-buying-option-price-quantity">
-                          <div className="flex items-center text-[14px] order-option-cart-product-buying-option-quantity">
+                        <div className="flex mt-[auto] w-full order-option-cart-product-buying-option-price-quantity">
+                          <div className="flex w-[50%] items-center text-[14px] order-option-cart-product-buying-option-quantity">
                             <p
                               className="mr-[10px]"
                               onClick={() => minNum(items)}
@@ -269,7 +273,7 @@ const OrderPage = () => {
                               <AiOutlinePlus />
                             </p>
                           </div>
-                          <p className="text-[14px] order-option-cart-product-buying-option-price ml-[auto]">
+                          <p className="text-[14px] w-[50%] order-option-cart-product-buying-option-price">
                             {items.priceProduct.toLocaleString("vi-VN")}đ
                           </p>
                         </div>
@@ -312,35 +316,60 @@ const OrderPage = () => {
                 Chọn thêm
               </div>
               <div className="order-option-add-more-content mt-[10px]">
-                <div className="order-option-add-more-content mt-[10px]">
+                <div className="order-option-add-more-content mt-[10px] w-full">
                   {AdditionalItemsList.map((item) => (
                     <div
                       key={item.id}
-                      className="order-option-add-more-content-detail flex items-start"
+                      className="order-option-add-more-content-detail w-full flex items-start justify-center mt-[10px] h-[60px]"
                     >
-                      <input
-                        type="checkbox"
-                        checked={selectedItems.includes(item.id)}
-                        onChange={() => handleCheckboxChange(item.id)}
-                        className="order-option-add-more-content-detail-checkbox mr-[10px] w-[20px] h-[20px] accent-[#a72020]"
-                      />
-                      <div className="order-option-add-more-content-detail-items w-[100%] mr-[10px]">
-                        {item.name}
+                      <div className="w-[20%] flex justify-evenly items-center order-option-add-more-content-detail-checkbox-image">
+                        <div className="w-[20%] flex justify-center items-center h-full">
+                          <input
+                            type="checkbox"
+                            checked={selectedItems.includes(item.id)}
+                            onChange={() => handleCheckboxChange(item.id)}
+                            className="order-option-add-more-content-detail-checkbox  accent-[#a72020]"
+                          />
+                        </div>
+                        <div className="image-option-add-more-detail w-[60px] h-[60px] flex justify-center items-center">
+                          <Image
+                            src={item.image.src}
+                            alt={item.image.alt}
+                            width={item.image.width}
+                            height={item.image.height}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
-                      <div className="order-option-add-more-content-detail-items-quantity w-[fit] ml-[10px] justify-start items-center mr-[10px] flex">
-                        <p
-                          onClick={() => minNumAddMore(item)}
-                          className="mr-[3px] "
-                        >
-                          <AiOutlineMinus />
-                        </p>
-                        <p className="mr-[3px] text-[14px]">{item.quantity}</p>
-                        <p onClick={() => plusNumAddMore(item)}>
-                          <AiOutlinePlus />
-                        </p>
-                      </div>
-                      <div className="order-option-add-more-content-detail-price ml-auto text-[14px] flex items-center justify-end w-[30%]">
-                        {item.price.toLocaleString("vi-VN")}đ
+                      <div className="w-[80%] h-[60px] flex flex-col  order-option-add-more-content-detail-name-price">
+                        {item.name.length > 15 ? (
+                          <div className="order-option-add-more-content-detail-items w-[100%] mr-[10px] font-[600] ">
+                            {item.name.slice(0, 23) + "..."}
+                          </div>
+                        ) : (
+                          <div className="order-option-add-more-content-detail-items w-[100%] mr-[10px] font-[600] ">
+                            {item.name}
+                          </div>
+                        )}
+                        <div className="flex justify-between items-center mt-auto order-option-add-more-content-detail-items-quantity-container">
+                          <div className="order-option-add-more-content-detail-items-quantity w-[fit] ml-[10px] justify-start items-center mr-[10px] flex">
+                            <p
+                              onClick={() => minNumAddMore(item)}
+                              className="mr-[3px] "
+                            >
+                              <AiOutlineMinus />
+                            </p>
+                            <p className="mr-[3px] text-[14px]">
+                              {item.quantity}
+                            </p>
+                            <p onClick={() => plusNumAddMore(item)}>
+                              <AiOutlinePlus />
+                            </p>
+                          </div>
+                          <div className="order-option-add-more-content-detail-price ml-auto text-[14px] flex items-center justify-end w-[30%] font-[600]">
+                            {item.price.toLocaleString("vi-VN")}đ
+                          </div>
+                        </div>
                       </div>
                     </div>
                   ))}

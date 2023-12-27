@@ -49,6 +49,12 @@
   .footer-address-content {
     width: 100%;
   }
+  .footer-category-container {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: normal;
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 1050px) {
   .footer-info__container {

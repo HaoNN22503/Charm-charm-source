@@ -1,7 +1,7 @@
 "use client";
 import { ProductListTypes } from "@/types/Interface";
 import React, { useContext, useState } from "react";
-import { HiOutlineArrowUturnLeft } from "react-icons/hi2";
+import { HiOutlineArrowUturnLeft, HiTrash } from "react-icons/hi2";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Link from "next/link";
 import { CartContext } from "@/context/CartContext";
@@ -84,21 +84,21 @@ const ShoppingBag = ({
                   key={item.idProduct}
                   className="mb-[40px] option-cart-product-buying"
                 >
-                  <div className="mt-[20px] flex items-start">
-                    <div className="w-[130px] h-[140px] bg-slate-300 option-cart-profile mr-[10px]">
+                  <div className="mt-[20px] h-[150px] flex items-start w-[100%] shopping-bag-option-product">
+                    <div className="w-[40%] h-[100%] option-cart-profile mr-[10px]">
                       <Image
-                        src={item.imgProfile.imgProfile1.src}
-                        alt={item.imgProfile.imgProfile1.alt}
-                        width={item.imgProfile.imgProfile1.width}
-                        height={item.imgProfile.imgProfile1.height}
+                        src={item.imgProfileThumbNails[0].src}
+                        alt={item.imgProfileThumbNails[0].alt}
+                        width={item.imgProfileThumbNails[0].width}
+                        height={item.imgProfileThumbNails[0].height}
                         loading="lazy"
-                        className="w-[130px] h-[140px] object-fill option-cart-profile-image"
+                        className="w-[100%] h-[100%] option-cart-profile-image"
                       />
                     </div>
-                    <div className="flex flex-col option-cart-profile-product">
-                      <p>{item.nameProduct}</p>
-                      <div className="flex mt-[95px]">
-                        <div className="flex items-center text-[14px] mr-[40px]">
+                    <div className="flex h-[100%] w-[60%] flex-col option-cart-profile-product">
+                      <p className="font-[600]">{item.nameProduct}</p>
+                      <div className="flex mt-auto items-end justify-between shoping-bag-option-price-number">
+                        <div className="flex items-center text-[14px] ">
                           <p className="mr-[10px]" onClick={() => minNum(item)}>
                             <AiOutlineMinus />
                           </p>
@@ -109,11 +109,11 @@ const ShoppingBag = ({
                         </div>
                         <p
                           onClick={() => removeFromCart(item.idProduct)}
-                          className="cursor-pointer hover:underline mr-[40px]"
+                          className="cursor-pointer hover:underline "
                         >
-                          Xóa
+                          <HiTrash size={20} className="text-[red]" />
                         </p>
-                        <div className="text-[14px]">
+                        <div className="text-[14px] font-[600]">
                           <p>{item.priceProduct.toLocaleString("vi-VN")}đ</p>
                         </div>
                       </div>

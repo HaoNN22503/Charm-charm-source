@@ -39,10 +39,10 @@ const ProductHAB = () => {
                   className="w-[200px] h-[210px]  cursor-pointer product-HAB-items"
                 >
                   <Image
-                    src={items.imgProfile.imgProfile1.src}
-                    alt={items.imgProfile.imgProfile1.alt}
-                    width={items.imgProfile.imgProfile1.width}
-                    height={items.imgProfile.imgProfile1.height}
+                    src={items.imgProfileThumbNails[0].src}
+                    alt={items.imgProfileThumbNails[0].alt}
+                    width={items.imgProfileThumbNails[0].width}
+                    height={items.imgProfileThumbNails[0].height}
                     loading="lazy"
                     className="h-[210px] w-[200px] object-fill product-HAB-items-image"
                   />

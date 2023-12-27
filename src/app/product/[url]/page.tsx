@@ -21,7 +21,10 @@ import {
 } from "react-icons/ai";
 import { handleAddToCart } from "@/utils/function";
 
-const DetailProduct = ({ params }: { params: { url: string } }) => {
+const DetailProduct = (
+  { params }: { params: { url: string } },
+  profileItems: { imgProfileThumbNails: { src: any }[] }
+) => {
   const router = useRouter();
   const { cart, setCart } = useContext(CartContext);
   const [commentShow, setCommentShow] = useState(false);
@@ -30,31 +33,29 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
   const [title, setTitle] = useState<string>("");
   const [comment, setComment] = useState<string>("");
   const [reviews, setReviews] = useState<ReviewTypes[]>([]);
+  const [mainSwiper, setMainSwiper] = useState<typeof Swiper | null>(null);
+  const [selectedThumbnail, setSelectedThumbnail] = useState<number | null>(
+    null
+  );
   const [recommendation, setRecommendation] = useState<boolean | null>(null);
-
   const handleRatingChange = (value: number | null) => {
     setRating(value);
   };
-
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
-
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
-
   const handleCommentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value);
   };
-
   const handleRecommendationChange = (value: boolean) => {
     setRecommendation(value);
   };
   const handleSubmit = () => {
-    const currentDate = new Date(); // Get the current date and time
-    const formattedDate = currentDate.toLocaleDateString(); // Format the date as a string
-
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString();
     const newReview: ReviewTypes = {
       id: reviews.length + 1,
       name,
@@ -64,14 +65,7 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
       recommendation: recommendation as boolean,
       date: formattedDate,
     };
-
-    // Update the state with the new review
     setReviews([...reviews, newReview]);
-    // Validate the form data here
-
-    // Send the data to your backend or handle as needed
-
-    // Reset the form controls
     setRating(null);
     setName("");
     setTitle("");
@@ -81,17 +75,28 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
   };
   const minNum = (item: ProductListTypes) => {
     if (item.quantity > 1) {
-      // Decrease the quantity by 1
       item.quantity -= 1;
-      // Update the cart state
       setCart([...cart]);
     }
   };
   const plusNum = (item: ProductListTypes) => {
     item.quantity += 1;
-    // Update the cart state using the setCart function passed as a prop
     setCart([...cart]);
   };
+
+  const handleThumbClick = (index: number) => {
+    if (mainSwiper !== null) {
+      mainSwiper.slideTo(index);
+    }
+    setSelectedThumbnail(index);
+  };
+  const getRelatedProducts = (currentProductId: any) => {
+    return ProductList.filter(
+      (product) => product.idProduct !== currentProductId
+    );
+  };
+  const currentProductId = params.url;
+  const relatedProducts = getRelatedProducts(currentProductId);
   return (
     <div className="bg-[#a72020] py-[50px] product-detail-HAB__container">
       <div
@@ -112,7 +117,7 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
         return (
           <div
             key={profileItems.idProduct}
-            className="bg-white  flex items-start justify-center mt-[20px] px-[100px] py-[40px] text-[#a72020] product-detail-HAB-content__container"
+            className="bg-white flex items-start justify-center mt-[20px] px-[100px] py-[40px] text-[#a72020] product-detail-HAB-content__container"
           >
             <div className="product-detail-HAB-image flex items-start justify-start w-[50%]">
               <div className="product-detail-HAB-image-small w-[70%]">
@@ -122,49 +127,48 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
                   }}
                   navigation={true}
                   modules={[Pagination, Navigation]}
+                  onSwiper={(swiper) => {
+                    setMainSwiper(swiper);
+                    setSelectedThumbnail(swiper.activeIndex);
+                  }}
+                  onSlideChange={(swiper) =>
+                    setSelectedThumbnail(swiper.activeIndex)
+                  }
                   className="mySwiper"
                 >
-                  <SwiperSlide className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]">
-                    <Image
-                      src={profileItems.imgProfile.imgProfile1.src}
-                      alt={profileItems.imgProfile.imgProfile1.alt}
-                      height={400}
-                      width={350}
-                      loading="lazy"
-                      className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]"
-                    />{" "}
-                  </SwiperSlide>
-                  <SwiperSlide className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]">
-                    <Image
-                      src={profileItems.imgProfile.imgProfile4.src}
-                      alt={profileItems.imgProfile.imgProfile4.alt}
-                      height={400}
-                      width={350}
-                      loading="lazy"
-                      className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]"
-                    />{" "}
-                  </SwiperSlide>
-                  <SwiperSlide className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]">
-                    <Image
-                      src={profileItems.imgProfile.imgProfile2.src}
-                      alt={profileItems.imgProfile.imgProfile2.alt}
-                      height={400}
-                      width={350}
-                      loading="lazy"
-                      className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]"
-                    />{" "}
-                  </SwiperSlide>
-                  <SwiperSlide className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]">
-                    <Image
-                      src={profileItems.imgProfile.imgProfile3.src}
-                      alt={profileItems.imgProfile.imgProfile3.alt}
-                      height={400}
-                      width={350}
-                      loading="lazy"
-                      className="product-detail-HAB-image-main-detail object-fill w-[350px] h-[400px]"
-                    />{" "}
-                  </SwiperSlide>
+                  {profileItems.imgProfileThumbNails.map((thumb, index) => (
+                    <SwiperSlide key={index}>
+                      <Image
+                        src={thumb.src}
+                        alt={thumb.alt}
+                        width={thumb.width}
+                        height={thumb.height}
+                        onClick={() => handleThumbClick(index)}
+                      />
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
+                <div className="product-thumbnail-container justify-center flex mt-4">
+                  {profileItems.imgProfileThumbNails.map((thumbnail, index) => (
+                    <div
+                      key={index}
+                      className={`product-thumbnail mr-[20px] ${
+                        selectedThumbnail === index
+                          ? "selected-thumbnail rounded-[10px] border-4 border-solid border-[#a72020]"
+                          : ""
+                      }`}
+                    >
+                      <Image
+                        src={thumbnail.src}
+                        alt={`Thumbnail ${index}`}
+                        width={thumbnail.width}
+                        height={thumbnail.height}
+                        onClick={() => handleThumbClick(index)}
+                        className="rounded-[5px]"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="product-detail-HAB-content w-[50%]">
@@ -222,7 +226,63 @@ const DetailProduct = ({ params }: { params: { url: string } }) => {
           </div>
         );
       })}
+      <div className="order-product-container bg-white h-[400px] w-[100%] py-[40px] px-[100px]">
+        <div className="order-product-tittle text-[20px] font-[700]">
+          Sản phẩm tương tự
+        </div>
+        <div className="flex mt-[20px] order-product-all-container">
+          {relatedProducts.map((items) => (
+            <div
+              key={items.idProduct}
+              className="w-[200px] flex flex-col justify-center items-center mr-[40px] leading-[2] order-product-all-container-show"
+            >
+              <div
+                onClick={() => {
+                  router.push(`/product/${items.idProduct}`);
+                }}
+                className="w-[150px] cursor-pointer order-product-all-container-items"
+              >
+                <Image
+                  src={items.imgProfileThumbNails[0].src}
+                  alt={items.imgProfileThumbNails[0].alt}
+                  width={items.imgProfileThumbNails[0].width}
+                  height={items.imgProfileThumbNails[0].height}
+                  loading="lazy"
+                  className="w-[150px] object-fill order-product-all-container-items-image rounded-[10px]"
+                />
+              </div>
+              {items.nameProduct.length > 15 ? (
+                <div className="text-center flex items-center justify-center font-[550] mt-3 order-product-all-container-items-name">
+                  {items.nameProduct.slice(0, 15) + "..."}
+                </div>
+              ) : (
+                <div className="text-center flex items-center justify-center font-[550] mt-3 order-product-all-container-items-name">
+                  {items.nameProduct}
+                </div>
+              )}
+              <div className="flex justify-between w-[100%] text-sm mt-3 order-product-all-container-items-btn">
+                <p
+                  onClick={() => {
+                    handleAddToCart(
+                      cart,
+                      setCart,
+                      items.idProduct,
+                      items.quantity
+                    );
+                  }}
+                  className="cursor-pointer hover:underline order-product-all-container-add"
+                >
+                  Thêm vào túi
+                </p>
 
+                <p className="ml-auto order-product-all-container-items-price font-[600]">
+                  {items.priceProduct.toLocaleString("vi-VN")}đ
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="mt-[50px] detail-product-comment__container p-[100px]">
         <div className="text-white flex items-center pb-[10px] detail-product-comment-tittle">
           <p className="font-[550] text-[20px] detail-product-HAB-comment-tittle">

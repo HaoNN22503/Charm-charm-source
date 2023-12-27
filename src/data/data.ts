@@ -67,49 +67,77 @@ export const CommentUsers: CommentCardTypes[] = [
   },
 ];
 export const AdditionalItemsList: AdditionalItemTypes[] = [
-  { id: 1, quantity: 1, name: "Saffron (1gr)", price: 500000 },
-  { id: 2, quantity: 1, name: "Saffron mật ong", price: 700000 },
+  {
+    id: 1,
+    quantity: 1,
+    name: "Saffron (4gr)",
+    price: 500000,
+    image: {
+      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1703668129/BeautyProject/1_swa0ws.svg",
+      alt: "",
+      width: 40,
+      height: 40,
+    },
+  },
+  {
+    id: 2,
+    quantity: 1,
+    name: "Saffron mật ong",
+    price: 700000,
+    image: {
+      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1703668132/BeautyProject/3_p9dbcg.svg",
+      alt: "",
+      width: 40,
+      height: 40,
+    },
+  },
   {
     id: 3,
     quantity: 1,
     name: "Saffron mật ong và nấm đông trùng hạ thảo",
     price: 1500000,
+    image: {
+      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1703668129/BeautyProject/2_e7ubkk.svg",
+      alt: "",
+      width: 40,
+      height: 40,
+    },
   },
 ];
 export const ProductList: ProductListTypes[] = [
   {
     idProduct: "1",
-    nameProduct: "Saffron",
-
+    nameProduct: "Saffron (1gr)",
     priceProduct: 500000,
     profileProduct:
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
-    imgProfile: {
-      imgProfile1: {
+
+    imgProfileThumbNails: [
+      {
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958354/BeautyProject/10_gtj04z.svg",
+        alt: "",
+        width: 80,
+        height: 80,
+      },
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958349/BeautyProject/9_kz4icd.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958349/BeautyProject/9_kz4icd.svg",
-        alt: "",
-        width: 60,
-        height: 60,
-      },
-      imgProfile3: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958339/BeautyProject/11_wnsoxc.svg",
-        alt: "../../",
-        width: 60,
-        height: 60,
+        alt: "",
+        width: 80,
+        height: 80,
       },
-      imgProfile4: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960547/BeautyProject/12_w9rfow.svg",
         alt: "",
-        width: 200,
-        height: 210,
+        width: 80,
+        height: 80,
       },
-    },
+    ],
     quantity: 1,
     orders: [
       { productId: 1, quantity: 1 },
@@ -119,37 +147,37 @@ export const ProductList: ProductListTypes[] = [
   },
   {
     idProduct: "2",
-
     nameProduct: "Bột Saffron",
     priceProduct: 1000000,
     profileProduct:
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
-    imgProfile: {
-      imgProfile1: {
+
+    imgProfileThumbNails: [
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958346/BeautyProject/4_zdvcpb.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile2: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960570/BeautyProject/15_ingeih.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile3: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960568/BeautyProject/14_p3wu6c.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile4: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960566/BeautyProject/13_hpzbfn.svg",
         alt: "",
-        width: 200,
-        height: 210,
+        width: 80,
+        height: 80,
       },
-    },
+    ],
     quantity: 1,
     orders: [
       { productId: 1, quantity: 1 },
@@ -163,32 +191,33 @@ export const ProductList: ProductListTypes[] = [
     priceProduct: 700000,
     profileProduct:
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
-    imgProfile: {
-      imgProfile1: {
+
+    imgProfileThumbNails: [
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958337/BeautyProject/6_izqknm.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile2: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958348/BeautyProject/5_ph03yf.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile3: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960565/BeautyProject/17_y5gttz.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile4: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960545/BeautyProject/16_eum4x1.svg",
         alt: "",
-        width: 200,
-        height: 210,
+        width: 80,
+        height: 80,
       },
-    },
+    ],
     quantity: 1,
     orders: [
       { productId: 1, quantity: 1 },
@@ -203,32 +232,34 @@ export const ProductList: ProductListTypes[] = [
     priceProduct: 1500000,
     profileProduct:
       "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
-    imgProfile: {
-      imgProfile1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958328/BeautyProject/1_bwzcj3.svg",
-        alt: "",
-        width: 60,
-        height: 60,
-      },
-      imgProfile2: {
+
+    imgProfileThumbNails: [
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958345/BeautyProject/3_vuctbe.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile3: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958355/BeautyProject/2_w3obkb.svg",
         alt: "",
-        width: 60,
-        height: 60,
+        width: 80,
+        height: 80,
       },
-      imgProfile4: {
+      {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702960543/BeautyProject/18_v86c6s.svg",
         alt: "",
-        width: 200,
-        height: 210,
+        width: 80,
+        height: 80,
       },
-    },
+      {
+        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958328/BeautyProject/1_bwzcj3.svg",
+        alt: "",
+        width: 80,
+        height: 80,
+      },
+    ],
+
     quantity: 1,
     orders: [
       { productId: 1, quantity: 1 },

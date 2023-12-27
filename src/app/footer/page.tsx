@@ -36,24 +36,54 @@ const FooterHAB = () => {
         </div>
         <div className="text-[14px] w-fit footer-address">
           <p className="h-[40px] font-[500] text-[15px]">ĐỊA CHỈ SHOWROOM</p>
-
           <p>26/1/7 Đỗ Quang phường Trung Hòa quận Cầu Giấy Hà Nội</p>
         </div>
       </div>
-      <div className=" flex items-center w-[100%] p-[50px] text-[#611a1a] footer-address__container">
-        <div className="text-[14px] pl-[40px] footer-address-profile">
+      <div className=" flex items-start w-[100%] p-[50px] text-[#611a1a] footer-address__container">
+        <div className="footer-category-container w-[20%] flex flex-col justify-center items-center">
+          <div className="font-[600] text-[16px]">Danh mục</div>
+          <div className="mt-[10px] leading-[1.5] ">
+            <p className="hover:underline cursor-pointer footer-address-profile">
+              - Giới thiệu
+            </p>
+            <p className="hover:underline cursor-pointer footer-address-profile">
+              - Bí quyết
+            </p>
+            <div className="">
+              <p className="hover:underline cursor-pointer footer-address-profile ">
+                . Ẩm thực
+              </p>
+              <p className="hover:underline cursor-pointer footer-address-profile">
+                . Làm đẹp
+              </p>
+            </div>
+            <p className="hover:underline cursor-pointer footer-address-profile">
+              - Sản phẩm
+            </p>
+            <p className="hover:underline cursor-pointer footer-address-profile">
+              - Khuyến mãi
+            </p>
+            <p className="hover:underline cursor-pointer footer-address-profile">
+              - Liên hệ
+            </p>
+          </div>
+        </div>
+        <div className="text-[14px] footer-address-profile">
+          <div className="font-[600] text-[16px] mb-[10px]">
+            Thông tin liên hệ
+          </div>
           <p className="text-base footer-address-tittle">
             Công ty TNHH Global Trading Đức Thành Phát
           </p>
-          <p className="mt-3 w-[550px] footer-address-content">
+          <p className="mt-3 w-[550px] footer-address-content pl-[5px]">
             - Head office: 26/1 số 7 Đỗ Quang, phường Trung Hòa, quận Cầu Giấy,
             TP Hà Nội
           </p>
-          <p className="mt-3 w-[550px] footer-address-content">
+          <p className="mt-3 w-[550px] footer-address-content pl-[5px]">
             - VPĐD: Tòa nhà 3 Bees Tower, 281 Nguyễn Văn Trỗi, quận Phú Nhuận,
             TP HCM
           </p>
-          <p className="mt-3 w-[550px] footer-address-content">
+          <p className="mt-3 w-[550px] footer-address-content pl-[5px]">
             - Showroom: 26/1 số 7 Đỗ Quang, phường Trung Hòa, quận Cầu Giấy, TP
             Hà Nội
           </p>

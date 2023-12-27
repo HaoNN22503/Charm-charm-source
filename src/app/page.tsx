@@ -106,6 +106,51 @@ const HomePageHAB = () => {
               loading="lazy"
             />
           </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1703305520/BeautyProject/homepage_sileder_5_l1dm0f.svg"
+              alt=""
+              width={500}
+              height={500}
+              loading="lazy"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1703305523/BeautyProject/homepage_sileder_2_ubjfba.svg"
+              alt=""
+              width={500}
+              height={500}
+              loading="lazy"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1703305530/BeautyProject/homepage_sileder_4_ygtjav.svg"
+              alt=""
+              width={500}
+              height={500}
+              loading="lazy"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1703305533/BeautyProject/homepage_sileder_3_rwhdcj.svg"
+              alt=""
+              width={500}
+              height={500}
+              loading="lazy"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1703305539/BeautyProject/homepage_sileder_1_hcab10.svg"
+              alt=""
+              width={500}
+              height={500}
+              loading="lazy"
+            />
+          </SwiperSlide>
         </Swiper>
         <div className="absolute mt-[300px] z-[10] flex flex-col items-center justify-center homepage-HAB-swiper-action">
           <Link
@@ -117,6 +162,26 @@ const HomePageHAB = () => {
           <div className="flex text-[16px] justify-center items-center mt-[30px] font-[550] text-white homepage-HAB-swiper-review">
             Charm Charm Saffron 100% hàng chính hãng
           </div>
+        </div>
+      </div>
+      <div className=" mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
+        <div className="flex leading-[1.8] items-start justify-center homepage-H-B-header">
+          <div className="w-[600px] mr-[100px] homepage-H-B-header-content">
+            <p className="text-[#f4aa2a] text-[40px]">VỀ SẢN PHẨM</p>
+            <p className="mt-[10px] text-xl text-white homepage-HAB-intro-content">
+              Saffron được ví như “Viên kim cương quý nhất của chiếc nhẫn” (The
+              diamond on a ring) - Món quà “vàng đỏ” quý giá của thiên nhiên ban
+              tặng. Nhuỵ hoa nghệ tây là sự lựa chọn hàng đầu cho sức khỏe và
+              sắc đẹp mỗi người.
+            </p>
+          </div>
+          <Image
+            src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1703306910/BeautyProject/Thi%E1%BA%BFt-k%E1%BA%BF-ch%C6%B0a-c%C3%B3-t%C3%AAn-_2__pwfyvf.gif"
+            alt=""
+            width={500}
+            height={300}
+            className="homepage-HAB-intro-video"
+          />
         </div>
       </div>
       <div className="mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
@@ -141,20 +206,7 @@ const HomePageHAB = () => {
           </div>
         </div>
       </div>
-      <div className=" mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
-        <div className="flex leading-[1.8] items-center justify-center homepage-H-B-header">
-          <div className="w-[600px] mr-[100px] homepage-H-B-header-content">
-            <p className="text-[#f4aa2a] text-[40px]">VỀ SẢN PHẨM</p>
-            <p className="mt-[10px] text-xl text-white homepage-HAB-intro-content">
-              Saffron được ví như “Viên kim cương quý nhất của chiếc nhẫn” (The
-              diamond on a ring) - Món quà “vàng đỏ” quý giá của thiên nhiên ban
-              tặng. Nhuỵ hoa nghệ tây là sự lựa chọn hàng đầu cho sức khỏe và
-              sắc đẹp mỗi người.
-            </p>
-          </div>
-          <div className="homepage-HAB-intro-video w-[500px]"></div>
-        </div>
-      </div>
+
       <div className="mt-[70px] flex homepage-HAB-QC w-[100%]">
         <div className="bg-white p-[70px] flex flex-col items-center justify-center h-[600px] w-[60%] homepage-HAB-QC-left">
           <p className="text-[#611a1a] font-[550] text-[35px] homepage-HAB-QC-left-name">
@@ -180,13 +232,13 @@ const HomePageHAB = () => {
             <Image src={imgHomeBottomLogo} alt="" />
           </p>
         </div>
-        <div className="w-[600px] h-[600px] object-fill homepage-HAB-QC-right">
+        <div className="w-[40%] h-[600px] object-fill homepage-HAB-QC-right">
           <Image
             src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618377/BeautyProject/2_dyaogx.jpg"
             alt=" "
             width={600}
-            height={700}
-            className="homepage-HAB-QC-right-image"
+            height={600}
+            className="homepage-HAB-QC-right-image w-full h-[600px] object-fill"
           />
         </div>
       </div>
