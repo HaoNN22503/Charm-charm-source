@@ -33,7 +33,7 @@ const DetailProduct = (
   const [title, setTitle] = useState<string>("");
   const [comment, setComment] = useState<string>("");
   const [reviews, setReviews] = useState<ReviewTypes[]>([]);
-  const [mainSwiper, setMainSwiper] = useState<typeof Swiper | null>(null);
+  const [mainSwiper, setMainSwiper] = useState<any>(null);
   const [selectedThumbnail, setSelectedThumbnail] = useState<number | null>(
     null
   );
