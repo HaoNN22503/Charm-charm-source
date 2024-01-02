@@ -21,7 +21,7 @@ export const CommentUsers: CommentCardTypes[] = [
     img: "",
     name: "bababa",
     comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
+      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
   },
   {
     idComment: 3,
@@ -297,7 +297,7 @@ export const BeautyListMain: BeautyListMainTypes[] = [
       content1:
         "Rất nhiều người phụ nữ lúc trẻ thường bỏ qua việc chăm sóc sức khỏe và cho đến khi cơ thể xuất hiện dấu hiệu tuổi tác mới bắt đầu tìm kiếm những phương pháp trẻ hóa. Nhưng ở tuổi đó, những loại mỹ phẩm, các liệu trình spa hay cả phẫu thuật thẩm mỹ cũng chẳng thể kéo dài nét xuân!",
       content2:
-        "NẾU BẠN THỰC SỰ MUỐN GIỮ VẺ ĐẸP L U DÀI, SỨC KHỎE DẺO DAI THÌ NÊN SỬ DỤNG SAFFRON NGAY KHI CÒN TRẺ! ",
+        "NẾU BẠN THỰC SỰ MUỐN GIỮ VẺ ĐẸP LÂU DÀI, SỨC KHỎE DẺO DAI THÌ NÊN SỬ DỤNG SAFFRON NGAY KHI CÒN TRẺ! ",
       content3:
         "Saffron được mệnh danh là “vàng đỏ” Trung Đông bởi giá trị quý báu của nó. Từ xa xưa, Nữ hoàng Ai Cập Cleopatra đã sử dụng Saffron để gìn giữ sắc đẹp và tăng sự quyến rũ của mình. Cũng như các vua chúa, tầng lớp quý tộc thời cổ đại và trung cổ đã sử dụng Saffron để làm đẹp.",
       content4:

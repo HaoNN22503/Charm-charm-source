@@ -37,7 +37,6 @@
   .beauty-info-btn {
     margin: 0;
     margin-top: 10px;
-    // margin-left: auto;
   }
   .beauty-HAB-nomal-option {
     padding: 0;
@@ -48,15 +47,19 @@
   }
   .beauty-HAB-nomal {
     height: 400px;
-    width: 45%;
+    width: 30%;
     margin: 10px;
   }
   .beauty-HAB-nomal-image {
     width: 100%;
-    height: 200px;
   }
 }
-@media (max-width: 391px) {
+@media (max-width: 767px) {
+  .beauty-HAB-nomal {
+    width: 45%;
+  }
+}
+@media (max-width: 424px) {
   .beauty-HAB-nomal-option {
     padding: 0;
     justify-content: center;
@@ -85,17 +88,8 @@
     margin-left: auto;
   }
 }
-@media (max-width: 321px) {
+@media (max-width: 374px) {
   .beauty-HAB-nomal {
-    width: 100%;
-  }
-  .beauty-HAB-nomal-option {
-    padding: 20px;
-  }
-  .beauty-option-tittle {
-    width: 100%;
-    gap: 0;
-    font-size: 13px;
-    justify-content: space-evenly;
+    width: 80%;
   }
 }

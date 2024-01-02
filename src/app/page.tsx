@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
-import imgHomeBottomLogo from "../assets/image/ImageHomepageBottomLogo.png";
+import imgHomeBottomLogo from "../assets/image/logo.svg";
 import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 import { CommentUsers } from "@/data/data";
 import { CommentCardTypes } from "@/types/Interface";
@@ -68,7 +68,7 @@ const HomePageHAB = () => {
   };
 
   return (
-    <div className="py-[70px] bg-[#a72020] homepage-H-B__container h-[auto]">
+    <div className="py-[70px] bg-[#a72020] homepage-H-B__container">
       <div className="h-[500px] relative flex items-center justify-center homepage-HAB-swiper">
         <Swiper
           spaceBetween={30}
@@ -159,81 +159,89 @@ const HomePageHAB = () => {
           </div>
         </div>
       </div>
-      <div className=" mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
-        <div className="flex leading-[1.8] items-start justify-center homepage-H-B-header">
-          <div className="w-[600px] mr-[100px] homepage-H-B-header-content">
+
+      <div className="w-full mt-[50px] px-[50px] homepage-H-B-header-profile-charmcharm">
+        <div className="flex w-full text-justify items-start justify-between homepage-H-B-header">
+          <div className="w-[50%] homepage-H-B-header-content">
             <p className="text-[#f4aa2a] text-[40px]">VỀ SẢN PHẨM</p>
-            <p className="mt-[10px] text-xl text-white homepage-HAB-intro-content">
+            <p className="mt-[20px] text-xl text-white homepage-HAB-intro-content">
               Saffron được ví như “Viên kim cương quý nhất của chiếc nhẫn” (The
               diamond on a ring) - Món quà “vàng đỏ” quý giá của thiên nhiên ban
               tặng. Nhuỵ hoa nghệ tây là sự lựa chọn hàng đầu cho sức khỏe và
               sắc đẹp mỗi người.
             </p>
           </div>
-          <Image
-            src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1703306910/BeautyProject/Thi%E1%BA%BFt-k%E1%BA%BF-ch%C6%B0a-c%C3%B3-t%C3%AAn-_2__pwfyvf.gif"
-            alt=""
-            width={500}
-            height={300}
-            className="homepage-HAB-intro-video"
-          />
+          <div className="w-[50%] homepage-HAB-intro-image-container justify-center flex items-center">
+            <Image
+              src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1703306910/BeautyProject/Thi%E1%BA%BFt-k%E1%BA%BF-ch%C6%B0a-c%C3%B3-t%C3%AAn-_2__pwfyvf.gif"
+              alt=""
+              width={500}
+              height={300}
+              className="homepage-HAB-intro-image"
+            />
+          </div>
         </div>
-      </div>
-      <div className="mt-[70px] flex items-center justify-center relative homepage-HAB-intro">
-        <div className="flex leading-[1.8] items-center justify-center homepage-H-B-header">
-          <div className="w-[600px] mr-[100px] homepage-H-B-header-content">
+
+        <div className="flex w-full mt-[50px] items-start justify-between homepage-H-B-header">
+          <div className="homepage-H-B-header-content w-[50%]">
             <p className="text-[#f4aa2a] text-[40px] ">Saffron</p>
-            <p className="text-[#f4aa2a] text-[40px]">
+            <p className="text-[#f4aa2a] text-[40px] mt-[10px]">
               The Gold Of Middle East
             </p>
-            <p className="mt-[10px] text-xl text-white homepage-HAB-intro-content">
+            <p className="text-xl text-white homepage-HAB-intro-content mt-[10px]">
               NHÀ NHẬP KHẨU VÀ PHÂN KHỐI ĐỘC QUYỀN DÒNG CAO CẤP SAFFRON EXTRA
               SUPER NEGIN IRAN
             </p>
           </div>
-          <div className="homepage-HAB-intro-video">
+          <div className="homepage-HAB-intro-video w-[50%] flex justify-center items-center">
             <video
               controls
+              autoPlay
               width={500}
               height={400}
               src="https://res.cloudinary.com/dkfg3xljc/video/upload/v1698317144/BeautyProject/6699873123557280070_gaj8kv.mp4"
+              className="homepage-HAB-intro-video-detail"
             ></video>
           </div>
         </div>
       </div>
 
-      <div className="mt-[70px] flex homepage-HAB-QC w-[100%]">
-        <div className="bg-white p-[70px] flex flex-col items-center justify-center h-[600px] w-[60%] homepage-HAB-QC-left">
-          <p className="text-[#611a1a] font-[550] text-[35px] homepage-HAB-QC-left-name">
+      <div className="mt-[50px] h-[500px] flex homepage-HAB-QC w-[100%]">
+        <div className="bg-white p-[70px] flex flex-col items-center justify-center h-[full] w-[50%] homepage-HAB-QC-left">
+          <p className="text-[#611a1a] font-[550] text-[30px] homepage-HAB-QC-left-name">
             Charm Charm Saffron
           </p>
-          <p className="font-[500] text-[25px] text-[#a72020] flex homepage-HAB-QC-left-tittle">
+          <p className="font-[500] text-[20px] mt-[10px] text-[#a72020] flex homepage-HAB-QC-left-tittle">
             Đã được
             <Link
               href="https://suckhoedoisong.vn/bao-ve-suc-khoe-bang-cac-san-pham-co-chat-chong-oxy-hoa-manh-me-169188383.htm"
-              className="text-[#a72020] font-[650] ml-[3px] mr-[3px] cursor-pointer"
+              className="text-[#a72020] font-[650] mx-[3px] cursor-pointer"
             >
               báo Sức Khỏe & Đời Sống
             </Link>
             nhắc đến
           </p>
-          <p className="w-[600px] mt-[50px] text-center italic text-[24px] homepage-HAB-QC-left-content">
+          <p className="mt-[30px] text-center italic text-[20px] homepage-HAB-QC-left-content">
             {`"`}Charm Charm Saffron là nhà nhập khẩu nhụy hoa nghệ tây loại
             Extra Super Negin cao cấp, có đầy đủ giấy tờ chứng minh nguồn gốc,
             chất lượng và đây là địa chỉ tín cậy để khách hàng tim mua.
             {`"`}
           </p>
-          <p>
-            <Image src={imgHomeBottomLogo} alt="" />
+          <p className="mt-[10px] w-full flex justify-center items-center homepage-HAB-QC-left-image">
+            <Image
+              src={imgHomeBottomLogo}
+              alt=""
+              className="homepage-HAB-QC-left-image-detail"
+            />
           </p>
         </div>
-        <div className="w-[40%] h-[600px] object-fill homepage-HAB-QC-right">
+        <div className="w-[50%] h-full object-fill homepage-HAB-QC-right">
           <Image
             src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618377/BeautyProject/2_dyaogx.jpg"
             alt=" "
-            width={600}
-            height={600}
-            className="homepage-HAB-QC-right-image w-full h-[600px] object-fill"
+            width={500}
+            height={500}
+            className="homepage-HAB-QC-right-image w-full h-full object-fill"
           />
         </div>
       </div>
@@ -246,21 +254,34 @@ const HomePageHAB = () => {
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
-          className="flex justify-center pt-[80px] slide-container"
+          className="flex justify-center pt-[50px] slide-container w-full"
         >
           {CommentUsers.slice(startIndex, endIndex).map(
             (commentUser: CommentCardTypes, index) => {
               return (
                 <div
                   key={index}
-                  className="h-[400px] w-[350px] mr-[70px] slide-container-comment"
+                  className="h-[400px] w-[33%] slide-container-comment  flex justify-center items-center"
                 >
-                  <div className="bg-white flex flex-col mt-[20px] relative rounded-[10px] p-[20px] h-[100%] slide-container-comment-show">
-                    <div className="bg-black w-[100px] h-[100px] absolute z-[100] mt-[-70px] ml-[100px] border-2 border-solid rounded-[50%] slide-container-comment-img"></div>
-                    <div className="mt-[50px] flex items-start text-start justify-start slide-container-comment-content">
-                      {commentUser.comment.slice(0, 300) + " xem thêm..."}
+                  <div className="bg-white flex flex-col mt-[20px] relative rounded-[10px] w-[80%] h-[100%] slide-container-comment-show">
+                    <div className="h-[100px] absolute z-[100] mt-[-55px]  flex justify-center items-center w-full slide-container-comment-img">
+                      <Image
+                        src={imgHomeBottomLogo}
+                        alt=""
+                        className="rounded-full slide-container-comment-img-detail border-solid border h-full w-[25%] bg-red-50 shadow-[rgba(0,0,0,0.24)_0px_3px_8px]"
+                      />
                     </div>
-                    <div className="mt-auto flex items-start slide-container-comment-tittle">
+                    {commentUser.comment.length > 300 ? (
+                      <div className="mt-[50px] flex items-start text-justify  justify-start slide-container-comment-content p-[20px]">
+                        {commentUser.comment.slice(0, 300) + "... xem thêm"}
+                      </div>
+                    ) : (
+                      <div className="mt-[50px] flex items-start text-justify  justify-start slide-container-comment-content p-[20px]">
+                        {commentUser.comment}
+                      </div>
+                    )}
+
+                    <div className="mt-auto flex items-start slide-container-comment-tittle p-[20px]">
                       {commentUser.name}
                     </div>
                   </div>

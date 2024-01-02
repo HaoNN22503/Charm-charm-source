@@ -226,15 +226,15 @@ const DetailProduct = (
           </div>
         );
       })}
-      <div className="order-product-container bg-white h-[400px] w-[100%] py-[40px] px-[100px]">
+      <div className="order-product-container bg-white h-[400px]  w-[100%] py-[40px] px-[100px]">
         <div className="order-product-tittle text-[20px] font-[700]">
           Sản phẩm tương tự
         </div>
-        <div className="flex mt-[20px] order-product-all-container">
+        <div className="flex mt-[20px] order-product-all-container z">
           {relatedProducts.map((items) => (
             <div
               key={items.idProduct}
-              className="w-[200px] flex flex-col justify-center items-center mr-[40px] leading-[2] order-product-all-container-show"
+              className="w-[200px] flex flex-col justify-center items-center leading-[2] mr-[20px] order-product-all-container-show"
             >
               <div
                 onClick={() => {
@@ -260,7 +260,7 @@ const DetailProduct = (
                   {items.nameProduct}
                 </div>
               )}
-              <div className="flex justify-between w-[100%] text-sm mt-3 order-product-all-container-items-btn">
+              <div className="flex justify-between px-[10px] w-[100%] text-sm mt-3 order-product-all-container-items-btn">
                 <p
                   onClick={() => {
                     handleAddToCart(
@@ -301,13 +301,13 @@ const DetailProduct = (
           </div>
         </div>
         {commentShow && (
-          <div className="bg-white rounded-[10px] mt-[20px] pl-[200px] pr-[200px] pt-[80px] pb-[80px] detail-product-comment-table__container">
-            <div className="flex flex-col">
-              <div className="flex items-center product-detail-HAB-comment-rating">
-                <p className="underline text-[18px] font-[500] w-[30%] product-detail-HAB-comment-rating-tittle">
+          <div className="bg-white rounded-[10px] w-full mt-[20px] py-[80px] px-[200px] detail-product-comment-table__container">
+            <div className="flex flex-col w-full">
+              <div className="flex items-center product-detail-HAB-comment-rating w-full justify-between">
+                <p className="underline w-[50%] text-[18px] font-[500] product-detail-HAB-comment-rating-tittle">
                   Đánh giá cảm nhận
                 </p>
-                <p className="flex ml-[140px] text-[#a72020] product-detail-HAB-comment-rating">
+                <p className="flex w-[50%] text-[#a72020] product-detail-HAB-comment-rating">
                   <Rating
                     name="simple-controlled mr-[5px]"
                     value={rating}
@@ -317,70 +317,72 @@ const DetailProduct = (
                   />
                 </p>
               </div>
-              <div className="">
-                {" "}
-                <div className="flex text-[18px] font-[500] h-[40px] mt-[30px] product-detail-HAB-comment-name">
-                  <p className="underline w-[30%] product-detail-HAB-comment-name-tittle">
+              <div className="w-full mt-[15px]">
+                <div className="flex text-[18px] mt[30px] w-full justify-between items-center font-[500] product-detail-HAB-comment-name">
+                  <p className="underline w-[50%]  product-detail-HAB-comment-name-tittle">
                     Tên của bạn
                   </p>
                   <input
                     type="text"
                     value={name}
                     onChange={handleNameChange}
-                    className="border-2 border-solid border-[#a72020] w-[500px] p-[5px] pl-[5px] text-[15px] rounded-[5px] ml-[auto] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-name"
+                    className="border-2 border-solid w-[50%] px-[5px] h-[40px] border-[#a72020] text-[15px] rounded-[5px] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-name"
                   />
                 </div>
-                <div className="flex text-[18px] font-[500] h-[40px] mt-[30px] product-detail-HAB-comment-topic">
-                  <p className="underline w-[30%] product-detail-HAB-comment-topic-tittle">
-                    Tiêu đề{" "}
+                <div className="flex justify-between w-full items-center text-[18px] font-[500] mt-[30px] product-detail-HAB-comment-topic">
+                  <p className="underline w-[50%]  product-detail-HAB-comment-topic-tittle">
+                    Tiêu đề
                   </p>
                   <input
                     type="text"
                     value={title}
                     onChange={handleTitleChange}
-                    className="border-2 border-solid border-[#a72020] w-[500px] p-[5px] pl-[5px] text-[15px] rounded-[5px] ml-[auto] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-topic"
+                    className="border-2 border-solid px-[5px] w-[50%] h-[40px] border-[#a72020] text-[15px] rounded-[5px] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-topic"
                   />
                 </div>
-                <div className="flex text-[18px] font-[500] mt-[20px] product-detail-HAB-comment-decreption">
-                  <p className="underline w-[30%] product-detail-HAB-comment-decreption-tittle">
+                <div className="flex mt-[30px] w-full justify-between items-start text-[18px] font-[500]  product-detail-HAB-comment-decreption">
+                  <p className="underline w-[50%]  product-detail-HAB-comment-decreption-tittle">
                     Cảm nhận
                   </p>
                   <textarea
                     value={comment}
                     onChange={handleCommentChange}
-                    className="h-[120px] border-2 border-solid border-[#a72020] resize-none w-[500px] p-[5px] pl-[5px] text-[15px] ml-[auto] rounded-[5px] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-decreption"
+                    className="h-[120px] p-[5px]  border-2 border-solid w-[50%] border-[#a72020] resize-none  text-[15px]  rounded-[5px] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-decreption"
                     id=""
                   ></textarea>
                 </div>
               </div>
-              <div className="flex text-[18px] font-[500] h-[40px] mt-[30px] product-detail-HAB-comment-share">
-                <p className="underline w-[30%] product-detail-HAB-comment-share-tittle ">
+              <div className="flex justify-between w-full items-start mt-[30px] text-[18px] font-[500]  product-detail-HAB-comment-share">
+                <p className="underline w-[50%] product-detail-HAB-comment-share-tittle ">
                   Lời giới thiệu
                 </p>
-                <div className="ml-[140px] mb-[40px] product-detail-HAB-comment-share">
-                  <label className="flex items-center" htmlFor="like">
+                <div className="w-[50%] product-detail-HAB-comment-share">
+                  <label
+                    className="flex items-center w-[100%] h-[25px] justify-between"
+                    htmlFor="like"
+                  >
                     <input
                       type="radio"
                       id="like"
                       value="like"
-                      className="detail-product-comment-table-option-radio mr-[7px]"
+                      className="detail-product-comment-table-option-radio w-[14%]"
                       name="inputRadio"
                       checked={recommendation === true}
                       onChange={() => handleRecommendationChange(true)}
                       required
                     />
-                    <p className="bg-black text-white p-[7] rounded-[50%] ml-[10px] mr-[7px]">
+                    <p className="bg-black text-white detail-product-comment-table-option-like rounded-[50%] flex justify-center items-center h-full w-[6%]">
                       <AiFillLike size={20} />
                     </p>
-                    <p>Tôi sẽ giới thiệu cho bạn bè</p>
+                    <p className="w-[80%]">Tôi sẽ giới thiệu cho bạn bè</p>
                   </label>
                   <label
                     htmlFor="dislike"
-                    className="flex items-center mt-[20px] "
+                    className="flex items-center mt-[20px] w-[100%] h-[25px] justify-between "
                   >
                     <input
                       type="radio"
-                      className="text-[#a72020] detail-product-comment-table-option-radio mr-[7px]"
+                      className="text-[#a72020] detail-product-comment-table-option-radio w-[16%]"
                       id="dislike"
                       value="dislike"
                       name="inputRadio"
@@ -388,10 +390,10 @@ const DetailProduct = (
                       onChange={() => handleRecommendationChange(false)}
                       required
                     />
-                    <p className="bg-black text-white p-[7] rounded-[50%] ml-[10px] mr-[7px]">
+                    <p className="bg-black w-[6%] detail-product-comment-table-option-like h-full flex justify-center items-center text-white rounded-[50%]">
                       <AiFillDislike size={20} />
                     </p>
-                    <p className="w-[235px] product-detail-HAB-comment-share-option">
+                    <p className="w-[80%] product-detail-HAB-comment-share-option">
                       Tôi sẽ không giới thiệu cho bạn bè
                     </p>
                   </label>

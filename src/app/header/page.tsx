@@ -298,7 +298,7 @@ const HeaderHAB = () => {
             orderShow={toggleBuying}
           />
         )}
-        <div className="mt-[20px] flex justify-center items-center text-[#611a1a] text-[17px] font-[550] header-option">
+        <div className="mt-[20px] px-[200px] flex justify-between items-center text-[#611a1a] text-[17px] font-[550] header-option">
           <Link
             href="/"
             onClick={() => {
@@ -317,8 +317,8 @@ const HeaderHAB = () => {
             }}
             className={
               homepageShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
-                : "option-intro mr-[70px]"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
+                : "option-intro "
             }
           >
             Trang chủ
@@ -341,8 +341,8 @@ const HeaderHAB = () => {
             }}
             className={
               introShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
-                : "option-intro mr-[70px]"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active "
+                : "option-intro"
             }
           >
             Giới thiệu
@@ -355,8 +355,8 @@ const HeaderHAB = () => {
             }}
             className={
               optionSecret
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
-                : "option-intro mr-[70px]"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
+                : "option-intro"
             }
           >
             Bí quyết
@@ -368,10 +368,10 @@ const HeaderHAB = () => {
             }}
             className={
               optionProduct
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer mr-[70px]"
-                : "option-intro cursor-pointer mr-[70px]" && productShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer mr-[70px]"
-                : "option-intro cursor-pointer mr-[70px]"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer"
+                : "option-intro cursor-pointer" && productShow
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active cursor-pointer"
+                : "option-intro cursor-pointer"
             }
           >
             Sản phẩm
@@ -380,8 +380,8 @@ const HeaderHAB = () => {
             <div
               className={
                 orderShow
-                  ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
-                  : "option-intro-buying mr-[70px]"
+                  ? "text-[#f4aa2a] italic font-[550] option-intro-active"
+                  : "option-intro-buying"
               }
             >
               Đặt mua
@@ -406,8 +406,8 @@ const HeaderHAB = () => {
             }}
             className={
               promotionShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
-                : "option-intro mr-[70px]"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
+                : "option-intro"
             }
           >
             Khuyến mãi
@@ -431,8 +431,8 @@ const HeaderHAB = () => {
             }}
             className={
               contactShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
-                : "option-intro mr-[70px]"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
+                : "option-intro"
             }
           >
             Liên hệ
@@ -455,8 +455,8 @@ const HeaderHAB = () => {
             }}
             className={
               feedbackShow
-                ? "text-[#f4aa2a] italic font-[550] option-intro-active mr-[70px]"
-                : "option-intro mr-[70px]"
+                ? "text-[#f4aa2a] italic font-[550] option-intro-active"
+                : "option-intro"
             }
           >
             Feedback
@@ -473,7 +473,17 @@ const HeaderHAB = () => {
                   key={items.idProduct}
                   className="cursor-pointer hover:underline"
                   onClick={() => {
+                    setHomepageShow(false);
+                    setIntroShow(false);
                     setOptionProduct(false);
+                    setOrderShow(false);
+                    setOrderNoneShow(false);
+                    setBeautyShow(false);
+                    setPromotionShow(false);
+                    setFeedbackShow(false);
+                    setContactShow(false);
+                    setCuisineShow(false);
+                    setProductShow(true);
                   }}
                 >
                   {items.nameProduct}

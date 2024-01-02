@@ -65,7 +65,7 @@ $background-color_5: #918d8d;
 .heading-option-product {
   border-top: 0.5px solid #e0e0e0;
 }
-@media (max-width: 1023px) {
+@media (max-width: 769px) {
   .header-option {
     display: none;
   }
@@ -124,5 +124,19 @@ $background-color_5: #918d8d;
   }
   to {
     opacity: 1;
+  }
+}
+@media (max-width: 1025px) {
+  .option-intro {
+    margin: 0;
+  }
+  .option-intro-active {
+    margin: 0;
+  }
+  .header-option {
+    padding: 0;
+  }
+  .header-option-bar {
+    padding: 0;
   }
 }

@@ -3,217 +3,258 @@ import React, { useState } from "react";
 import { BsStarFill } from "react-icons/bs";
 import { BiFilter } from "react-icons/bi";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { HiArrowUpTray } from "react-icons/hi2";
-import { CommentUsers, commentsData } from "@/data/data";
-import { CommentFeedbackTypes } from "@/types/Interface";
-import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
-const FeedbackPage = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [filterStar, setFilterStar] = useState<number | null>(null);
-  const [selectedStar, setSelectedStar] = useState<number | null>(null);
-  const [sortBy, setSortBy] = useState<"newest" | "oldest" | null>(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [transitionDirection, setTransitionDirection] = useState<
-    "slide-out" | "slide-in"
-  >("slide-in");
-  const commentsPerPage = 3;
-  const startIndex = (currentPage - 1) * commentsPerPage;
-  const endIndex = startIndex + commentsPerPage;
-  const handlePrevClick = () => {
-    setTransitionDirection("slide-out");
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-  };
-  const handleNextClick = () => {
-    setTransitionDirection("slide-in");
-    const totalPages = Math.ceil(commentsData.length / commentsPerPage);
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-  };
-  const totalPages = Math.ceil(commentsData.length / commentsPerPage);
-  const pageNumbers = Array.from(
-    { length: totalPages },
-    (_, index) => index + 1
-  );
 
-  const handlePromoteToCover = (commentId: string) => {
-    // Thực hiện logic đưa phản hồi lên trang bìa ở đây
-    console.log(`Đưa phản hồi có ID ${commentId} lên trang bìa`);
+import imgHomeBottomLogo from "../../assets/image/logo.svg";
+import Image from "next/image";
+import { Rating } from "@mui/material";
+interface FeedbackData {
+  name: string;
+  rating: number;
+  comment: string;
+  time: string;
+}
+const FeedbackPage = () => {
+  const [feedbackList, setFeedbackList] = useState<FeedbackData[]>([]);
+  const [name, setName] = useState<string>("");
+  const [rating, setRating] = useState<number | null>(null);
+  const [comment, setComment] = useState<string>("");
+  const [selectedFilterStar, setSelectedFilterStar] = useState<number | null>(
+    null
+  );
+  const [sortType, setSortType] = useState<"newest" | "oldest" | null>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleRatingChange = (value: number | null) => {
+    setRating(value);
   };
-  const handleFilterChange = (
-    newFilter: string,
-    value: string | number | null
-  ) => {
-    setIsDropdownOpen(false);
-    setCurrentPage(1);
-    if (newFilter === "star") {
-      setFilterStar(value as number | null);
-      setSelectedStar(value as number | null);
-    }
+
+  // Event handler for name input change
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
   };
-  const handleSortChange = (newSortBy: "newest" | "oldest" | null) => {
-    setSortBy(newSortBy);
+
+  // Event handler for comment input change
+  const handleCommentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setComment(e.target.value);
   };
+
+  const handleFeedbackSubmit = () => {
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleString();
+
+    const newFeedback: FeedbackData = {
+      name,
+      rating: rating as number,
+      comment,
+      time: formattedDate,
+    };
+
+    setFeedbackList((prevFeedbackList) => [...prevFeedbackList, newFeedback]);
+
+    setRating(null);
+    setName("");
+    setComment("");
+    setSelectedFilterStar(null);
+  };
+
+  const filteredAndSortedFeedback = feedbackList
+    .filter((feedback) => {
+      if (selectedFilterStar) {
+        return feedback.rating === selectedFilterStar;
+      }
+      return true;
+    })
+    .sort((a, b) => {
+      if (sortType === "newest") {
+        return new Date(b.time).getTime() - new Date(a.time).getTime();
+      } else if (sortType === "oldest") {
+        return new Date(a.time).getTime() - new Date(b.time).getTime();
+      }
+      return 0;
+    });
   return (
-    <div className="bg-[#a72020] p-[100px] feedback-page__container">
-      <div className="feedback-page-head">
-        <div className="text-[white] font-[550] text-[25px]">
-          Feedback từ khách hàng
-        </div>
-        <div className="flex mt-[40px] items-center ">
-          <div
-            onClick={() => {
-              setIsDropdownOpen(!isDropdownOpen);
-            }}
-            className="rounded-[10px] bg-white flex items-center mr-[15px] p-[10px] text-[#a72020] text-[16px] cursor-pointer font-[550] relative feedback-page-filter"
-          >
-            <p className="mr-[5px] text-yellow-600 ">
-              <BsStarFill />
-            </p>
-            <p className="mr-[5px]">
-              {selectedStar !== null ? `${selectedStar} sao` : "Sao"}
-            </p>
-            <p>
-              <IoMdArrowDropdown size={18} />
-            </p>
+    <div className="w-full bg-[#a72020] flex flex-col py-[40px] justify-evenly items-center">
+      <div className="w-[80%] feedback-page__container">
+        <div className="feedback-page-form-table">
+          <div className="bg-white rounded-[10px] w-full mt-[20px] py-[80px] px-[150px] detail-product-comment-table__container">
+            <div className="flex flex-col w-full">
+              <div className="flex items-center product-detail-HAB-comment-rating w-full justify-between">
+                <p className="w-[40%] text-[20px] font-[500] product-detail-HAB-comment-rating-tittle">
+                  Đánh giá cảm nhận
+                </p>
+                <p className="flex w-[60%] text-[#a72020] product-detail-HAB-comment-rating">
+                  <Rating
+                    name="simple-controlled mr-[5px]"
+                    value={rating}
+                    onChange={(event, newValue) => {
+                      handleRatingChange(newValue);
+                    }}
+                  />
+                </p>
+              </div>
+              <div className="w-full mt-[15px]">
+                <div className="flex text-[20px] mt[30px] w-full justify-between items-center font-[500] product-detail-HAB-comment-name">
+                  <p className="w-[40%] product-detail-HAB-comment-name-tittle">
+                    Tên của bạn
+                  </p>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={handleNameChange}
+                    className="border-2 border-solid w-[60%] px-[5px] h-[40px] border-[#a72020] text-[15px] rounded-[5px] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-name"
+                  />
+                </div>
+
+                <div className="flex mt-[30px] w-full justify-between items-start text-[20px] font-[500]  product-detail-HAB-comment-decreption">
+                  <p className="w-[40%]  product-detail-HAB-comment-decreption-tittle">
+                    Cảm nhận
+                  </p>
+                  <textarea
+                    value={comment}
+                    onChange={handleCommentChange}
+                    className="h-[150px] p-[5px]  border-2 border-solid w-[60%] border-[#a72020] resize-none  text-[15px]  rounded-[5px] focus:outline-1 outline-[#a72020] product-detail-HAB-comment-decreption"
+                    id=""
+                  ></textarea>
+                </div>
+              </div>
+
+              <button
+                onClick={handleFeedbackSubmit}
+                className="bg-[#611a1a] text-white p-[10px] rounded-[5px] mt-[50px] ml-[auto] cursor-pointer"
+              >
+                Đăng đánh giá
+              </button>
+            </div>
           </div>
-          {isDropdownOpen && (
-            <div className="absolute bg-[white] cursor-pointer p-[10px] text-[#a72020] mt-[150px] text-[14px] w-[6%] rounded-[10px] boder-[#a72020] border border-solid leading-[1.3] feedback-dropdown-star">
-              {[1, 2, 3, 4, 5].map((star) => (
+        </div>
+        <div className="feedback-page-head w-full mt-[20px]">
+          <div className="text-[white] font-[550] text-[25px]">
+            Feedback từ khách hàng
+          </div>
+          <div className="flex mt-[40px] items-center justify-between w-[30%] feedback-HAB-option-filter">
+            <div
+              onClick={() => {
+                setIsDropdownOpen(!isDropdownOpen);
+              }}
+              className="rounded-[10px] bg-white flex items-center p-[10px] text-[#a72020] text-[16px] cursor-pointer font-[550] relative feedback-page-filter"
+            >
+              <p className="mr-[5px] text-yellow-600 ">
+                <BsStarFill />
+              </p>
+              <p className="mr-[5px]">
+                {selectedFilterStar !== null
+                  ? `${selectedFilterStar}`
+                  : "Tất cả"}
+              </p>
+              <p>
+                <IoMdArrowDropdown size={18} />
+              </p>
+            </div>
+            {isDropdownOpen && (
+              <div className="absolute bg-[white] cursor-pointer p-[10px] text-[#a72020] mt-[150px] text-[14px] w-[6%] rounded-[10px] boder-[#a72020] border border-solid leading-[1.3] feedback-dropdown-star">
                 <div
-                  key={star}
-                  onClick={() => handleFilterChange("star", star)}
+                  onClick={() => {
+                    setSelectedFilterStar(null);
+                    setIsDropdownOpen(false);
+                  }}
                   className="cursor-pointer flex justify-center"
                 >
-                  {star}{" "}
-                  <p className="ml-[10px] flex items-start">
-                    {" "}
-                    <BsStarFill />
-                  </p>
+                  Tất cả
                 </div>
-              ))}
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <div
+                    key={star}
+                    onClick={() => {
+                      setSelectedFilterStar(star);
+                      setIsDropdownOpen(false);
+                    }}
+                    className="cursor-pointer flex justify-center"
+                  >
+                    {star}
+                    <p className="ml-[10px] flex items-start">
+                      {" "}
+                      <BsStarFill />
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div
+              onClick={() => {
+                setSortType("newest");
+              }}
+              className="rounded-[10px] bg-white flex items-center cursor-pointer p-[10px] text-[#a72020] text-[16px] font-[550] feedback-page-filter"
+            >
+              <p className="mr-[5px] text-yellow-600 ">
+                <BiFilter size={18} />
+              </p>
+              <p>Mới nhất</p>
             </div>
-          )}
-          <div
-            onClick={() => handleSortChange("newest")}
-            className="rounded-[10px] bg-white flex items-center cursor-pointer mr-[15px] p-[10px] text-[#a72020] text-[16px] font-[550] feedback-page-filter"
-          >
-            <p className="mr-[5px] text-yellow-600 ">
-              <BiFilter size={18} />
-            </p>
-            <p>Mới nhất</p>
-          </div>
-          <div
-            onClick={() => handleSortChange("oldest")}
-            className="rounded-[10px] bg-white flex cursor-pointer items-center mr-[15px] p-[10px] text-[#a72020] text-[16px] font-[550] feedback-page-filter"
-          >
-            <p className="mr-[5px] text-yellow-600 ">
-              <BiFilter size={18} />
-            </p>
-            <p>Cũ nhất</p>
+            <div
+              onClick={() => {
+                setSortType("oldest");
+              }}
+              className="rounded-[10px] bg-white flex cursor-pointer items-center p-[10px] text-[#a72020] text-[16px] font-[550] feedback-page-filter"
+            >
+              <p className="mr-[5px] text-yellow-600 ">
+                <BiFilter size={18} />
+              </p>
+              <p>Cũ nhất</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="feedback-user-data">
-        {commentsData
-          .sort((a, b) => {
-            if (sortBy === "newest") {
-              return (
-                new Date(b.timeComment).getTime() -
-                new Date(a.timeComment).getTime()
-              );
-            } else if (sortBy === "oldest") {
-              return (
-                new Date(a.timeComment).getTime() -
-                new Date(b.timeComment).getTime()
-              );
-            } else {
-              return 0;
-            }
-          })
-          .filter((comment) =>
-            filterStar !== null ? comment.starComment === filterStar : true
-          )
-          .slice(startIndex, endIndex)
-          .map((commentUser: CommentFeedbackTypes, index) => {
-            return (
-              <div
-                key={index}
-                className="mt-[50px] flex w-[100%] feedback-fomat-container"
-              >
-                <div className="bg-white rounded-[10px] p-[20px] w-[85%] mr-[5px] feddback-fomat-content-container">
-                  <div className="feedback-fomat-name-img flex items-start w-[100%]">
-                    <p className="h-[80px] w-[80px] mr-[20px] rounded-full border-solid border border-black feedback-fomat-img"></p>
-                    <div className="feedback-fomat-info-user flex w-[90%]">
+        <div className="feedback-user-data w-full">
+          {filteredAndSortedFeedback.map((feedback, index) => (
+            <div key={index} className="feedback-user-data w-full">
+              <div className="mt-[50px] flex w-[100%] feedback-fomat-container justify-between">
+                <div className="bg-white rounded-[10px] p-[20px] w-[85%] feddback-fomat-content-container">
+                  <div className="feedback-fomat-name-img flex items-start w-[100%] justify-between">
+                    <p className=" w-[8%] h-[80px] feedback-fomat-img">
+                      <Image
+                        src={imgHomeBottomLogo}
+                        alt=""
+                        className=" feedback-fomat-img-detail rounded-full border-solid border border-slate-300 w-full h-full"
+                      />
+                    </p>
+                    <div className="feedback-fomat-info-user flex w-[90%] justify-between">
                       <div className="feedback-fomat-name font-[550] text-[20px] mt-[5px]">
-                        <p>{commentUser.nameComment}</p>
+                        <p>{feedback.name}</p>
                         <div className="flex items-center mt-[3px]">
-                          {Array.from({ length: commentUser.starComment }).map(
-                            (_, i) => (
-                              <BsStarFill key={i} className="text-yellow-600" />
-                            )
-                          )}
+                          <div>
+                            <Rating
+                              name="read-only"
+                              value={feedback.rating}
+                              readOnly
+                            />
+                          </div>
                         </div>
                       </div>
                       <p className="ml-[auto] font-[550] text-gray-500 italic mr-[10px] mt-[5px] feedback-fomat-time">
-                        {commentUser.timeComment}
+                        {feedback.time}
                       </p>
                     </div>
                   </div>
-                  <div className="feedback-fomat-content mt-[10px] text-justify">
-                    {commentUser.contentComment}
+                  <div className="feedback-fomat-content mt-[10px] text-justify w-full">
+                    {feedback.comment}
                   </div>
                 </div>
-                <div
-                  className="feedback-HAB-bottom-btn flex justify-center items-center text-white ml-[auto] cursor-pointer"
-                  onClick={() => handlePromoteToCover(commentUser.idComment)}
-                >
-                  <p className="mr-[5px] ">
-                    <HiArrowUpTray size={25} />
-                  </p>
-                  <p className="underline font-[550] text-[16px] ">
-                    Đưa lên trang bìa
-                  </p>
+                <div className="feedback-btn-upload-hompage-container flex justify-between w-[14%] items-center text-[white]">
+                  <div className="w-full flex justify-between items-end hover:underline hover:cursor-pointer">
+                    <div className="w-[10%]">
+                      <Image
+                        src="https://res.cloudinary.com/dkfg3xljc/image/upload/v1704163110/BeautyProject/Thi%E1%BA%BFt_k%E1%BA%BF_ch%C6%B0a_c%C3%B3_t%C3%AAn_4_ocbh4v.svg"
+                        alt=""
+                        width={25}
+                        height={25}
+                        className="w-full"
+                      />
+                    </div>
+                    <p className="w-[85%] text-[16px]">Đưa lên trang chủ</p>
+                  </div>
                 </div>
               </div>
-            );
-          })}
-        <div className="flex justify-center mt-[40px] ">
-          {pageNumbers.map((pageNumber) => (
-            <button
-              key={pageNumber}
-              onClick={() => setCurrentPage(pageNumber)}
-              className={` ml-[6px] h-[15px] w-[15px] rounded-full transition duration-300 ${
-                currentPage === pageNumber
-                  ? "bg-white slider-container-comment-circle"
-                  : "bg-[#ab9e9e] slider-container-comment-circle"
-              }`}
-            ></button>
+            </div>
           ))}
-        </div>
-        <div className="flex justify-center mt-[20px]">
-          <button
-            onClick={handlePrevClick}
-            disabled={currentPage === 1}
-            className={`bg-white p-[10px] mr-[15px] rounded-full  ${
-              currentPage === 1
-                ? "opacity-50 cursor-not-allowed slider-container-comment-btn"
-                : "opacity-100 slider-container-comment-btn"
-            }`}
-          >
-            <GrLinkPrevious size={20} />
-          </button>
-          <button
-            onClick={handleNextClick}
-            disabled={
-              currentPage === Math.ceil(CommentUsers.length / commentsPerPage)
-            }
-            className={`bg-white p-[10px]  rounded-full  ${
-              currentPage === Math.ceil(CommentUsers.length / commentsPerPage)
-                ? "opacity-50 cursor-not-allowed slider-container-comment-btn"
-                : "opacity-100 slider-container-comment-btn"
-            }`}
-          >
-            <GrLinkNext size={20} />
-          </button>
         </div>
       </div>
     </div>

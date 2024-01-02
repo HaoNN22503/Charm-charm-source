@@ -26,7 +26,7 @@ const FooterHAB = () => {
           </p>
         </div>
         <div className="text-[14px] leading-[2.2] footer-hotline-container w-[fit] mr-[80px]">
-          <p className="h-[40px] text-[16px] font-[550]">CHARM CHARM SAFFRON</p>
+          <p className="h-[40px] text-[16px] font-[550]">DANH MỤC</p>
           <p>Giới thiệu</p>
           <p>Làm đẹp</p>
           <p>Liên hệ</p>
@@ -40,34 +40,6 @@ const FooterHAB = () => {
         </div>
       </div>
       <div className=" flex items-start w-[100%] p-[50px] text-[#611a1a] footer-address__container">
-        <div className="footer-category-container w-[20%] flex flex-col justify-center items-center">
-          <div className="font-[600] text-[16px]">Danh mục</div>
-          <div className="mt-[10px] leading-[1.5] ">
-            <p className="hover:underline cursor-pointer footer-address-profile">
-              - Giới thiệu
-            </p>
-            <p className="hover:underline cursor-pointer footer-address-profile">
-              - Bí quyết
-            </p>
-            <div className="">
-              <p className="hover:underline cursor-pointer footer-address-profile ">
-                . Ẩm thực
-              </p>
-              <p className="hover:underline cursor-pointer footer-address-profile">
-                . Làm đẹp
-              </p>
-            </div>
-            <p className="hover:underline cursor-pointer footer-address-profile">
-              - Sản phẩm
-            </p>
-            <p className="hover:underline cursor-pointer footer-address-profile">
-              - Khuyến mãi
-            </p>
-            <p className="hover:underline cursor-pointer footer-address-profile">
-              - Liên hệ
-            </p>
-          </div>
-        </div>
         <div className="text-[14px] footer-address-profile">
           <div className="font-[600] text-[16px] mb-[10px]">
             Thông tin liên hệ

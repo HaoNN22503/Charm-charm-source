@@ -1,60 +1,62 @@
 @media (max-width: 1023px) {
-  .beauty-profile__container {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  .beauty-profile-return {
-    padding-left: 20px;
-    width: 100%;
-  }
   .beauty-profile-tittle {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    padding-left: 20px;
-    margin-top: 10px;
+    width: 90%;
+  }
+  .beauty-profile-detail {
+    width: 90%;
+  }
+  .beauty-profile-detail-content {
+    font-size: 18px;
+  }
+  .beauty-profile-detail-content-header {
+    font-size: 18px;
+  }
+  .beauty-profile-detail-content-header-detail {
+    width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .beauty-profile-tittle {
+    width: 90%;
+    font-size: 25px;
+  }
+  .beauty-profile-detail-content-header {
+    font-size: 16px;
+  }
+  .beauty-profile-tittle-detail {
     font-size: 20px;
   }
-  .beauty-profile-types {
-    padding-left: 20px;
+  .beauty-profile-detail {
+    width: 90%;
+  }
+  .beauty-profile-detail-content {
     font-size: 14px;
+    margin-top: 10px;
   }
   .beauty-profile-image {
     height: 300px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 424px) {
+  .beauty-profile-detail-content-container {
+    flex-direction: column;
     width: 100%;
-    object-fit: contain;
+  }
+  .beauty-profile-tittle-detail {
+    font-size: 16px;
   }
   .beauty-profile-detail-content-header {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    font-size: 11px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-  }
-  .beauty-profile-detail {
-    padding: 0;
-    margin: 0;
-    width: 100%;
     font-size: 14px;
   }
-  .beauty-profile-detail-content-container {
+  .beauty-profile-image {
     width: 100%;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 20px;
   }
   .beauty-profile-detail-content {
     width: 100%;
-    font-size: 14px;
-    gap: 0;
-    padding: 10px;
-    margin: 0;
-    text-align: justify;
+  }
+  .beauty-profile-detail-content-container {
+    flex-direction: column-reverse;
+    width: 100%;
   }
 }
