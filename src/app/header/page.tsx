@@ -232,8 +232,6 @@ const HeaderHAB = () => {
           type="checkbox"
           className="header-input-check w-[30px] h-[30px]"
           id="nav-mobile-input"
-
-          // onChange={() => setOptionSecretMobile(!optionSecretMobile)} // Toggle the state when checkbox is clicked
         />
         <label htmlFor="nav-mobile-input" className="header-overlay"></label>
         <div className="header-mobile">
@@ -244,52 +242,82 @@ const HeaderHAB = () => {
             htmlFor="nav-mobile-input"
             className="mt-[20px] flex justify-center items-center text-[#611a1a] text-[17px] font-[550] header-mobile-option"
           >
-            <Link href="/" className="option-intro mr-[70px]">
-              Trang chủ
-            </Link>
-            <Link href="/intro" className="option-intro mr-[70px]">
-              Giới thiệu
-            </Link>
-            <Link href="/product" className="option-intro mr-[70px]">
-              Sản phẩm
-            </Link>
             <div
+              onClick={() => {
+                router.push(`/`);
+              }}
+            >
+              <p className="option-intro mr-[70px]">Trang chủ</p>
+            </div>
+
+            <div
+              onClick={() => {
+                router.push(`/intro`);
+              }}
+            >
+              <p className="option-intro mr-[70px]">Giới thiệu</p>
+            </div>
+            <div
+              onClick={() => {
+                router.push(`/product`);
+              }}
+            >
+              <p className="option-intro mr-[70px]">Sản phẩm</p>
+            </div>
+
+            <Link
+              href={""}
               onClick={() => {
                 setOptionSecretMobile(!optionSecretMobile);
               }}
               className="option-intro mr-[70px] flex items-center"
             >
               Bí quyết <AiOutlineDown size={15} className="ml-[10px]" />
-            </div>
+            </Link>
             {optionSecretMobile && (
               <div className="w-[100%] bg-[white] flex-col flex mr-[70px] transition-all">
-                <Link
-                  href="/beauty"
-                  className="option-intro text-[#611a1a] text-[15px] font-[550] mr-[70px]"
+                <div
+                  onClick={() => {
+                    router.push(`/beauty`);
+                  }}
                 >
-                  Làm đẹp
-                </Link>
-                <Link
-                  href="/cuisine"
-                  className="option-intro text-[#611a1a] text-[15px] font-[550] mr-[70px]"
+                  <p className="option-intro text-[#611a1a] text-[15px] font-[550] mr-[70px]">
+                    Làm đẹp
+                  </p>
+                </div>
+                <div
+                  onClick={() => {
+                    router.push(`/cuisine`);
+                  }}
                 >
-                  Ẩm thực
-                </Link>
+                  <p className="option-intro text-[#611a1a] text-[15px] font-[550] mr-[70px]">
+                    Ẩm thực
+                  </p>
+                </div>
               </div>
             )}
-            {/* <Link href="/orderNone" className="option-intro-buying">
-              Đặt mua
-            </Link> */}
-            <Link href="/promotion" className="option-intro mr-[70px]">
-              Khuyến mãi
-            </Link>
 
-            <Link href="/contact" className="option-intro mr-[70px]">
-              Liên hệ
-            </Link>
-            <Link href="/feedback" className="option-intro mr-[70px]">
-              Feedback
-            </Link>
+            <div
+              onClick={() => {
+                router.push(`/promotion`);
+              }}
+            >
+              <p className="option-intro mr-[70px]">Khuyến mãi</p>
+            </div>
+            <div
+              onClick={() => {
+                router.push(`/contact`);
+              }}
+            >
+              <p className="option-intro mr-[70px]">Liên hệ</p>
+            </div>
+            <div
+              onClick={() => {
+                router.push(`/feedback`);
+              }}
+            >
+              <p className="option-intro mr-[70px]">Feedback</p>
+            </div>
           </label>
         </div>
         {showShoppingBag && (

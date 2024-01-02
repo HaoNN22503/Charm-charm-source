@@ -35,13 +35,13 @@ $background-color_5: #918d8d;
 .header-input-check:checked ~ .header-mobile {
   transform: translateX(0%);
 }
+
 .header-mobile-option {
   display: flex;
   flex-direction: column;
   font-size: 22px;
   padding: 0;
   align-items: flex-start;
-  gap: 0;
   margin-left: 30px;
   margin-top: 40px;
 }
@@ -104,7 +104,6 @@ $background-color_5: #918d8d;
   .option-intro {
     cursor: pointer;
     padding: 10px;
-
     width: 100%;
     &:hover {
       background-color: #f1ecec;
