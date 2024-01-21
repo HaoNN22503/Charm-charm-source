@@ -40,40 +40,46 @@ const BeautyProfile = ({ params }: { params: { urlbeautyMain: string } }) => {
             </div>
             <div className="w-full flex justify-evenly mt-[20px]">
               <div className="flex items-center flex-col beauty-profile-main-detail w-[80%]">
-                <div className="flex beauty-profile-main-detail-content w-full justify-between">
-                  <div className="beauty-profile-main-detail-image w-[48%]">
-                    <Image
-                      src={items.imgBeauty.imgBeauty2.src}
-                      alt={items.imgBeauty.imgBeauty2.alt}
-                      width={items.imgBeauty.imgBeauty2.width}
-                      height={items.imgBeauty.imgBeauty2.height}
-                      loading="lazy"
-                      className="flex flex-shrink-0 h-[450px] w-full beauty-profile-main-detail-image"
-                    />
-                  </div>
-                  <div className="text-[20px] beauty-profile-main-detail-profile w-[48%] text-justify">
+                <div className="beauty-profile-main-detail-image w-[full]">
+                  <Image
+                    src={items.imgBeauty.imgBeauty1.src}
+                    alt={items.imgBeauty.imgBeauty1.alt}
+                    width={items.imgBeauty.imgBeauty1.width}
+                    height={items.imgBeauty.imgBeauty1.height}
+                    loading="lazy"
+                    className="flex flex-shrink-0 h-[450px] w-full beauty-profile-main-detail-image"
+                  />
+                </div>
+                <div className="w-[full] mt-[10px]">
+                  {" "}
+                  <div className="text-[20px] beauty-profile-main-detail-profile  text-justify">
                     <p className="">{items.contentBeauty.content1}</p>
                     <p className="mt-[20px]">{items.contentBeauty.content2}</p>
+                  </div>
+                  <div className="text-[20px] beauty-profile-main-detail-profile text-justify">
+                    <p className="mt-[20px]">{items.contentBeauty.step1}</p>
                     <p className="mt-[20px]">{items.contentBeauty.content3}</p>
                   </div>
-                </div>
-                <div className="flex mt-[40px] beauty-profile-main-detail-content-2 w-full justify-between">
-                  <div className="text-[20px] beauty-profile-main-detail-profile w-[48%] text-justify">
-                    {" "}
+                  <div className="text-[20px] beauty-profile-main-detail-profile text-justify">
+                    <p className="">{items.contentBeauty.step2}</p>
+                    <p className="mt-[20px]">{items.contentBeauty.step3}</p>
+                    <p className="mt-[20px]">{items.contentBeauty.step4}</p>
+                    <p className="mt-[20px]">{items.contentBeauty.step5}</p>
+                  </div>
+                  <div className="text-[20px] beauty-profile-main-detail-profile text-justify">
                     <p className="">{items.contentBeauty.content4}</p>
                     <p className="mt-[20px]">{items.contentBeauty.content5}</p>
-                    <p className="mt-[20px]">{items.contentBeauty.content6}</p>
                   </div>
-                  <div className="beauty-profile-main-detail-image w-[48%]">
-                    <Image
-                      src={items.imgBeauty.imgBeauty3.src}
-                      alt={items.imgBeauty.imgBeauty3.alt}
-                      width={items.imgBeauty.imgBeauty3.width}
-                      height={items.imgBeauty.imgBeauty3.height}
-                      loading="lazy"
-                      className="w-full h-[450px] beauty-profile-main-detail-image"
-                    />
-                  </div>
+                </div>
+                <div className="beauty-profile-main-detail-image mt-[10px] w-[full]">
+                  <Image
+                    src={items.imgBeauty.imgBeauty2.src}
+                    alt={items.imgBeauty.imgBeauty2.alt}
+                    width={items.imgBeauty.imgBeauty2.width}
+                    height={items.imgBeauty.imgBeauty2.height}
+                    loading="lazy"
+                    className="flex flex-shrink-0 h-[450px] w-full beauty-profile-main-detail-image"
+                  />
                 </div>
               </div>
             </div>

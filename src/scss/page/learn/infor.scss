@@ -1,0 +1,23 @@
+@media (max-width: 1023px) {
+  .info-learnpage-image {
+    width: 80%;
+  }
+  .info-learnpage-content-container {
+    padding: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .info-learnpage-image {
+    width: 100%;
+  }
+  .info-learnpage-content-container {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .info-learnpage-tittle {
+    font-size: 17px;
+  }
+  .info-learnpage-tittle-container {
+    font-size: 30px;
+  }
+}

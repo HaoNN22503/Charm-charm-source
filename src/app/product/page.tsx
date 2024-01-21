@@ -12,6 +12,9 @@ const ProductHAB = () => {
   const { cart, setCart } = useContext(CartContext);
   const router = useRouter();
   const [cartVisible, setCartVisible] = useState(false);
+  const [selectedSize, setSelectedSize] = useState<string>("");
+  const [defaultSize, setDefaultSize] = useState<string>("");
+  const [defaultPrice, setDefaultPrice] = useState<number>();
 
   const hideShoppingCart = () => {
     setCartVisible(false);
@@ -19,6 +22,14 @@ const ProductHAB = () => {
   useEffect(() => {
     localStorage.setItem("shoppingBag", JSON.stringify(cart));
   }, [cart]);
+  useEffect(() => {
+    console.log("Default Size:", defaultSize);
+    console.log("Default Price:", defaultPrice);
+  }, [defaultSize, defaultPrice]);
+  useEffect(() => {
+    console.log("Updated Cart:", cart);
+  }, [cart]);
+
   return (
     <div>
       <div className="bg-[#a72020] product-HAB__container">
@@ -34,6 +45,11 @@ const ProductHAB = () => {
               >
                 <div
                   onClick={() => {
+                    const firstSize = items.capacities[0].size;
+                    const firstPrice = items.capacities[0].price;
+
+                    setDefaultSize(firstSize);
+                    setDefaultPrice(firstPrice);
                     router.push(`/product/${items.idProduct}`);
                   }}
                   className="w-[200px] h-[210px]  cursor-pointer product-HAB-items"
@@ -53,12 +69,19 @@ const ProductHAB = () => {
                 <div className="flex text-sm mt-3 product-HAB-items-btn">
                   <p
                     onClick={() => {
+                      // Set to defaultSize if not explicitly set
                       handleAddToCart(
                         cart,
                         setCart,
                         items.idProduct,
-                        items.quantity
+                        items.quantity,
+                        items.capacities,
+                        selectedSize || defaultSize // Use selectedSize if set, otherwise use defaultSize
                       );
+                      const firstSize = items.capacities[0].size;
+                      const firstPrice = items.capacities[0].price;
+                      setDefaultSize(firstSize);
+                      setDefaultPrice(firstPrice);
                     }}
                     className="cursor-pointer hover:underline product-HAB-add"
                   >
@@ -66,7 +89,7 @@ const ProductHAB = () => {
                   </p>
 
                   <p className="ml-auto product-HAB-items-price">
-                    {items.priceProduct.toLocaleString("vi-VN")}đ
+                    {items.capacities[0].price.toLocaleString("vi-VN")}đ
                   </p>
                 </div>
               </div>

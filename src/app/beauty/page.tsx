@@ -88,16 +88,22 @@ const BeautyHABPage = () => {
                 width={items.imgBeauty.imgBeauty1.width}
                 height={items.imgBeauty.imgBeauty1.height}
                 loading="lazy"
-                className="w-full h-full  object-fill beauty-HAB-main-option-image"
+                className="w-full h-full  object-cover beauty-HAB-main-option-image"
               />
             </div>
             <div className="w-[40%] h-[500px] bg-white p-[20px] text-[#a72020] px-[40px] py-[60px] beauty-info">
               <p className="text-[30px] font-[550] beauty-info-tittle">
                 {items.tittleBeauty}
               </p>
-              <p className="pt-[50px] text-[17px] text-[#611a1a] beauty-info-content">
-                {items.contentBeauty.content1.slice(0, 188) + " ... xem thêm"}
-              </p>
+              {items.contentBeauty.content1.length > 188 ? (
+                <p className="pt-[50px] text-[17px] text-[#611a1a] beauty-info-content">
+                  {items.contentBeauty.content1.slice(0, 188) + " ... xem thêm"}
+                </p>
+              ) : (
+                <p className="pt-[50px] text-[17px] text-[#611a1a] beauty-info-content">
+                  {items.contentBeauty.content1}
+                </p>
+              )}
               <div className="mt-[50px] p-[10px] border border-solid border-[#a72020] w-fit rounded-[7px]  beauty-info-btn">
                 <Link href={`/beauty/beautyMain/${items.idBeauty}`}>
                   <p>Tiếp tục đọc</p>
@@ -112,7 +118,7 @@ const BeautyHABPage = () => {
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className="p-[50px] flex flex-wrap beauty-HAB-nomal-option w-full justify-between"
+        className="p-[50px] flex flex-wrap beauty-HAB-nomal-option w-full justify-evenly"
       >
         {BeautyList.slice(startIndex, endIndex).map(
           (items: BeautyListTypes) => {
@@ -127,7 +133,7 @@ const BeautyHABPage = () => {
                     alt={items.imgBeauty.imgBeauty1.alt}
                     width={270}
                     height={250}
-                    className="h-full w-full object-fill beauty-HAB-nomal-image"
+                    className="h-full w-full object-cover beauty-HAB-nomal-image"
                   />
                 </div>
                 <div>
@@ -135,14 +141,14 @@ const BeautyHABPage = () => {
                     {items.tittleBeauty}
                   </p>
 
-                  {items.contentBeauty.contentHead1.length > 80 ? (
+                  {items.contentBeauty.content1.length > 80 ? (
                     <p className="text-[13px]">
-                      {items.contentBeauty.contentHead1.slice(0, 80) +
+                      {items.contentBeauty.content1.slice(0, 80) +
                         " ... xem thêm"}
                     </p>
                   ) : (
                     <p className="text-[13px]">
-                      {items.contentBeauty.contentHead1}
+                      {items.contentBeauty.content1}
                     </p>
                   )}
                 </div>

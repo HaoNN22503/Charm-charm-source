@@ -1,0 +1,40 @@
+@media (max-width: 1023px) {
+  .healthyWay-learnpage-image {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .healthyWay-learnpage-image-detail {
+    width: 80%;
+  }
+  .healthyWay-learnpage-content-container {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .healthyWay-learnpage-content {
+    width: 100%;
+  }
+  .healthyWay-learnpage-tittle-container {
+    font-size: 25px;
+  }
+  .healthy-learnpage-tittle-container {
+    font-size: 25px;
+    padding: 10px;
+  }
+  .healthy-learnpage-content-container {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .healthyWay-learnpage-image {
+    width: 100%;
+  }
+  .healthyWay-learnpage-content-container {
+    font-size: 14px;
+  }
+  .healthy-learnpage-tittle-container {
+    font-size: 25px;
+  }
+}

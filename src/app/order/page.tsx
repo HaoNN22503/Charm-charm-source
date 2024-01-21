@@ -83,7 +83,7 @@ const OrderPage = () => {
     );
 
     const cartTotal = cart.reduce((total, cartItem) => {
-      return total + cartItem.priceProduct * cartItem.quantity;
+      return total + cartItem.capacities[0].price * cartItem.quantity;
     }, 0);
 
     return selectedItemsTotal + cartTotal + transport;
@@ -274,7 +274,7 @@ const OrderPage = () => {
                             </p>
                           </div>
                           <p className="text-[14px] w-[50%] order-option-cart-product-buying-option-price">
-                            {items.priceProduct.toLocaleString("vi-VN")}đ
+                            {items.capacities[0].price.toLocaleString("vi-VN")}đ
                           </p>
                         </div>
                       </div>

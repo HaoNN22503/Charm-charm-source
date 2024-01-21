@@ -1,3 +1,14 @@
+@media (max-width: 1439px) {
+  .beauty-profile-nomal-detail-image-p1-flex {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .beauty-profile-nomal-detail-image-detail-p1-flex {
+    width: 100%;
+  }
+}
 @media (max-width: 1023px) {
   .beauty-profile-tittle {
     width: 90%;
@@ -23,8 +34,8 @@
   .beauty-profile-detail-content-header {
     font-size: 16px;
   }
-  .beauty-profile-tittle-detail {
-    font-size: 20px;
+  .beauty-profile-nomal-tittle-detail {
+    font-size: 25px;
   }
   .beauty-profile-detail {
     width: 90%;
@@ -34,8 +45,20 @@
     margin-top: 10px;
   }
   .beauty-profile-image {
-    height: 300px;
     margin-top: 10px;
+  }
+  .beauty-profile-nomal-detail {
+    font-size: 18px;
+  }
+  .beauty-profile-nomal-detail-profile-p2-flex {
+    font-size: 18px;
+    flex-direction: column;
+  }
+  .beauty-profile-nomal-detail-profile-p2-flex-content {
+    width: 100%;
+  }
+  .beauty-profile-nomal-detail-image-p1-flex {
+    width: 100%;
   }
 }
 @media (max-width: 424px) {
@@ -58,5 +81,14 @@
   .beauty-profile-detail-content-container {
     flex-direction: column-reverse;
     width: 100%;
+  }
+  .beauty-profile-nomal-detail {
+    font-size: 16px;
+  }
+  .beauty-profile-nomal-detail-profile-p2-flex-content {
+    font-size: 16px;
+  }
+  .beauty-profile-nomal-detail-profile {
+    font-size: 16px;
   }
 }

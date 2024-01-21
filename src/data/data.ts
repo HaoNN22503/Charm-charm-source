@@ -6,64 +6,61 @@ import {
   CuisineListTypes,
   CommentFeedbackTypes,
 } from "./../types/Interface";
+import img1 from "../assets/image/CuisineImage (10).svg";
+import img2 from "../assets/image/CuisineImage (1).svg";
+import img3 from "../assets/image/CuisineImage (14).svg";
+import img4 from "../assets/image/CuisineImage (6).svg";
+import img5 from "../assets/image/CuisineImage (13).svg";
+import img6 from "../assets/image/CuisineImage (9).svg";
+import imgBeauty1 from "../assets/image/CuisineImage (11).svg";
+import imgBeauty2 from "../assets/image/CuisineImage (12).svg";
+import imgBeauty3 from "../assets/image/CuisineImage (5).svg";
+import imgBeauty4 from "../assets/image/CuisineImage (8).svg";
+import imgBeauty5 from "../assets/image/CuisineImage (3).svg";
+import imgBeauty6 from "../assets/image/CuisineImage (4).svg";
+import imgBeauty7 from "../assets/image/CuisineImage (2).svg";
+import imgBeauty8 from "../assets/image/CuisineImage (7).svg";
+import imgSaffron4g1 from "../assets/image/Saffron4g (1).svg";
+import imgSaffron4g2 from "../assets/image/Saffron4g (2).svg";
+import imgSaffron4g3 from "../assets/image/Saffron4g (3).svg";
+import imgSaffron4g4 from "../assets/image/Saffron4g (4).svg";
 import { CommentCardTypes, ProductListTypes } from "@/types/Interface";
 
 export const CommentUsers: CommentCardTypes[] = [
   {
     idComment: 1,
     img: "",
-    name: "abcxyz",
+    name: "Thu Huyền",
     comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
+      "Dịch vụ tư vấn tận tình, mở lọ ra thấy sợi nhuỵ dài thật, chuẩn ngạch Iran, hương thơm thư thái, dùng khá thích.",
   },
   {
     idComment: 2,
     img: "",
-    name: "bababa",
+    name: "Minh Quang",
     comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
+      "Mình dùng một thời gian thấy ngủ ngon giấc hơn hẳn, bao bì thiết kế cũng đẹp đấy!",
   },
   {
     idComment: 3,
     img: "",
-    name: "hahaha",
+    name: "Hồng Ngọc",
     comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
+      "Mỗi sáng mình lại pha cốc saffron ngâm đông trùng hạ thảo ấm cho cả nhà. Tiện lợi, nhanh gọn mà bổ dưỡng.",
   },
   {
     idComment: 4,
     img: "",
-    name: "cucwrvrv",
+    name: "Nguyet Minh",
     comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
+      "Mình đã sử dụng Nhụy hoa nghệ tây của Charm Charm, mình vô cùng hài lòng, mình ngủ thấy ngôn giấc hơn, người không còn mệt mỏi nữa.",
   },
   {
     idComment: 5,
     img: "",
-    name: "xữewx",
+    name: "....",
     comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
-  },
-  {
-    idComment: 6,
-    img: "",
-    name: "lancke",
-    comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
-  },
-  {
-    idComment: 7,
-    img: "",
-    name: "ịijfi",
-    comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
-  },
-  {
-    idComment: 8,
-    img: "",
-    name: "nccnc",
-    comment:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley oforem Ipsum is simply dummy text of the printing and typesetting industry Ipsum is simply dummy Lorem Ipsum has",
+      "Cảm ơn vì sự nhiệt tình của các bạn, cảm ơn bạn đã giao hàng. Hôm qua mình nói không cần nhưng hôm nay các bạn vẫn mang xuống, cảm ơn các bạn nhiều lắm! Năm mới chúc các bạn bình an , thịnh vượng vạn sự như ý nhé.",
   },
 ];
 export const AdditionalItemsList: AdditionalItemTypes[] = [
@@ -108,9 +105,49 @@ export const ProductList: ProductListTypes[] = [
   {
     idProduct: "1",
     nameProduct: "Saffron (1gr)",
-    priceProduct: 500000,
-    profileProduct:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
+
+    profileProduct: {
+      topicProfile: "Mô tả sản phẩm",
+      productProfile: "Lọ 1 gram Saffron (Khoảng 500 sợi Nhuỵ hoa nghệ tây)",
+      contentProductProfile1: "",
+      contentProductProfile2: "",
+      contentProductProfile3: "",
+      tittleProfile1:
+        "1) Charm Charm Saffron khác biệt gì với các loại nhuỵ hoa nghệ tây thông thường trên thị trường?",
+      tittleProfile2: "2)  Công dụng của Saffron",
+      tittleProfile3: "3) Cách dùng",
+      contentTittle1p1: "- 100% cam kết đủ giấy tờ:",
+      contentTittle1p2:
+        "Nhập khẩu chính ngạch từ Iran, Chứng nhận Kiểm dịch Thực vật, Quy chuẩn của Y tế, Cục Quản lý chất lượng Nông, Lâm Sản & Thuỷ sản, kết quả thử nghiệm do VILAS ISO/IEC 2017 Quốc tế.",
+      contentTittle1p3:
+        "- Charm Charm Saffron tuyển chọn từ những cây nghệ tây 4-5 năm tuổi: Thời kỳ đỉnh cao nhất trong vòng đời 8 năm tuổi thọ của cây.",
+      contentTittle1p4:
+        "- Chỉ nhập khẩu dòng Extra Super Negin cao cấp, thượng hạng nhất:",
+      contentTittle1p5:
+        "Nghiên cứu dựa trên hàm lượng dinh dưỡng, màu sắc, mùi vị, độ ẩm,... Người tiêu dùng thông thái nhận biết qua chiều dài sợi, không vụn, màu sắc sợi đỏ sẫm, không lẫn gốc vàng hay cam, không nhiều bụi, vụn.",
+      contentTittle1p6:
+        "- Giá cả hợp lý, hỗ trợ tối ưu người tiêu dùng và đối tác đại lý:",
+      contentTittle1p7:
+        "Một sản phẩm của Công ty TNHH Global Trading Đức Thành Phát đạt danh hiệu Top 10 Thương hiệu hàng đầu Việt Nam 2023 do Trung tâm Nghiên cứu phát triển Doanh nghiệp Châu Á.",
+      contentTittle2p1:
+        "- Giàu vitamin và các chất picrocrocin, crocin giúp trung hòa các gốc tự do, chống oxy hoá gây ra các bệnh ung thư.",
+      contentTittle2p2:
+        "- Tăng cường sức đề kháng, đặc biệt phụ nữ mang thai và sau sinh làm giảm triệu chứng thai kỳ.",
+      contentTittle2p3:
+        "- Hỗ trợ hạ huyết áp, trầm cảm, các bệnh tim mạch, tiêu hoá, thị lực, hệ thần kinh, Alzheimer.",
+      contentTittle2p4: "- Cải thiện chất lượng giấc ngủ ngon hơn, sâu hơn.",
+      contentTittle2p5: "- Điều hoà nội tiết tố, tăng cường nhu cầu sinh lý.",
+      contentTittle2p6:
+        "- Phòng chống lão hoá, làn da trắng sáng, mịn màng, hồng hào hơn, làm giảm sắc tố và các đốm đen trên da, chữa lành vết sẹo, mờ thâm.",
+      contentTittle2p7:
+        "- Sản phẩm không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh.",
+      contentTittle3p1:
+        "- Chỉ cần thả 5-10 sợi saffron vào cốc nước ấm 200ml, chờ vài phút để màu vàng từ sợi nhụy bắt đầu tan ra. Thức uống vừa thơm đậm mùi saffron, vừa có màu vàng đẹp mắt. Đây là một cách sử dụng đơn giản nhất mà vẫn phát huy tối đa tác dụng bổ dưỡng.",
+      contentTittle3p2:
+        "Có thể pha cùng mật ong, đường, sữa tươi, các loại trà xanh, trà hoa cúc, trà hoa hồng, táo đỏ, kỳ tử,... để tăng hương vị và dễ uống hơn.",
+      contentTittle3p3:
+        "Theo Cục quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA), liều lượng khuyên dùng của người trưởng thành là mỗi ngày 20-50 sợi.",
+    },
 
     imgProfileThumbNails: [
       {
@@ -139,6 +176,7 @@ export const ProductList: ProductListTypes[] = [
       },
     ],
     quantity: 1,
+    capacities: [{ size: "1 gr", price: 300000, quantity: 1 }],
     orders: [
       { productId: 1, quantity: 1 },
       { productId: 2, quantity: 2 },
@@ -147,11 +185,134 @@ export const ProductList: ProductListTypes[] = [
   },
   {
     idProduct: "2",
-    nameProduct: "Bột Saffron",
-    priceProduct: 1000000,
-    profileProduct:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
+    nameProduct: "Saffron (4gr)",
 
+    profileProduct: {
+      topicProfile: "Mô tả sản phẩm",
+      productProfile: "Diện mạo mới của hộp saffron 4gr:",
+      contentProductProfile1:
+        "Hộp mới với thiết kế sang trọng và hiện đại, nhuỵ hoa nghệ tây được đặt trong 2 hũ đựng vàng ánh, tròn trĩnh và thời thượng. Túi quà sang trọng rất thích hợp để tri ân cha mẹ, gửi tặng các chị em phụ nữ, bạn bè hay đồng nghiệp.",
+      contentProductProfile2:
+        "Charm Charm Saffron chăm chút tinh tế từng sản phẩm Nhuỵ hoa nghệ tây để mỗi món quà sức khỏe mang đến cho khách hàng là tầm đẳng cấp và sự tri ân.",
+      contentProductProfile3: "",
+      tittleProfile1:
+        "1) Charm Charm Saffron khác biệt gì với các loại nhuỵ hoa nghệ tây thông thường trên thị trường? ",
+      tittleProfile2: "2)  Công dụng của Saffron",
+      tittleProfile3: "3) Cách dùng",
+      contentTittle1p1: "- 100% cam kết đủ giấy tờ:",
+      contentTittle1p2:
+        "Nhập khẩu chính ngạch từ Iran, Chứng nhận Kiểm dịch Thực vật, Quy chuẩn của Y tế, Cục Quản lý chất lượng Nông, Lâm Sản & Thuỷ sản, kết quả thử nghiệm do VILAS ISO/IEC 2017 Quốc tế.",
+      contentTittle1p3:
+        "- Charm Charm Saffron tuyển chọn từ những cây nghệ tây 4-5 năm tuổi: Thời kỳ đỉnh cao nhất trong vòng đời 8 năm tuổi thọ của cây.",
+      contentTittle1p4:
+        "- Chỉ nhập khẩu dòng Extra Super Negin cao cấp, thượng hạng nhất:",
+      contentTittle1p5:
+        "Nghiên cứu dựa trên hàm lượng dinh dưỡng, màu sắc, mùi vị, độ ẩm,... Người tiêu dùng thông thái nhận biết qua chiều dài sợi, không vụn, màu sắc sợi đỏ sẫm, không lẫn gốc vàng hay cam, không nhiều bụi, vụn.",
+      contentTittle1p6:
+        "- Giá cả hợp lý, hỗ trợ tối ưu người tiêu dùng và đối tác đại lý:",
+      contentTittle1p7:
+        "Một sản phẩm của Công ty TNHH Global Trading Đức Thành Phát đạt danh hiệu Top 10 Thương hiệu hàng đầu Việt Nam 2023 do Trung tâm Nghiên cứu phát triển Doanh nghiệp Châu Á.",
+      contentTittle2p1:
+        "- Giàu vitamin và các chất picrocrocin, crocin giúp trung hòa các gốc tự do, chống oxy hoá gây ra các bệnh ung thư.",
+      contentTittle2p2:
+        "- Tăng cường sức đề kháng, đặc biệt phụ nữ mang thai và sau sinh làm giảm triệu chứng thai kỳ.",
+      contentTittle2p3:
+        "- Hỗ trợ hạ huyết áp, trầm cảm, các bệnh tim mạch, tiêu hoá, thị lực, hệ thần kinh, Alzheimer.",
+      contentTittle2p4: "- Cải thiện chất lượng giấc ngủ ngon hơn, sâu hơn.",
+      contentTittle2p5: "- Điều hoà nội tiết tố, tăng cường nhu cầu sinh lý.",
+      contentTittle2p6:
+        "- Phòng chống lão hoá, làn da trắng sáng, mịn màng, hồng hào hơn, làm giảm sắc tố và các đốm đen trên da, chữa lành vết sẹo, mờ thâm.",
+      contentTittle2p7:
+        "- Sản phẩm không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh.",
+      contentTittle3p1:
+        "- Chỉ cần thả 5-10 sợi saffron vào cốc nước ấm 200ml, chờ vài phút để màu vàng từ sợi nhụy bắt đầu tan ra. Thức uống vừa thơm đậm mùi saffron, vừa có màu vàng đẹp mắt. Đây là một cách sử dụng đơn giản nhất mà vẫn phát huy tối đa tác dụng bổ dưỡng.",
+      contentTittle3p2:
+        "Có thể pha cùng mật ong, đường, sữa tươi, các loại trà xanh, trà hoa cúc, trà hoa hồng, táo đỏ, kỳ tử,... để tăng hương vị và dễ uống hơn.",
+      contentTittle3p3:
+        "Theo Cục quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA), liều lượng khuyên dùng của người trưởng thành là mỗi ngày 20-50 sợi.",
+    },
+
+    imgProfileThumbNails: [
+      {
+        src: imgSaffron4g2,
+        alt: "",
+        width: 80,
+        height: 80,
+      },
+      {
+        src: imgSaffron4g1,
+        alt: "",
+        width: 80,
+        height: 80,
+      },
+      {
+        src: imgSaffron4g3,
+        alt: "",
+        width: 80,
+        height: 80,
+      },
+      {
+        src: imgSaffron4g4,
+        alt: "",
+        width: 80,
+        height: 80,
+      },
+    ],
+    quantity: 1,
+    orders: [
+      { productId: 1, quantity: 1 },
+      { productId: 2, quantity: 2 },
+    ],
+    capacities: [{ size: "4 gr", price: 1200000, quantity: 1 }],
+    selected: true,
+  },
+  {
+    idProduct: "3",
+    nameProduct: "Bột Saffron (1gr)",
+    profileProduct: {
+      topicProfile: "Mô tả sản phẩm",
+      productProfile: "So sánh loại bột saffron và loại nguyên sợi saffron: ",
+      contentProductProfile1:
+        "- Về chất lượng và chủng loại: Dòng Extra Super Negin cao cấp như nhau.",
+      contentProductProfile2:
+        "- Về thẩm thấu nhanh nhất vào cơ thể: loại bột xay sẽ hoà tan trong nước triệt để hơn loại nguyên sợi.",
+      contentProductProfile3:
+        "Về thẩm mỹ đẹp mắt: loại nguyên sợi nổi trội hơn loại bột xay.",
+      tittleProfile1:
+        "1) Charm Charm Saffron khác biệt gì với các loại nhuỵ hoa nghệ tây thông thường trên thị trường?",
+      tittleProfile2: "2) Công dụng của Saffron",
+      tittleProfile3: "3) Cách dùng",
+      contentTittle1p1: "- 100% cam kết đủ giấy tờ:",
+      contentTittle1p2:
+        "Nhập khẩu chính ngạch từ Iran, Chứng nhận Kiểm dịch Thực vật, Quy chuẩn của Y tế, Cục Quản lý chất lượng Nông, Lâm Sản & Thuỷ sản, kết quả thử nghiệm do VILAS ISO/IEC 2017 Quốc tế.",
+      contentTittle1p3:
+        "- Charm Charm Saffron tuyển chọn từ những cây nghệ tây 4-5 năm tuổi: Thời kỳ đỉnh cao nhất trong vòng đời 8 năm tuổi thọ của cây.",
+      contentTittle1p4:
+        "- Chỉ nhập khẩu dòng Extra Super Negin cao cấp, thượng hạng nhất:",
+      contentTittle1p5:
+        "Nghiên cứu dựa trên hàm lượng dinh dưỡng, màu sắc, mùi vị, độ ẩm,... Người tiêu dùng thông thái nhận biết qua chiều dài sợi, không vụn, màu sắc sợi đỏ sẫm, không lẫn gốc vàng hay cam, không nhiều bụi, vụn.",
+      contentTittle1p6:
+        "- Giá cả hợp lý, hỗ trợ tối ưu người tiêu dùng và đối tác đại lý:",
+      contentTittle1p7:
+        "Một sản phẩm của Công ty TNHH Global Trading Đức Thành Phát đạt danh hiệu Top 10 Thương hiệu hàng đầu Việt Nam 2023 do Trung tâm Nghiên cứu phát triển Doanh nghiệp Châu Á.",
+      contentTittle2p1:
+        "- Giàu vitamin và các chất picrocrocin, crocin giúp trung hòa các gốc tự do, chống oxy hoá gây ra các bệnh ung thư.",
+      contentTittle2p2:
+        "- Tăng cường sức đề kháng, đặc biệt phụ nữ mang thai và sau sinh làm giảm triệu chứng thai kỳ.",
+      contentTittle2p3:
+        "- Hỗ trợ hạ huyết áp, trầm cảm, các bệnh tim mạch, tiêu hoá, thị lực, hệ thần kinh, Alzheimer.",
+      contentTittle2p4: "- Cải thiện chất lượng giấc ngủ ngon hơn, sâu hơn.",
+      contentTittle2p5: "- Điều hoà nội tiết tố, tăng cường nhu cầu sinh lý.",
+      contentTittle2p6:
+        "- Phòng chống lão hoá, làn da trắng sáng, mịn màng, hồng hào hơn, làm giảm sắc tố và các đốm đen trên da, chữa lành vết sẹo, mờ thâm.",
+      contentTittle2p7:
+        "- Sản phẩm không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh.",
+      contentTittle3p1:
+        "- Chỉ cần thả một ít lượng bột saffron vào cốc nước ấm 200ml, chờ vài phút để màu vàng từ sợi nhụy bắt đầu tan ra. Thức uống vừa thơm đậm mùi saffron, vừa có màu vàng đẹp mắt. Đây là một cách sử dụng đơn giản nhất mà vẫn phát huy tối đa tác dụng bổ dưỡng.",
+      contentTittle3p2:
+        "- Có thể pha cùng mật ong, đường, sữa tươi, các loại trà xanh, trà hoa cúc, trà hoa hồng, táo đỏ, kỳ tử,... để tăng hương vị và dễ uống hơn.",
+      contentTittle3p3: "",
+    },
     imgProfileThumbNails: [
       {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958346/BeautyProject/4_zdvcpb.svg",
@@ -183,15 +344,56 @@ export const ProductList: ProductListTypes[] = [
       { productId: 1, quantity: 1 },
       { productId: 2, quantity: 2 },
     ],
+    capacities: [{ size: "1gr", price: 300000, quantity: 1 }],
     selected: true,
   },
   {
-    idProduct: "3",
-    nameProduct: "Saffron mật ong",
-    priceProduct: 700000,
-    profileProduct:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
+    idProduct: "4",
+    nameProduct: "Saffron ngâm mật ong bạc hà",
 
+    profileProduct: {
+      topicProfile: "Mô tả sản phẩm",
+      productProfile: "",
+      contentProductProfile1:
+        "Thưởng thức ly Mật ong bạc hà pha Nhuỵ hoa nghệ tây thanh khiết để cùng đắm mình vào 2 lớp hương vị: thơm nồng của saffron và ngọt ngào từ mật ong.",
+      contentProductProfile2:
+        "Hội tụ trong hũ Charm Charm Saffron là những vị thảo mộc nổi tiếng lâu đời và vô cùng quý giá. Mật ong bạc hà nơi cao nguyên đá và saffron được nâng niu xử lý qua công nghệ sấy khô công phu nhằm giữ nguyên tính tự nhiên nhất cho sản phẩm.",
+      contentProductProfile3:
+        "Thức uống chiết xuất hoàn toàn từ thiên nhiên không chỉ thơm ngon đậm đà, mà còn mang lại nhiều lợi ích sức khỏe. Sự kết hợp hoàn hảo đầy dinh dưỡng, giúp bồi bổ cơ thể khoẻ mạnh, tăng cường sức đề kháng cho mọi người, mọi nhà.",
+      tittleProfile1:
+        "1) Charm Charm Saffron khác biệt gì với các loại nhuỵ hoa nghệ tây thông thường trên thị trường? ",
+      tittleProfile2: "2)  Công dụng của Saffron",
+      tittleProfile3: "",
+      contentTittle1p1: "- 100% cam kết đủ giấy tờ:",
+      contentTittle1p2:
+        "Nhập khẩu chính ngạch từ Iran, Chứng nhận Kiểm dịch Thực vật, Quy chuẩn của Y tế, Cục Quản lý chất lượng Nông, Lâm Sản & Thuỷ sản, kết quả thử nghiệm do VILAS ISO/IEC 2017 Quốc tế.",
+      contentTittle1p3:
+        "- Charm Charm Saffron tuyển chọn từ những cây nghệ tây 4-5 năm tuổi: Thời kỳ đỉnh cao nhất trong vòng đời 8 năm tuổi thọ của cây.",
+      contentTittle1p4:
+        "- Chỉ nhập khẩu dòng Extra Super Negin cao cấp, thượng hạng nhất:",
+      contentTittle1p5:
+        "Nghiên cứu dựa trên hàm lượng dinh dưỡng, màu sắc, mùi vị, độ ẩm,... Người tiêu dùng thông thái nhận biết qua chiều dài sợi, không vụn, màu sắc sợi đỏ sẫm, không lẫn gốc vàng hay cam, không nhiều bụi, vụn.",
+      contentTittle1p6:
+        "- Giá cả hợp lý, hỗ trợ tối ưu người tiêu dùng và đối tác đại lý:",
+      contentTittle1p7:
+        "Một sản phẩm của Công ty TNHH Global Trading Đức Thành Phát đạt danh hiệu Top 10 Thương hiệu hàng đầu Việt Nam 2023 do Trung tâm Nghiên cứu phát triển Doanh nghiệp Châu Á.",
+      contentTittle2p1:
+        "- Giàu vitamin và các chất picrocrocin, crocin giúp trung hòa các gốc tự do, chống oxy hoá gây ra các bệnh ung thư.",
+      contentTittle2p2:
+        "- Tăng cường sức đề kháng, đặc biệt phụ nữ mang thai và sau sinh làm giảm triệu chứng thai kỳ.",
+      contentTittle2p3:
+        "- Hỗ trợ hạ huyết áp, trầm cảm, các bệnh tim mạch, tiêu hoá, thị lực, hệ thần kinh, Alzheimer.",
+      contentTittle2p4: "- Cải thiện chất lượng giấc ngủ ngon hơn, sâu hơn.",
+      contentTittle2p5: "- Điều hoà nội tiết tố, tăng cường nhu cầu sinh lý.",
+      contentTittle2p6:
+        "- Phòng chống lão hoá, làn da trắng sáng, mịn màng, hồng hào hơn, làm giảm sắc tố và các đốm đen trên da, chữa lành vết sẹo, mờ thâm.",
+      contentTittle2p7:
+        "- Sản phẩm không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh.",
+      contentTittle3p1:
+        "Theo Cục quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA), liều lượng khuyên dùng của người trưởng thành là mỗi ngày 20-50 sợi.",
+      contentTittle3p2: "",
+      contentTittle3p3: "",
+    },
     imgProfileThumbNails: [
       {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958337/BeautyProject/6_izqknm.svg",
@@ -223,16 +425,61 @@ export const ProductList: ProductListTypes[] = [
       { productId: 1, quantity: 1 },
       { productId: 2, quantity: 2 },
     ],
+    capacities: [
+      { size: "220ml", price: 280000, quantity: 1 },
+      { size: "400ml", price: 450000, quantity: 1 },
+      { size: "500ml", price: 580000, quantity: 1 },
+    ],
     selected: true,
   },
 
   {
-    idProduct: "4",
+    idProduct: "5",
     nameProduct: "Saffron mật ong & Đông Trùng Hạ Thảo",
-    priceProduct: 1500000,
-    profileProduct:
-      "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. I",
-
+    profileProduct: {
+      topicProfile: "Mô tả sản phẩm",
+      productProfile: "So sánh loại bột saffron và loại nguyên sợi saffron:",
+      contentProductProfile1:
+        "- Về chất lượng và chủng loại: Dòng Extra Super Negin cao cấp như nhau.",
+      contentProductProfile2:
+        "- Về thẩm thấu nhanh nhất vào cơ thể: loại bột xay sẽ hoà tan trong nước triệt để hơn loại nguyên sợi.",
+      contentProductProfile3:
+        "- Về thẩm mỹ đẹp mắt: loại nguyên sợi nổi trội hơn loại bột xay",
+      tittleProfile1:
+        "1) Charm Charm Saffron khác biệt gì với các loại nhuỵ hoa nghệ tây thông thường trên thị trường?",
+      tittleProfile2: "2)  Công dụng của Saffron",
+      tittleProfile3: "3) Cách dùng ",
+      contentTittle1p1: "- 100% cam kết đủ giấy tờ:",
+      contentTittle1p2:
+        "Nhập khẩu chính ngạch từ Iran, Chứng nhận Kiểm dịch Thực vật, Quy chuẩn của Y tế, Cục Quản lý chất lượng Nông, Lâm Sản & Thuỷ sản, kết quả thử nghiệm do VILAS ISO/IEC 2017 Quốc tế.",
+      contentTittle1p3:
+        "- Charm Charm Saffron tuyển chọn từ những cây nghệ tây 4-5 năm tuổi: Thời kỳ đỉnh cao nhất trong vòng đời 8 năm tuổi thọ của cây.",
+      contentTittle1p4:
+        "- Chỉ nhập khẩu dòng Extra Super Negin cao cấp, thượng hạng nhất:",
+      contentTittle1p5:
+        "Nghiên cứu dựa trên hàm lượng dinh dưỡng, màu sắc, mùi vị, độ ẩm,... Người tiêu dùng thông thái nhận biết qua chiều dài sợi, không vụn, màu sắc sợi đỏ sẫm, không lẫn gốc vàng hay cam, không nhiều bụi, vụn.",
+      contentTittle1p6:
+        "- Giá cả hợp lý, hỗ trợ tối ưu người tiêu dùng và đối tác đại lý:",
+      contentTittle1p7:
+        "Một sản phẩm của Công ty TNHH Global Trading Đức Thành Phát đạt danh hiệu Top 10 Thương hiệu hàng đầu Việt Nam 2023 do Trung tâm Nghiên cứu phát triển Doanh nghiệp Châu Á.",
+      contentTittle2p1:
+        "- Giàu vitamin và các chất picrocrocin, crocin giúp trung hòa các gốc tự do, chống oxy hoá gây ra các bệnh ung thư.",
+      contentTittle2p2:
+        "- Tăng cường sức đề kháng, đặc biệt phụ nữ mang thai và sau sinh làm giảm triệu chứng thai kỳ.",
+      contentTittle2p3:
+        "- Hỗ trợ hạ huyết áp, trầm cảm, các bệnh tim mạch, tiêu hoá, thị lực, hệ thần kinh, Alzheimer.",
+      contentTittle2p4: "- Cải thiện chất lượng giấc ngủ ngon hơn, sâu hơn.",
+      contentTittle2p5: "- Điều hoà nội tiết tố, tăng cường nhu cầu sinh lý.",
+      contentTittle2p6:
+        "- Phòng chống lão hoá, làn da trắng sáng, mịn màng, hồng hào hơn, làm giảm sắc tố và các đốm đen trên da, chữa lành vết sẹo, mờ thâm.",
+      contentTittle2p7:
+        "- Sản phẩm không phải là thuốc, không có tác dụng thay thế thuốc chữa bệnh.",
+      contentTittle3p1:
+        "- Chỉ cần thả một ít lượng bột saffron vào cốc nước ấm 200ml, chờ vài phút để màu vàng từ sợi nhụy bắt đầu tan ra. Thức uống vừa thơm đậm mùi saffron, vừa có màu vàng đẹp mắt. Đây là một cách sử dụng đơn giản nhất mà vẫn phát huy tối đa tác dụng bổ dưỡng.",
+      contentTittle3p2:
+        "- Có thể pha cùng mật ong, đường, sữa tươi, các loại trà xanh, trà hoa cúc, trà hoa hồng, táo đỏ, kỳ tử,... để tăng hương vị và dễ uống hơn.",
+      contentTittle3p3: "",
+    },
     imgProfileThumbNails: [
       {
         src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1702958345/BeautyProject/3_vuctbe.svg",
@@ -265,47 +512,55 @@ export const ProductList: ProductListTypes[] = [
       { productId: 1, quantity: 1 },
       { productId: 2, quantity: 2 },
     ],
+    capacities: [
+      { size: "220ml", price: 280000, quantity: 1 },
+      { size: "400ml", price: 450000, quantity: 1 },
+      { size: "500ml", price: 580000, quantity: 1 },
+    ],
     selected: true,
   },
 ];
 export const BeautyListMain: BeautyListMainTypes[] = [
   {
     idBeauty: "1",
+    topicBeauty: "Trẻ hoá làn da",
     imgBeauty: {
       imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618376/BeautyProject/SF6_pw3jlr.jpg",
+        src: imgBeauty1,
         alt: "",
-        width: 912,
-        height: 513,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618377/BeautyProject/2_dyaogx.jpg",
-        alt: "",
-        width: 400,
+        width: 500,
         height: 500,
       },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618380/BeautyProject/4_fti6na.jpg",
+      imgBeauty2: {
+        src: imgBeauty2,
         alt: "",
-        width: 400,
+        width: 500,
         height: 500,
       },
     },
     tittleBeauty:
-      "Vì sao phụ nữ nên tìm hiểu và sử dụng Saffron từ khi còn trẻ?",
+      "5 bí mật tiết lộ Saffron làm trẻ hoá làn da, mềm mại và rạng rỡ",
     contentBeauty: {
+      step1:
+        "1) Saffron chứa các thành phần chống oxy hóa, góp phần phòng tránh ung thư: Saffron giàu các chất như crocin, picrocrocin, safranal, kaempferol và crocetin.",
+      step2:
+        "2) Chất caroten có trong saffron được nghiên cứu có thể phục hồi tế bào da tổn thương và đảm bảo giảm thiểu các tác nhân từ ô nhiễm môi trường hàng ngày.",
+      step3:
+        "3) Cải thiện tâm trạng, chất lượng giấc ngủ ngon hơn và đem lại cảm giác tươi tỉnh: Sự hiện diện của các thành phần hoạt tính là safranal và crocin, làm tăng mức serotonin trong cơ thể. Mùi hương của saffron còn giúp người sử dụng giảm stress.",
+      step4:
+        "4) Ngăn ngừa và điều trị mụn, xóa mờ vết thâm, phục hồi tình trạng da sau tổn thương, chống lão hóa, loại bỏ thâm, nám hay tàn nhang: Saffron chứa nhiều vitamin, khoáng chất thiết yếu và các chất chống oxy hóa.",
+      step5:
+        "5) Hỗ trợ làm đẹp, bảo vệ làn da khỏe mạnh khỏi tia UV, duy trì vẻ trắng hồng, sáng mịn hấp dẫn: Loại dược liệu quý này cải thiện vẻ đẹp của làn da từ bên trong.",
       content1:
-        "Rất nhiều người phụ nữ lúc trẻ thường bỏ qua việc chăm sóc sức khỏe và cho đến khi cơ thể xuất hiện dấu hiệu tuổi tác mới bắt đầu tìm kiếm những phương pháp trẻ hóa. Nhưng ở tuổi đó, những loại mỹ phẩm, các liệu trình spa hay cả phẫu thuật thẩm mỹ cũng chẳng thể kéo dài nét xuân!",
+        "Khi già đi, làn da của chúng ta cũng sẽ bị lão hoá và giảm tính đàn hồi.",
       content2:
-        "NẾU BẠN THỰC SỰ MUỐN GIỮ VẺ ĐẸP LÂU DÀI, SỨC KHỎE DẺO DAI THÌ NÊN SỬ DỤNG SAFFRON NGAY KHI CÒN TRẺ! ",
+        "Theo báo cáo của nhiều tài liệu nghiên cứu nước ngoài, các nhà khoa học chỉ ra 5 lợi ích với sắc đẹp khi sử dụng Nhuỵ hoa nghệ tây kỳ diệu như sau:",
       content3:
-        "Saffron được mệnh danh là “vàng đỏ” Trung Đông bởi giá trị quý báu của nó. Từ xa xưa, Nữ hoàng Ai Cập Cleopatra đã sử dụng Saffron để gìn giữ sắc đẹp và tăng sự quyến rũ của mình. Cũng như các vua chúa, tầng lớp quý tộc thời cổ đại và trung cổ đã sử dụng Saffron để làm đẹp.",
+        "Nhờ đó, chúng giúp chống lại gốc tự do trong cơ thể và bảo vệ sức khỏe của người sử dụng. ",
       content4:
-        "Trong Saffron, có hàng trăm chất dinh dưỡng hữu cơ giúp 𝒍𝒂̀𝒏 𝒅𝒂 𝒕𝒓𝒂̆́𝒏𝒈 𝒉𝒐̂̀𝒏𝒈, 𝒄𝒂̆𝒏𝒈 𝒎𝒊̣𝒏 và ngăn ngừa mụn, nám. Các chất chống oxy cực mạnh trong Saffron có khả năng đ𝒊𝒆̂̀𝒖 𝒄𝒉𝒊̉𝒏𝒉 𝒃𝒆́𝒐 𝒑𝒉𝒊̀ và các rối loạn chuyển hóa liên quan, hữu ích trong việc 𝒑𝒉𝒐̀𝒏𝒈 𝒏𝒈𝒖̛̀𝒂 𝒗𝒂̀ 𝒌𝒊𝒆̂̉𝒎 𝒔𝒐𝒂́𝒕 𝒕𝒊̀𝒏𝒉 𝒕𝒓𝒂̣𝒏𝒈 𝒕𝒉𝒖̛̀𝒂 𝒄𝒂̂𝒏!",
+        "Khi bắt đầu quy trình chăm sóc da hàng ngày, bạn có thể cải thiện làn da của mình với Nhuỵ hoa nghệ tây. Đó chính là món quà thiên nhiên đã được sử dụng hàng trăm năm nay vì sức khỏe, vì sắc đẹp.",
       content5:
-        "Bên cạnh đó, Saffron 𝒕𝒂̆𝒏𝒈 𝒔𝒖̛́𝒄 đ𝒆̂̀ 𝒌𝒉𝒂́𝒏𝒈, trao cho bạn một “tấm khiên” bảo vệ sức khỏe lâu dài. Saffron chứa nhiều carotenoid, retinol nên có khả năng chống oxy hóa. Saffron dùng làm mặt nạ giúp làn da sáng khỏe, kháng viêm, chống khuẩn và điều trị các chứng mụn viêm rất hiệu quả.",
-      content6:
-        "Như vẫn gọi là {'triệt để từ trong ra ngoài'}, bạn có thể sử dụng Saffron làm gia vị nêm nếm tạo màu sắc cho món ăn có màu vàng tươi đẹp tự nhiên. Như vậy bạn sẽ được {'chăm sóc'} cả ngày bằng Saffron.",
+        "Charm Charm Saffron đảm bảo mỗi sản phẩm đưa đến tay người tiêu dùng luôn đạt chuẩn chất lượng của quy trình sấy khô nghiêm ngặt, hiện đại, cam kết giấy chứng nhận nhập khẩu chính ngạch từ Iran và ISO-Norm quốc tế.",
     },
     typeBeauty: "Sức khỏe",
   },
@@ -313,957 +568,360 @@ export const BeautyListMain: BeautyListMainTypes[] = [
 export const BeautyList: BeautyListTypes[] = [
   {
     idBeauty: "1",
+    topicBeauty: "Sữa chua dưỡng nhan saffron",
     imgBeauty: {
       imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856415/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img2_yfgtix.png",
+        src: imgBeauty3,
         alt: "",
-        width: 1519.2,
-        height: 500,
+        width: 400,
+        height: 400,
       },
       imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697857817/BeautyProject/ImageBeautyOption_blq9rn.png",
+        src: imgBeauty4,
         alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697855832/BeautyProject/z4803563352611_eddcc23970a12a4423174cbac74047e4_qcycxg.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 0,
-        height: 0,
+        width: 200,
+        height: 400,
       },
     },
-    tittleBeauty: "Làm đẹp da bằng cách pha chế hỗn hợp saffron ngâm mật ong",
+    tittleBeauty: "Khéo tay hay làm với Sữa chua Saffron đẹp mắt ngon miệng",
     contentBeauty: {
-      contentHead1:
-        "Mỗi ngày một ly nước mật ong bạc hà Saffron cho tinh thần tươi trẻ hơn.",
-      contentHead2:
+      tittle1: "Nguyên liệu cần chuẩn bị:",
+      tittle2: "Nguyên liệu trang trí thêm:",
+      tittle3: "Cách nấu:",
+      step1:
+        "BƯỚC 1: Đặt một miếng vải dạ hoặc giấy nến dày vào một cái rây lớn và để trên một cái bát lớn. Múc sữa chua vào rây, phủ một miếng vải dạ hoặc 2 tờ giấy bếp khác và để riêng ở nhiệt độ phòng trong 25-30 phút (thao tác này được thực hiện để loại bỏ độ ẩm dư thừa).",
+      step2:
+        "BƯỚC 2: Nhấc ra và loại bỏ lớp giấy trên cùng của sữa chua, sau đó nạo sữa chua vào một cái bát và khuấy đều đường. Trộn các sợi nghệ tây với sữa đặc, sau đó cho hỗn hợp đó cùng chút vani tạo hương vào sữa chua và khuấy đều cho đến khi các nguyên liệu đã hòa lẫn vào nhau. (Bạn có thể làm trước bước này và bảo quản trong tủ lạnh.)",
+      step3:
+        "BƯỚC 3: Chia 6 ly nhỏ sau đó rải hạt dẻ cười lên trên. Đặt mỗi ly trên một chiếc đĩa với một vài lát xoài tươi và thưởng thức.",
+      step4: "",
+      step5: "",
+      step6: "",
+      content1:
+        "Sữa chua là món ăn dễ làm và phù hợp cho bữa xế hay món tráng miệng cho cả gia đình. Hôm nay các bạn vào bếp cùng Charm Charm Saffron thử Sữa chua Saffron mới lạ vừa ngon miệng, vừa tốt cho sức khỏe, trẻ đẹp làn da nhé!",
+      content2:
         " Mật ong bạc hà ngọt dịu, thơm mát hoà quyện với Saffron thoảng hương cỏ khô sẽ là thức uống bổ dưỡng, mang tới năng lượng tích cực mỗi ngày cho bạn và gia đình.",
-      contentTittle3: "𝐃𝐮̀𝐧𝐠 𝐡𝐨̂̃𝐧 𝐡𝐨̛̣𝐩 để 𝐮𝐨̂́𝐧𝐠",
-      content4:
-        "Chuẩn bị một chai thủy tinh được rửa sạch bằng nước nóng. Sau đó, ngâm 0,1 gram saffron cùng 100ml mật ong nguyên chất trong khoảng một ngày.",
-      content5:
-        "Đối với hỗn hợp này có thể dùng và bảo quản trong vòng 10 ngày. Mỗi lần dùng, bạn có thể uống một trực tiếp 1 thìa cà phê saffron ngâm mật ong hoặc pha với nước ấm.",
-      content6:
-        "Thời điểm để hỗn hợp phát huy công dụng hiệu quả là buổi sáng trước khi ăn và tối trước khi đi ngủ.",
-      contentTittle7: "𝐃𝐮̀𝐧𝐠 𝐡𝐨̂̃𝐧 𝐡𝐨̛̣𝐩 để 𝐥𝐚̀𝐦 𝐦𝐚̣̆𝐭 𝐧𝐚̣",
-      content9:
-        "Bạn giã nhuyễn 3 đến 5 sợi hoa nhụy tây sau đó ngâm cùng 1 hoặc 2 thìa mật ong nguyên chất. Tiếp đến, bạn để hỗn hợp trong ngăn mát tủ lạnh 15 đến 30 phút là có thể dùng được.",
-      content10:
-        " Sau khi tẩy trang, bạn dùng hỗn hợp thoa đều và massage nhẹ nhàng trong 3 phút và thư giãn 20 phút để dưỡng chất thấm đều trên da mặt. Cuối cùng, rửa sạch lại với nước ấm.",
-      content11: "",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      content7: "",
+      content8:
+        "Với công thức đơn giản này, món sữa chua đơn điệu sẽ càng đẹp mắt và thơm ngon hơn đó. Các bạn muốn cải thiện thực đơn cho cả nhà thì đừng bỏ qua công thức này nha!",
+      contentTittle1:
+        "700g sữa chua Hy Lạp không đường, 2 muỗng cà phê vani, 100g đường nâu, 8-10 sợi nghệ tây, 1 thìa cà phê sữa đặc.",
+      contentTittle2:
+        "1 muỗng canh hạt dẻ cười rang sẵn, băm nhỏ và 1 trái xoài chín lớn, cắt lát.",
     },
     typeBeauty: "Sức khỏe",
   },
   {
     idBeauty: "2",
+    topicBeauty: "Điều hoà chuyển hoá",
     imgBeauty: {
       imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856418/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img3_eyqgqn.png",
+        src: imgBeauty5,
         alt: "",
-        width: 1519.2,
-        height: 500,
+        width: 400,
+        height: 400,
       },
       imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697855831/BeautyProject/z4803563365306_7474e3da042f78ff49881be4b11661c2_lvasth.jpg",
+        src: imgBeauty6,
         alt: "",
         width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697855831/BeautyProject/z4803563362868_14952a48e95d7ac073be86e6a436a38c_dvqkwn.jpg  ",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 0,
-        height: 0,
+        height: 400,
       },
     },
-    tittleBeauty: "Công dụng của saffron cải thiện sắc đẹp ",
+    tittleBeauty: "6 CÔNG THỨC LÀM ĐẸP DA VỚI SAFFRON",
     contentBeauty: {
-      contentHead1: "Không có người phụ nữ xấu",
-      contentHead2: "Chỉ có người phụ nữ không biết làm đẹp.",
-      contentTittle3: "",
-      content4:
-        "Là con gái dù ở độ tuổi nào cũng phải thật xinh đẹp, kiêu sa và sang trọng. Đừng bao giờ lấy lý do tuổi tác để ngăn cản ý định làm đẹp nhé các chị em.",
-
-      content5:
-        "Tân trang nhan sắc và giữ lại nét đẹp thanh xuân cùng các dòng sản phẩm Charm Charm Saffron, bởi với hoạt chất Crocin chống oxy hóa cực mạnh, giải nhiệt thanh lọc cơ thể, mang lại cảm giác dễ chịu cả ngày dài:",
-
+      tittle1: "",
+      tittle2: "",
+      tittle3: "",
+      step1:
+        "𝐌𝐚̣̆𝐭 𝐧𝐚̣ 𝐒𝐚𝐟𝐟𝐫𝐨𝐧 𝐬𝐮̛̃𝐚 𝐭𝐮̛𝐨̛𝐢: Nguyên liệu gồm 5-7 sợi Saffron, một muỗng sữa tươi không đường. Đầu tiên, bạn hãy ngâm sợi nhụy nghệ tây trong sữa khoảng 2 tiếng cho đến khi màu sữa chuyển sang màu cam. Dùng dung dịch này thoa đều lên mặt và để trong 10 phút.",
+      step2:
+        "𝐌𝐚̣̆𝐭 𝐧𝐚̣ 𝐒𝐚𝐟𝐟𝐫𝐨𝐧 𝐜𝐚́𝐦 𝐠𝐚̣𝐨: 5-7 sợi Saffron, 1 muỗng sữa chua không đường, 1 muỗng bột cám gạo và vài hạt muối. Cho tất cả nguyên liệu chung vào một chén nhỏ và trộn đều chúng lại với nhau. Rửa mặt sạch và dùng hỗn hợp vừa làm đắp đều lên mặt sau đó để yên trong khoảng 15 - 20 phút.",
+      step3:
+        "𝐌𝐚̣̆𝐭 𝐧𝐚̣ 𝐒𝐚𝐟𝐟𝐫𝐨𝐧 𝐦𝐚̣̂𝐭 𝐨𝐧𝐠: 5 sợi Saffron, một muỗng mật ong. Trộn đều hai nguyên liệu thành hỗn hợp. Rửa sạch mặt, thoa lên da và thư giãn trong 15 - 20 phút.",
+      step4:
+        "𝐌𝐚̣̆𝐭 𝐧𝐚̣ 𝐒𝐚𝐟𝐟𝐫𝐨𝐧 đất 𝐬𝐞́𝐭: 5-6 sợi Saffron, 1 muỗng cà phê sữa đông, 1/2 muỗng cà phê đất sét. Ngâm sợi nhụy hoa nghệ trong sữa đông khoảng 4 - 5 giờ. Sau đó bạn trộn đều hỗn hợp lên rồi cho bột đất sét vào và đắp lên mặt cho đến khi hỗn hợp khô lại.",
+      step5:
+        "𝐌𝐚̣̆𝐭 𝐧𝐚̣ 𝐒𝐚𝐟𝐟𝐫𝐨𝐧 𝐠𝐨̂̃ đ𝐚̀𝐧 𝐡𝐮̛𝐨̛𝐧𝐠: 5-7 sợi Saffron, 1 thìa cà phê bột gỗ đàn hương, 2 thìa cà phê sữa tươi. Trộn đều Saffron, bột gỗ đàn hương và sữa tươi lại. Rửa mặt sạch sau đó dùng hỗn hợp trong khoảng 20 phút.",
+      step6:
+        "𝐌𝐚̣̆𝐭 𝐧𝐚̣ 𝐒𝐚𝐟𝐟𝐫𝐨𝐧 𝐝𝐚̂̀𝐮 𝐨𝐥𝐢𝐯𝐞: 5-7 sợi Saffron, 1/2 muỗng cà phê dầu olive, 1 muỗng cà phê sữa tươi (không đường), 1 muỗng nước lọc. Đầu tiên bạn hãy ngâm Saffron với nước và sau khi thấy nước đã chuyển sang màu cam đậm thì dùng nước này trộn đều với các nguyên liệu còn lại.",
+      content1:
+        "Saffron từ bao đời vẫn được coi như là loại gia vị thượng hạng trong căn bếp của các nhà hàng. Nhưng ngoài công dụng đó, nó còn được xem là một nguyên liệu 'thần thánh' để làm đẹp, dưỡng da.",
+      content2:
+        "Cũng như tinh bột nghệ nhưng Saffron còn mạnh mẽ hơn rất nhiều lần, trong Saffron có nhiều các loại thành phần tốt cho da như vitamin A, đồng, kali, sắt, kẽm, axit folic, và một số loại sắc tố tan trong dầu như alpha-carotene, beta-carotene,... Nhờ vậy, khả năng làm sáng da, lành sẹo, mờ thâm, tăng sức đề kháng cho da của Saffron là không thể chối cãi.",
+      content3:
+        "Chính vì điều đó mà nhiều tín đồ làm đẹp hiện nay đã nghĩ ra cách trộn một vài sợi Saffron với các nguyên liệu khác nhau để tạo ra nhiều loại mặt nạ dưỡng da tại nhà. Sau đây Charm Charm Saffron sẽ mách cho các chị em 6 công thức làm mặt nạ dưỡng da với Saffron:",
+      content4: "",
+      content5: "",
       content6: "",
-      contentTittle7: "",
-      content9:
-        "- Chống lão hoá, cải thiện làn da trở nên căng bóng, hồng hào.",
-
-      content10: "- Giúp cân bằng nội tiết tố",
-
-      content11: "- Hỗ trợ điều trị trầm cảm, căng thẳng stress",
-
-      content12: "- Saffron hỗ trợ giảm cân hiệu quả",
-
-      contentTittle13: "",
-      content14:
-        "Quá nhiều ưu điểm trong một sản phẩm thì ngại gì không thử ngay nào các nàng ơi!",
-      content15: "",
-      content16: "",
-      content17: "",
+      content7: "",
+      content8: "",
+      contentTittle1: "",
+      contentTittle2: "",
     },
     typeBeauty: "Sức khỏe",
   },
   {
     idBeauty: "3",
+    topicBeauty: "Giảm mụn nhọt làn da",
     imgBeauty: {
       imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856417/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img5_oqbozd.png",
+        src: imgBeauty7,
         alt: "",
-        width: 1519.2,
-        height: 500,
+        width: 400,
+        height: 400,
       },
       imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856419/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img4_lyivf6.png",
+        src: imgBeauty8,
         alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697859135/BeautyProject/z4803736297243_561bbf3ab621139f962d4b0c88c27475_gzcvjt.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 0,
-        height: 0,
+        width: 200,
+        height: 400,
       },
     },
-    tittleBeauty: "Saffron mix hạt chia - Bí kíp giữ thanh xuân của phái đẹp ",
+    tittleBeauty: "Saffron giúp giảm mụn nhọt như thế nào?",
     contentBeauty: {
-      contentHead1:
-        "Nếu đã quá nhàm chán khi pha Saffron với nước lọc thông thường thì các nàng thử ngay cách này xem sao nhé. Chẳng những bổ sung chất xơ, điều chỉnh cân nặng mà da còn căng mướt trắng sáng thấy rõ luôn.",
-      contentHead2: "",
-      contentTittle3: "Chuẩn bị:",
-
-      content4: "- 15 sợi Saffron",
-
-      content5: "- 2 thìa hạt chia",
-
-      content6: "- Bình nước 1 lít",
-      contentTittle7: "𝐃𝐮̀𝐧𝐠 𝐡𝐨̂̃𝐧 𝐡𝐨̛̣𝐩 để 𝐥𝐚̀𝐦 𝐦𝐚̣̆𝐭 𝐧𝐚̣",
-      content9:
-        " Cho hạt chia và Saffron vào bình nước rồi lắc đều, chờ 15-20p cho hạt chia nở ra và Saffron tiết dưỡng chất ra nước là sử dụng được luôn. Ai nào thích uống lạnh thì cho vào ngăn mát 2 tiếng là thưởng thức.",
-      content10:
-        " Hạt chia lại chứa nhiều chất xơ, omega-3 và omega-6 giúp tăng cường sức khỏe cho làn da. Do đó khi kết hợp cả 2 sẽ có ngay thức uống làm đẹp cực kỳ hiệu quả, uống tới đâu da dẻ lại căng mướt, trắng sáng tới đó. Chị em nhất định phải thử nhé!",
-
-      content11: "",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "4",
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856415/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img6_rkbqi0.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856418/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img11_wzvyzl.png",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856414/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img9_wrrm3f.png",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty: "3 lý giải cho độ hot của saffron trong những năm gần đây",
-    contentBeauty: {
-      contentHead1: "",
-      contentHead2: "",
-      contentTittle3: "",
+      tittle1: "",
+      tittle2: "",
+      tittle3: "",
+      step1: "",
+      step2: "",
+      step3: "",
+      step4: "",
+      step5: "",
+      step6: "",
+      content1:
+        "Vì sao một vùng có khí hậu khắc nghiệt như Trung Đông mà làn da người phụ nữ nơi đó vẫn mịn màng, khỏe đẹp đến vậy?",
+      content2: "Đáp án chính là họ đã sử dụng Saffron!",
+      content3:
+        "Bên cạnh các phương pháp nấu ăn, ngâm nước uống thông thường, Saffron tại Trung Đông được dùng như 1 loại mặt nạ giúp sát khuẩn, ngừa mụn và giảm nám da.",
       content4:
-        "Bởi tình hình dịch bệnh còn ảnh hưởng nhiều nên nhu cầu nâng cao sức đề kháng, bảo vệ sức khoẻ của người dân tăng cao. Đặc biệt, những sản phẩm thực phẩm chức năng nguồn gốc thiên nhiên được ưa chuộng và tìm hiểu. Và saffron là loại thảo dược quý vùng Trung Đông, được mệnh danh vàng đỏ bởi công dụng toàn diện cho cơ thể!",
-
-      content5: "",
-
-      content6: "",
-      contentTittle7: "3 CÔNG DỤNG NỔI BẬT NHẤT CỦA SAFFRON CÓ THỂ KỂ ĐẾN:",
-      content9:
-        "1) Saffron tăng chất chống oxy hóa mạnh: Chất oxy hóa trong cơ thể nhiều là nguyên nhân dẫn đến các bệnh mãn tính, thậm chí là ung thư. Saffron giàu chất Crocin, chất chống oxy hóa mạnh mẽ giúp cơ thể tăng thêm đề kháng",
-
-      content10:
-        "2) Saffron an thần: Một trong những tác dụng có hiệu quả nhanh nhất khi dùng Saffron đó là chất lượng giấc ngủ được cái thiện. Saffron mang đến sự thoải mái cho tinh thần người sử dụng, làm giảm căng thẳng, mệt mỏi từ đó tạo cho bạn những giấc ngủ ngon",
-
-      content11:
-        "3) Saffron làm chậm tốc độ lão hoá da: Saffron chứa nhiều vitamin A, bao gồm retinol, axit retinoic và các carotenoid tiền vitamin A có công dụng giảm tốc độ lão hóa và tăng cường sự đàn hồi, mềm mại cho da.",
-
-      content12:
-        "Với những công dụng trên, SAFFRON xứng đáng được đặt trong tủ thuốc của mọi gia đình! Hãy sử dụng Saffron Extra Super Negin, loại Saffron cao cấp nhất để bảo vệ sức khoẻ từ hôm nay.",
-
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "5",
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856414/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img7_nmk2fa.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697855832/BeautyProject/z4803563352611_eddcc23970a12a4423174cbac74047e4_qcycxg.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697855831/BeautyProject/z4803563365306_7474e3da042f78ff49881be4b11661c2_lvasth.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty:
-      "Saffron - Nguyên liệu thiết yếu cho những chiếc mặt nạ home-made",
-
-    contentBeauty: {
-      contentHead1: "",
-      contentHead2: "",
-      contentTittle3: "",
-      content4:
-        "Thời gian giãn cách là lúc chúng ta vừa phòng chống dịch vừa tự nâng cao sức khoẻ. Với chị em, việc cải thiện sắc đẹp vô cùng quan trọng, bởi vẻ ngoài cũng là một trong các yếu tố đánh giá sức khoẻ!",
-
+        "Trong saffron có chứa nhiều vitamin A, bao gồm: retinal, retinol, axit retinoic và các carotenoid tiền vitamin A có công dụng giảm tốc độ lão hóa và tăng cường sự đàn hồi, mềm mại của da.",
       content5:
-        "Vậy nên chị em đừng bỏ lỡ những mẹo làm đẹp hay từ Saffron nhé!",
-
-      content6: "",
-      contentTittle7: "",
-      content9:
-        "Sử dụng Saffron sẽ làm da chị em trắng sáng, đều màu lên rõ rệt. Tyrosinase trong Saffron là chất có tác dụng tổng hợp ra hắc sắc tố melanin, bảo vệ tế bào da khỏi tác hại của bức xạ UVB, chống nắng, giảm nguy cơ ung thư da.",
-
-      content10:
-        "Bên cạnh đó, Saffron có chứa các dưỡng chất thẩm thấu nhanh, không bít lỗ chân lông, dưỡng ẩm sâu cho da.",
-
-      content11:
-        "Kết hợp với Saffron để làm ra những chiếc mặt nạ home-made cực kì đa dạng như: yến mạch, sữa chua, nha đam,... Saffron chất lượng loại Extra Super Negin mang lại hiệu quả càng cao và không gây tác dụng phụ!",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "6",
-
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856414/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img9_wrrm3f.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856419/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img10_1_brudxl.png",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856424/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img13_oi7szt.png",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712789/BeautyProject/z4798483483836_df606b56d5b1fb9a3a13164f2ee27ee3_kdflrc.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty: "Các cách thư giãn cùng mật ong bạc hà saffron ",
-    contentBeauty: {
-      contentHead1:
-        "Bên cạnh cách uống để giải nhiệt thông thường, mật ong bạc hà Saffron cũng là một trong các nguyên liệu giúp thư giãn da mặt hiệu quả! Hôm nay hãy cùng Saffron khám phá thêm 1 số loại mặt nạ sử dụng mật ong bạc hà Saffron dưỡng da nhé!",
-      contentHead2: "",
-      contentTittle3: "Mặt nạ mật ong bạc hà và saffron sữa chua",
-
-      content4:
-        "Với mặt nạ làm đẹp da mặt từ mật ong bạc hà saffron và sữa chua không đường này ngoài tác dụng làm trắng da hiệu quả, nó cũng cung cấp độ ẩm tối ưu cho da, ngăn chặn nếp nhăn da, làm sáng da, giúp da căng mịn hơn.",
-
-      content5: "Cách làm:",
-
+        "Không những vậy, vitamin A này còn đóng vai trò bảo vệ, giảm tình trạng da bị mụn và kiềm dầu, đẩy nhanh tốc độ liền sẹo cũng như mờ thâm.",
       content6:
-        "Lấy 2 muỗng mật ong bạc hà saffron trộn cùng 2 muỗng sữa chua trắng không đường, trộn thật đều để hai hỗn hợp này quyện đều vào nhau.",
-      contentTittle7: "Mặt nạ mật ong bạc hà saffron và trứng gà",
-      content9:
-        "Sự kết hợp giữa mật ong bạc hà saffron trứng gà sẽ tạo nên hỗn hợp mặt nạ dưỡng da tuyệt vời cho những cô nàng có làn da sần sùi, kém săn chắc",
-
-      content10:
-        "Mặt nạ mật ong bạc hà saffron trứng gà giúp phục hồi làn da đã có dấu hiệu lão hóa, giúp căng da, thu nhỏ lỗ chân lông.",
-
-      content11: "Cách làm:",
-
-      content12:
-        "Trộn 1 lòng trắng trứng gà + 1 muỗng mật ong bạc hà saffron nguyên chất, đánh đều hỗn hợp sau đó massage hỗn hợp lên da. Để yên trong khoảng 20 phút rồi rửa mặt bằng nước ấm.",
-
-      contentTittle13: "Mặt nạ mật ong bạc hà saffron và chuối",
-      content14:
-        "Mặt nạ mật ong bạc hà saffron và chuối giúp sáng da, tăng cường độ ẩm cho da.",
-      content15: "Cách làm:",
-      content16:
-        "Sử dụng nửa trái chuối chín, 1 thìa cà phê mật ong bạc hà saffron nguyên chất. Trộn và nghiền nhuyễn hỗn hợp rồi thoa trực tiếp lên da mặt đã rửa sạch, sau 20 phút rửa mặt lại thât sạch bằng nước ấm.",
-      content17:
-        " Với 1 số công thức này, da của bạn sẽ được chăm sóc và phục hồi hiệu quả.",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "7",
-
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856424/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img13_oi7szt.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618389/BeautyProject/SSFF-17_hsnvkw.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618377/BeautyProject/2_dyaogx.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty: "Saffron hữu ích như thế nào cho làn da trong mùa hè?",
-    contentBeauty: {
-      contentHead1:
-        "Mùa hè là khoảng thời gian tia UV có cường độ mạnh nhất trong năm. Với sự nắng nóng kéo dài và tia UV mạnh như vậy rất dễ khiến sức khỏe tổn hại, đặc biệt là làn da, thứ giúp ta chống lại các tác hại từ môi trường.",
-      contentHead2: "",
-      contentTittle3:
-        "Saffron với 4 công dụng tuyệt vời sẽ bảo vệ và mang lại làn da sáng cho bạn!",
-
-      content4:
-        "1) Saffron là một chất chống oxy hóa: Saffron có hàm lượng chất chống oxy hóa cao như carotenoid ngăn ngừa tổn thương cho da và bổ sung cá chất cần thiết cho da khỏe hơn. Giúp thải độc cho làn da khỏi các tạp chất từ môi trường.",
-
-      content5:
-        "2) Saffron kháng khuẩn mạnh mẽ: Vi khuẩn trú ngụ trên da là nguyên nhân chính gây ra mụn, viêm. Các loại mụn và bệnh viêm da thường tăng vào mùa hè do mồ hôi và bụi, tuy nhiên chúng có thể được giảm bớt bằng cách sử dụng saffron.",
-
-      content6: "",
-      contentTittle7: "",
-      content9:
-        "3) Crocetin, là một hợp chất có nhiều trong Saffron có đặc tính chống vi khuẩn đáng kinh ngạc, giúp làn da chống lại vi khuẩn, ngừa mụn và làm sạch sâu trong da hiệu quả.",
-
-      content10:
-        "4) Saffron làm lành da nhanh: Tia UV và các tác nhân môi trường khiến da trở nên nhạy cảm hơn và rất khó lành nếu nổi mụn, bị thương hoặc có sẹo. Saffron với đặc tính chống oxy hóa giúp các vết thương mau lành, chóng mờ sẹo.",
-
-      content11: "Trong mùa hè này, hãy bảo vệ làn da với Saffron nhé!",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "8",
-
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856425/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img0_ny89fx.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697618378/BeautyProject/SSFF-5_sf5ubh.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697617464/BeautyProject/SFT-7_fcqk0d.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty:
-      "Mật ong bạc hà saffron bổ phế, mát gan – Sản phẩm đặc biệt của mùa hè!",
-    contentBeauty: {
-      contentHead1:
-        "Thời tiết dù có mưa nhưng bên trong cơ thể vẫn nóng và gây nổi mề đay, mụn viêm cùng một số bệnh về đường hô hấp.",
-      contentHead2: "",
-      contentTittle3: "",
-      content4:
-        "Theo các phương thuốc cổ truyền, mật ong bạc hà là dược liệu quý phù hợp dùng trong mùa nóng để giảm nhiệt, điều hòa âm dương trong cơ thể và đặc biệt điều trị các bệnh về hô hấp như ho, viêm họng, phế quản,…",
-
-      content5:
-        "Ngoài ra, mật ong bạc hà giúp mát gan tiêu độc, giảm nóng trong hiệu quả",
-
-      content6: "",
-      contentTittle7: "",
-      content9:
-        "1) Kết hợp với Saffron, tác dụng của sản phẩm được nhân lên nhiều lần. Bên cạnh là phương thuốc quý nhuận phổi, bảo vệ cổ họng những ngày trở trời, mật ong bạc hà Saffron còn là phương thuốc dưỡng nhan thuần thiên nhiên cho các chị em ",
-
-      content10:
-        "2) Mật ong bạc hà Saffron làm giảm mụn bởi tính chất kháng khuẩn của mật ong rất mạnh, làm lành và mờ sẹo mụn cho các làn da mẫn cảm. Bên cạnh đó, sản phẩm còn giúp trắng da, cấp ẩm da trong mọi mùa.",
-
-      content11: "",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "9",
-
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856422/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img14_s80ecm.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856418/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img11_wzvyzl.png",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697855830/BeautyProject/z4803563365304_d11990e70dd46c0d5d4bf97be6bb1347_saycxv.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty: "Saffron bảo vệ bạn khỏi nắng gắt như thế nào?",
-    contentBeauty: {
-      contentHead1: "",
-      contentHead2: "",
-      contentTittle3: "",
-      content4:
-        "Nắng nóng và khô hanh là nguyên nhân gây ra nám, sạm da, đen da và phải mất 1 thời gian dài da mới hồi lại được",
-
-      content5:
-        " Cho dù chị em có sử dụng bao nhiêu loại kem chống nắng, che chắn kín thì tia cực tím ngoài trời 41 độ vẫn sẽ gây tổn thương cho da!",
-
-      content6: "",
-      contentTittle7: "",
-      content9: "VẬY TẠI SAO CHỊ EM KHÔNG SỬ DỤNG SAFFRON TỪ HÔM NAY?",
-
-      content10:
-        "Saffron chứa nhiều Carotenoid (gồm Beta Carotene, Lycopene, Zeaxanthin) và đặc biệt là Retinol – dưỡng chất chống lão hóa hàng đầu trong da liễu.",
-
-      content11:
-        "Vì vậy, sử dụng Saffron thường xuyên mỗi ngày sẽ quay ngược quá trình lão hóa da của bạn, đồng thời bảo vệ làn da khỏi tia UV cũng như làm sáng da an toàn.",
-
-      content12:
-        "Không gì quý hơn mỹ phẩm hoàn toàn thiên nhiên, không gây tác dụng phụ! Chị em đừng bỏ lỡ nhé!",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "10",
-
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856416/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img12_m4hozb.png  ",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697855831/BeautyProject/z4803563365306_7474e3da042f78ff49881be4b11661c2_lvasth.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697855831/BeautyProject/z4803563362868_14952a48e95d7ac073be86e6a436a38c_dvqkwn.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty: "Saffron giúp giảm mụn như thế nào?",
-    contentBeauty: {
-      contentHead1:
-        "Vì sao một vùng có khí hậu khắc nghiệt như Trung Đông mà làn da người phụ nữ nơi đó vẫn mịn màng, khỏe đẹp? Đáp án chính là họ đã sử dụng Saffron!",
-      contentHead2: "",
-      contentTittle3: "",
-      content4:
-        "Bên cạnh các phương pháp nấu ăn, ngâm nước uống thông thường, Saffron tại Trung Đông được dùng như 1 loại mặt nạ giúp sát khuẩn, ngừa mụn và giảm nám da",
-      content5:
-        "Trong saffron có chứa nhiều vitamin A, bao gồm retinal, retinol, axit retinoic và các carotenoid tiền vitamin A có công dụng giảm tốc độ lão hóa và tăng cường sự đàn hồi, mềm mại của da",
-      content6: "",
-      contentTittle7: "",
-      content9:
-        "Không những vậy, vitamin A này còn đóng vai trò bảo vệ, giảm tình trạng da bị mụn và kiềm dầu, đẩy nhanh tốc độ liền sẹo cũng như mờ thâm",
-      content10:
         "Nếu bạn đang tìm kiếm những sản phẩm dưỡng nhan hoàn toàn từ thiên nhiên thì Saffron là lựa chọn hàng đầu!",
-      content11: "",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "11",
-
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856424/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img13_oi7szt.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712789/BeautyProject/z4798483486185_8b696eb0bb726574b1040ceaa1d0b311_r93rr3.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712789/BeautyProject/z4798483475435_3a94f855d444c7219f143741f88c9675_jxrutz.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty:
-      "Tại sao ngày càng nhiều chị em sử dụng Saffron thay cho các loại mặt nạ và kem dưỡng?",
-    contentBeauty: {
-      contentHead1:
-        "Bên cạnh các công dụng tuyệt vời cho sức khỏe, Saffron còn là dược thảo dưỡng nhan mang lại sự trẻ hóa làn da cho chị em mà không gây tác dụng phụ hay kích ứng!",
-      contentHead2: "",
-      contentTittle3: "",
-
-      content4:
-        "Các loại mặt nạ hay kem dưỡng dù ít hay nhiều đều có 1 số thành phần hóa chất, sử dụng trên da nhạy cảm có khả năng gây kích ứng, viêm nhiễm, thậm chí là tổn thương sâu cho da.",
-      content5:
-        "Tuy nhiên, khi bạn bôi trực tiếp Saffron lên da hoặc kết hợp Saffron với các nguyên liệu như sữa chua, mật ong, trứng,… hoàn toàn tự nhiên nên da không hề bị kích ứng, giúp nuôi dưỡng làn da sạch – khỏe!",
-      content6: "",
-      contentTittle7: "",
-
-      content9:
-        "Dưỡng chất từ Saffron thẩm thấu vào da làm da mịn màng hơn, ngừa khuẩn giảm viêm, mụn hiệu quả và giúp trẻ hóa làn da sâu từ bên trong!",
-      content10: "Hãy tự làm tươi trẻ bản thân bằng Saffron từ hôm nay nhé!",
-      content11: "",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "12",
-
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856422/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img14_s80ecm.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712469/BeautyProject/z4798468323202_a48f03dd256d27f9b2a02ee030dc6866_yn396t.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697712470/BeautyProject/z4798468323978_f981ecaf63052f76a461f92f19eefdb3_fphbtm.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty: "LÀM THẾ NÀO ĐỂ THOÁT KHỎI NỖI SỢ NGÀY ĐÈN ĐỎ?",
-    contentBeauty: {
-      contentHead1: "NGÀY ĐÈN ĐỎ + NẮNG NÓNG = ÁC MỘNG CỦA CHỊ EM!",
-      contentHead2: "",
-      contentTittle3: "",
-
-      content4:
-        "Hội chứng tiền kinh nguyệt (PMS) và những ngày “đèn đỏ” là nỗi lo thường trực của nhiều chị em bởi chúng gây sự bất tiện, thậm chí là đau đớn, suy nhược kéo dài cho cơ thể!",
-      content5:
-        "Vậy nên, bên cạnh bổ sung những món ăn nhiều sắt và khoáng chất, sử dụng Saffron để làm giảm những triệu chứng PMS là phương pháp được các bác sĩ khuyên dùng!",
-      content6: "",
-      contentTittle7: "",
-
-      content9:
-        "Crocetin và crocin là hai chất chống oxy hóa được tìm thấy bên trong nghệ tây và có khả năng làm giảm áp lực chị em trong những ngày căng thẳng",
-      content10:
-        "Thêm vào đó, Safranal được biết đến với công dụng an thần và không gây tác dụng phụ, giúp người phụ nữ giảm bớt cảm giác đau đớn, mệt mỏi những ngày đầu kinh nguyệt",
-      content11:
-        "Ngoài ra, Saffron cung cấp 1 lượng lớn các chất dinh dưỡng và kháng khuẩn phòng ngừa mụn viêm, giúp làn da hồng hào, mịn màng hơn!",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
-    },
-    typeBeauty: "Sức khỏe",
-  },
-  {
-    idBeauty: "13",
-    imgBeauty: {
-      imgBeauty1: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856422/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img15_vlwz5k.png",
-        alt: "",
-        width: 1519.2,
-        height: 500,
-      },
-      imgBeauty2: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697860245/BeautyProject/z4803789458349_e40e479adc48ea0900e2945f0fc23505_ptovli.jpg",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty3: {
-        src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697856425/BeautyProject/CHUY%C3%8AN_M%E1%BB%A4C_CHO_WEBSITE_Img0_ny89fx.png",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-      imgBeauty4: {
-        src: "",
-        alt: "",
-        width: 400,
-        height: 500,
-      },
-    },
-    tittleBeauty:
-      "Mỗi ngày 1 ly trà táo mật ong bạc hà Saffron sẽ giúp bạn tươi trẻ dài lâu!",
-    contentBeauty: {
-      contentHead1: "",
-      contentHead2: "",
-      contentTittle3: "",
-
-      content4:
-        "Mật ong bạc hà Saffron được biết đến là một nguyên liệu không thể thiếu trong các sản phẩm dưỡng da thuần thiên nhiên cho phái nữ. Bên cạnh đó, nó còn cho ta những thức uống thơm ngon – bổ dưỡng!",
-      content5: "",
-      content6: "",
-      contentTittle7: "",
-
-      content9:
-        "Bạn chỉ cần chuẩn bị: 1 quả táo, 2 túi lọc trà Lipton, khoảng 2 muỗng cà phê mật ong bạc hà Saffron cho thức uống này",
-      content10:
-        "Để làm trà táo mật ong bạc hà Saffron trước hết bạn cần rửa sạch táo rồi gọt vỏ và thái hạt lựu. Nếu không muốn bỏ vỏ bạn cũng có thể để nguyên vỏ nhé, nhưng lưu ý là cần sửa thật sạch!",
-      content11:
-        "Cuối cùng bạn thả táo vào ly và khuấy đều rồi để nguội. Lúc này bạn có thể thưởng thức ngay hoặc cho thêm vài viên đá lạnh để ngon miệng hơn",
-      content12: "",
-      contentTittle13: "",
-      content14: "",
-      content15: "",
-      content16: "",
-      content17: "",
+      content7:
+        "Một chế độ dinh dưỡng hợp lý, tập thể thao thường xuyên sẽ góp phần không nhỏ trong “công cuộc” làm đẹp của bạn!",
+      content8:
+        "Charm Charm Saffron đảm bảo mỗi sản phẩm đưa đến tay người tiêu dùng luôn đạt chuẩn chất lượng của quy trình sấy khô nghiêm ngặt, hiện đại, cam kết giấy chứng nhận nhập khẩu chính ngạch từ Iran và ISO-Norm quốc tế.",
+      contentTittle1: "",
+      contentTittle2: "",
     },
     typeBeauty: "Sức khỏe",
   },
 ];
 export const CuisineListMain: CuisineListMainTypes[] = [
   {
-    idCuisine: 1,
-    urlCuisineMain: "kem-vani-saffron",
-    imgCuisine: {
-      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697863407/BeautyProject/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-10-21_114303_um0mgm.png",
-      alt: "",
-      width: 500,
-      height: 600,
-    },
-    tittleCuisine: "KEM VANI SAFFRON",
+    idCuisine: "1",
+    topicCuisine: "Thức uống saffron",
+    imgCuisine: [
+      {
+        src: img1,
+        alt: "",
+        width: 500,
+        height: 500,
+      },
+      {
+        src: img2,
+        alt: "",
+        width: 500,
+        height: 500,
+      },
+    ],
+    tittleCuisine: "Pha thức uống ngon lành và dễ dàng với saffron",
     contentCuisine: {
-      contentTittle1: "Nguyên liệu",
+      content1:
+        "Mỗi lần uống chỉ cần thả 5-10 sợi nhuỵ hoa vào cốc nước ấm 200ml, chờ vài phút để màu vàng từ sợi nhụy bắt đầu tan ra. Đây là một cách sử dụng đơn giản nhất, mà vẫn phát huy tối đa tác dụng bổ dưỡng. Thức uống vừa thơm đậm mùi saffron, vừa có màu vàng đẹp mắt.",
       content2:
-        "300ml whipping cream, 500ml sữa tươi, 200 gram đường, hương liệu vani, 10-15 sợi Saffron",
-      contentTittle3: "Cách làm :",
-      content4: "Ngâm saffron trong nước ấm 20 phút để nhụy hoa tan màu.",
+        "Bạn có thể pha cùng thêm thìa cafe mật ong, đường, sữa tươi, các loại trà xanh, hoa cúc, trà mạn, trà gừng, trà hoa hồng, táo đỏ, đông trùng hạ thảo,... để gia tăng màu sắc, hương vị, bổ dưỡng và dễ uống hơn.",
+      content3:
+        "Nếu trang trí món ăn thì hãy sử dụng saffron dạng sợi, nếu để chúng thật bắt mắt thì hãy sử dụng saffron dạng bột. Nhuỵ hoa nghệ tây sẽ tạo ra mùi hương và màu sắc hấp dẫn cho thực phẩm của bạn.",
+      content4:
+        "Vừa mang lại nhiều công dụng sức khoẻ và lợi ích làm đẹp, Saffron còn đem đến hương vị giải khát lôi cuốn và mùi hương ấn tượng.",
       content5:
-        "Đun sôi sữa, đổ vào bát, thêm nước saffron và hương liệu vani, khuấy đều. Sau đó thêm đường.",
+        "Theo Cục quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA), liều lượng khuyên dùng của người trưởng thành là mỗi ngày 20-50 sợi.",
       content6:
-        "Làm nguội nhanh hỗn hợp bằng cách đặt hỗn hợp trong một bát đá lớn. Trộn hỗn hợp với whipping cream, đảo đều nhẹ tay.",
-      content7: "Cho vào tủ lạnh, 30p – 1h lấy ra đảo đều.",
-      content8: "Như vậy 6-7 lần trong khoảng 8 tiếng.",
-      content9:
-        "Bạn có thể rắc thêm hạt ngũ cốc hoặc hoa quả cho món ăn thêm bắt mắt hơn!",
+        "Charm Charm Saffron khác biệt với các loại nhuỵ hoa nghệ tây thông thường trên thị trường. Bởi lẽ, chỉ nhập khẩu loại Super Negin cao cấp nhất, được nghiên cứu dựa trên hàm lượng dinh dưỡng, màu sắc, độ ẩm,... và chỉ tuyển chọn từ những cây nghệ tây 4-5 năm tuổi ở thời kỳ đỉnh cao nhất trong vòng đời. Đây là thương hiệu đạt chất lượng nhập khẩu chính ngạch, kết quả tiêu chuẩn Vilas ISO/IEC 2017 quốc tế.",
     },
     typeCuisine: "Ẩm thực",
   },
 ];
 export const CuisineList: CuisineListTypes[] = [
   {
-    idCuisine: 1,
-    urlCuisine: "com-saffron",
-    imgCuisine: {
-      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697864343/BeautyProject/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-10-21_115728_ki5lys.png",
-      alt: "",
-      width: 500,
-      height: 600,
-    },
-    tittleCuisine: "CƠM SAFFRON",
+    idCuisine: "1",
+    topicCuisine: "Cơm, bánh ngọt saffron",
+    imgCuisine: [
+      {
+        alt: "",
+        src: img3,
+        width: 400,
+        height: 400,
+      },
+      {
+        alt: "",
+        src: img4,
+        width: 200,
+        height: 300,
+      },
+    ],
+    tittleCuisine1: "Cơm vàng ươm và bánh thơm lừng với saffron",
+    tittleCuisine2:
+      "Bánh bông lan Saffron hương cam thanh mát - Món tráng miệng cho bữa tối của cả gia đình ",
     contentCuisine: {
-      contentTittle1: "Nguyên liệu",
+      tittle1: "Nguyên liệu:",
+      tittle2: "Cách làm:",
+      step1:
+        "Bước 1: Rửa sạch cam, bào lấy vỏ, sau đó cắt làm đôi, vắt lấy nước cốt cam.",
+      step2:
+        "Bước 2: Trộn đều bột bắp với nước cốt cam và saffron. Trong 1 tô khác, rây qua bột mì, 1/2 muỗng cà phê muối.",
+      step3:
+        "Bước 3: Để trứng gà trong tủ lạnh khoảng 15 phút, lấy ra, tách lấy lòng trắng trứng, thêm 35gr đường bột vào, dùng máy đánh trứng, đánh đều lên.",
+      step4:
+        "Bước 4: Cuối cùng, cho lòng đỏ trứng gà, hỗn hợp bột mì, nước cốt cam, Saffron, bột bắp, vỏ cam vào, đánh đều 1 phút.",
+      step5:
+        "Bước 5: Lót cốc giấy vào khuôn cupcake, múc hỗn hợp bánh vào, dàn đều.",
+      step6:
+        "Bước 6: Cho bánh bông lan Saffron hương cam vào lò, nướng khoảng 25 phút ở nhiệt độ 175 độ C.",
+      step7:
+        "Bước 7: Bánh bông lan Saffron hương cam chín, lấy ra khỏi khuôn, cắt thành miếng vừa ăn là có thể thưởng thức ngay!",
+      contentTittle1:
+        "3-5 sợi Saffron Extra Super Negin, 180 gram đường, 3 quả trứng gà, 160 gram bột mì, ½ thìa cà phê bột bắp, 150 gram bơ lạt (đun chảy), 1 quả cam vàng Mỹ (lấy cả ruột lẫn vỏ), muối",
+      contentTittle2: "",
+      contentTittle3: "",
+      contentTittle4: "",
+      contentTittle5: "",
+      contentTittle6: "",
+      contentStep1p1: "",
+      contentStep1p2: "",
+      contentStep1p3: "",
+      contentStep1p4: "",
+      contentStep2p1: "",
+      content1:
+        "Để nấu nhụy hoa nghệ tây với cơm, bạn thả khoảng 10 sợi vào cốc nước, rồi chờ nhuỵ hoa pha ra màu trong nước. Vo gạo như bình thường và sử dụng nước từ nhụy hoa nghệ tây để nấu cơm. ",
       content2:
-        "300ml whipping cream, 500ml sữa tươi, 200 gram đường, hương liệu vani, 10-15 sợi Saffron",
-      contentTittle3: "Cách làm :",
-      content4: "Ngâm saffron trong nước ấm 20 phút để nhụy hoa tan màu.",
-      content5:
-        "Đun sôi sữa, đổ vào bát, thêm nước saffron và hương liệu vani, khuấy đều. Sau đó thêm đường.",
-      content6:
-        "Làm nguội nhanh hỗn hợp bằng cách đặt hỗn hợp trong một bát đá lớn. Trộn hỗn hợp với whipping cream, đảo đều nhẹ tay.",
-      content7: "Cho vào tủ lạnh, 30p – 1h lấy ra đảo đều.",
-      content8: "Như vậy 6-7 lần trong khoảng 8 tiếng.",
-      content9:
-        "Bạn có thể rắc thêm hạt ngũ cốc hoặc hoa quả cho món ăn thêm bắt mắt hơn!",
+        "Như vậy cơm không chỉ cực kỳ tốt cho sức khỏe mà còn có màu vàng đẹp mắt, hương thơm dễ chịu. Nhụy hoa nghệ tây nấu với cơm phù hợp với tất cả mọi người sử dụng hàng ngày.",
+      content3:
+        "Món tráng miệng dễ làm mà lại thơm ngon, bổ dưỡng. Hãy làm cho cả nhà thưởng thức nhé!",
+      content4: "",
     },
     typeCuisine: "Ẩm thực",
   },
   {
-    idCuisine: 2,
-    urlCuisine: "Saffron-for-Fried-Chicken",
-    imgCuisine: {
-      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697864342/BeautyProject/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-10-21_115736_bsmgyf.png",
-      alt: "",
-      width: 500,
-      height: 600,
-    },
-    tittleCuisine: "Saffron for Fried Chicken",
+    idCuisine: "2",
+    topicCuisine: "Món cà rì hải sản",
+    imgCuisine: [
+      {
+        src: img5,
+        alt: "",
+        width: 400,
+        height: 400,
+      },
+      {
+        alt: "",
+        src: "",
+        width: 0,
+        height: 0,
+      },
+    ],
+    tittleCuisine1: "Saffron for Fried Chicken",
+    tittleCuisine2: "",
     contentCuisine: {
-      contentTittle1: "Nguyên liệu",
-      content2:
-        "300ml whipping cream, 500ml sữa tươi, 200 gram đường, hương liệu vani, 10-15 sợi Saffron",
-      contentTittle3: "Cách làm :",
-      content4: "Ngâm saffron trong nước ấm 20 phút để nhụy hoa tan màu.",
-      content5:
-        "Đun sôi sữa, đổ vào bát, thêm nước saffron và hương liệu vani, khuấy đều. Sau đó thêm đường.",
-      content6:
-        "Làm nguội nhanh hỗn hợp bằng cách đặt hỗn hợp trong một bát đá lớn. Trộn hỗn hợp với whipping cream, đảo đều nhẹ tay.",
-      content7: "Cho vào tủ lạnh, 30p – 1h lấy ra đảo đều.",
-      content8: "Như vậy 6-7 lần trong khoảng 8 tiếng.",
-      content9:
-        "Bạn có thể rắc thêm hạt ngũ cốc hoặc hoa quả cho món ăn thêm bắt mắt hơn!",
+      tittle1: "Nguyên liệu chuẩn bị:",
+      tittle2: "Cách thực hiện:",
+      step1: "BƯỚC 1: Sơ chế tôm, mực, sò điệp và nghêu:",
+      step2: "BƯỚC 2: Sơ chế khoai lang, cà rốt, khoai tây:",
+      step3:
+        "BƯỚC 3: Lấy một nồi lớn và cho vào một ít dầu ăn. Khi dầu nóng lên thì bỏ tỏi vào phi cùng với sả, lá và bột cà ri cho thật thơm. Tiếp theo, bạn đổ nước khoảng 1/2 nồi và cho tất cả các loại củ vào, nấu khoảng 15 phút để các nguyên liệu chín.",
+      step4:
+        "BƯỚC 4: Sau khi khoai chín thì nêm nếm gia vị cho vừa ăn, nấu thêm một chút nữa để chúng mềm ra thì đổ hết lon nước dừa và tất cả các loại hải sản đã chuẩn bị trước đó vào nồi.",
+      step5:
+        "BƯỚC 5: Bỏ các sợi nhụy hoa nghệ tây vào và nấu cùng hỗn hợp khoảng 10 phút sao cho hải sản chín và các sợi nhụy hoa tan ra tạo thành màu vàng cam và BẬT DẬY MÙI THƠM ĐỘC ĐÁO cho món cà ri thì tắt bếp.",
+      step6: "",
+      step7: "",
+      contentTittle1: "- 200g tôm tươi, 200g mực ống, 50g sò điệp, 500g nghêu.",
+      contentTittle2: "- 1 củ khoai lang, 2 trái cà rốt, 2 củ khoai tây.",
+      contentTittle3: "- 1 ít lá cà ri, 1 gói bột cà ri.",
+      contentTittle4: "- 1 lon nước cốt dừa.",
+      contentTittle5: "- Muối, hạt nêm, bột ngọt, đường, dầu ăn, tỏi, sả.",
+      contentTittle6: "- Khoảng 15 - 20 sợi nhụy hoa nghệ tây.",
+      contentStep1p1:
+        "- Bạn dùng kéo cắt bỏ đầu và đuôi tôm. Rút bỏ sợi dây chỉ màu đen phía sau lưng và rửa lại sạch sẽ, vớt ra rổ để ráo nước.",
+      contentStep1p2:
+        "- Kéo nhẹ phần ruột và túi mực ra khỏi thân, ở phần đầu mực thì bạn cắt bỏ phần miệng, mắt. Với các sợi râu dài thì dùng dao cạo nhẹ để loại bỏ những chất bẩn. Sau đó rửa sạch dưới nước và cắt thành những khoang nhỏ, vừa ăn.",
+      contentStep1p3:
+        "- Để cậy vỏ của sò điệp, bạn sử dụng một con dao thật sắc bén. Sau khi đã lọc phần thịt ra, hãy loại bỏ lớp màng mỏng bao quanh thịt sò và phần bao tử màu đen. Rửa thịt sò nhiều lần dưới nước sạch để loại bỏ hết đất cát và bụi bẩn.",
+      contentStep1p4:
+        "- Bạn ngâm nghêu trong nước muối khoảng 1-2 tiếng để chất bẩn, cát bụi rơi ra. Rồi rửa lại sạch dưới nước và để ráo.",
+      contentStep2p1:
+        "- Bạn cạo sạch lớp vỏ bên ngoài. Ngâm trong nước muối khoảng 15 phút. Cắt thành từng khoang nhỏ vừa ăn.",
+      content1:
+        "Cà ri từ lâu là một món ăn đặc trưng nổi tiếng đến từ Ấn Độ. Khi được kết hợp cùng nhụy hoa nghệ tây Iran, món cà ri đậm đà tưởng chừng như quen thuộc này sẽ mang đến cho bạn một hương vị lạ lẫm, độc đáo và không kém phần ngon miệng.",
+      content2: "",
+      content3:
+        "Sau cùng là múc ra tô và đừng quên rắc thêm vài sợi nhụy hoa nghệ tây để trang trí cho món ăn.",
+      content4: "",
     },
     typeCuisine: "Ẩm thực",
   },
   {
-    idCuisine: 3,
-    urlCuisine: "saffron-trong-nau-an",
-    imgCuisine: {
-      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697864343/BeautyProject/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-10-21_115743_yibz4i.png",
-      alt: "",
-      width: 500,
-      height: 600,
-    },
-    tittleCuisine: "Saffron trong nấu ăn",
+    idCuisine: "3",
+    topicCuisine: "Mỳ Ý Saffron",
+    imgCuisine: [
+      {
+        src: img6,
+        alt: "",
+        width: 200,
+        height: 300,
+      },
+      {
+        alt: "",
+        src: "",
+        width: 0,
+        height: 0,
+      },
+    ],
+    tittleCuisine1: "Làm mới menu của bạn với Mỳ Ý Saffron",
+    tittleCuisine2: "",
     contentCuisine: {
-      contentTittle1: "Nguyên liệu",
+      tittle1: "Thành phần gồm: ",
+      tittle2: "Cách chế biến: Không hề cầu kỳ, chỉ cần 30 phút:",
+      step1:
+        "Bước 1: Cho khoảng 2 lít nước vào nồi và nấu sôi, bạn thêm vào nồi nước 2 thìa dầu ăn và 1 chút muối để sợi mì chín sẽ đậm vị hơn và không bị dính vào nhau. Sau 10 phút vớt mì để ráo.",
+      step2:
+        "Bước 2: Đun nóng dầu ô liu trong một chảo lớn. Xào hành tây cho đến khi hành chín và sau đó cho nấm vào. Xào trên lửa vừa, đảo thường xuyên để nấm hơi chuyển màu nâu.",
+      step3:
+        "Bước 3: Thêm bông cải xanh, ớt chuông, đậu Hà Lan, lá cần tây vào chung chảo xào trong 5 phút.",
+      step4:
+        "Bước 4: Đổ kem vào và đun nhỏ lửa trong 2-3 phút. Rắc thêm ớt nếu ăn được cay, 1 chút muối và Saffron để tăng thêm hương vị và màu sắc cho món ăn.",
+      step5:
+        "Bước 5: Cho mì ống đã nấu chín vào chảo và đảo đều cho sốt lẫn cùng mỳ. Đun nóng cho đến khi sủi bọt là thành công!",
+      step6: "",
+      step7: "",
+      contentTittle1: "- 300g mì ống, có thể có thịt bò xay nhỏ.",
+      contentTittle2: "- 300ml kem thực vật,",
+      contentTittle3: "- 2 muỗng nhỏ dầu ô liu, các gia vị cần thiết,",
+      contentTittle4: "- 1 củ hành tây thái nhỏ, 1 quả ớt chuông xanh thái nhỏ",
+      contentTittle5:
+        "- 150g nấm hương thái nhỏ, 50g đậu Hà Lan, 50g súp lơ, lá cần tây",
+      contentTittle6:
+        "- Và đương nhiên không thể thiếu 5-10 sợi 𝗦𝗮𝗳𝗳𝗿𝗼𝗻 𝗘𝘅𝘁𝗿𝗮 𝗦𝘂𝗽𝗲𝗿 𝗡𝗲𝗴𝗶𝗻 được rồi.",
+      contentStep1p1: "",
+      contentStep1p2: "",
+      contentStep1p3: "",
+      contentStep1p4: "",
+      contentStep2p1: "",
+      content1:
+        "Mỳ Ý Saffron là món ăn đơn giản dành cho những ngày “đổi gió” cho khẩu vị.",
       content2:
-        "300ml whipping cream, 500ml sữa tươi, 200 gram đường, hương liệu vani, 10-15 sợi Saffron",
-      contentTittle3: "Cách làm :",
-      content4: "Ngâm saffron trong nước ấm 20 phút để nhụy hoa tan màu.",
-      content5:
-        "Đun sôi sữa, đổ vào bát, thêm nước saffron và hương liệu vani, khuấy đều. Sau đó thêm đường.",
-      content6:
-        "Làm nguội nhanh hỗn hợp bằng cách đặt hỗn hợp trong một bát đá lớn. Trộn hỗn hợp với whipping cream, đảo đều nhẹ tay.",
-      content7: "Cho vào tủ lạnh, 30p – 1h lấy ra đảo đều.",
-      content8: "Như vậy 6-7 lần trong khoảng 8 tiếng.",
-      content9:
-        "Bạn có thể rắc thêm hạt ngũ cốc hoặc hoa quả cho món ăn thêm bắt mắt hơn!",
-    },
-    typeCuisine: "Ẩm thực",
-  },
-  {
-    idCuisine: 4,
-    urlCuisine: "canh-chua-ca-saffron",
-    imgCuisine: {
-      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697864310/BeautyProject/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-10-21_115753_wtfcfq.png",
-      alt: "",
-      width: 500,
-      height: 600,
-    },
-    tittleCuisine: "Canh chua cá saffron",
-    contentCuisine: {
-      contentTittle1: "Nguyên liệu",
-      content2:
-        "300ml whipping cream, 500ml sữa tươi, 200 gram đường, hương liệu vani, 10-15 sợi Saffron",
-      contentTittle3: "Cách làm :",
-      content4: "Ngâm saffron trong nước ấm 20 phút để nhụy hoa tan màu.",
-      content5:
-        "Đun sôi sữa, đổ vào bát, thêm nước saffron và hương liệu vani, khuấy đều. Sau đó thêm đường.",
-      content6:
-        "Làm nguội nhanh hỗn hợp bằng cách đặt hỗn hợp trong một bát đá lớn. Trộn hỗn hợp với whipping cream, đảo đều nhẹ tay.",
-      content7: "Cho vào tủ lạnh, 30p – 1h lấy ra đảo đều.",
-      content8: "Như vậy 6-7 lần trong khoảng 8 tiếng.",
-      content9:
-        "Bạn có thể rắc thêm hạt ngũ cốc hoặc hoa quả cho món ăn thêm bắt mắt hơn!",
-    },
-    typeCuisine: "Ẩm thực",
-  },
-  {
-    idCuisine: 5,
-    urlCuisine: "sup-saffron-rau-cu",
-    imgCuisine: {
-      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697864343/BeautyProject/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-10-21_115759_gwialu.png",
-      alt: "",
-      width: 500,
-      height: 600,
-    },
-    tittleCuisine: "Súp saffron rau củ",
-    contentCuisine: {
-      contentTittle1: "Nguyên liệu",
-      content2:
-        "300ml whipping cream, 500ml sữa tươi, 200 gram đường, hương liệu vani, 10-15 sợi Saffron",
-      contentTittle3: "Cách làm :",
-      content4: "Ngâm saffron trong nước ấm 20 phút để nhụy hoa tan màu.",
-      content5:
-        "Đun sôi sữa, đổ vào bát, thêm nước saffron và hương liệu vani, khuấy đều. Sau đó thêm đường.",
-      content6:
-        "Làm nguội nhanh hỗn hợp bằng cách đặt hỗn hợp trong một bát đá lớn. Trộn hỗn hợp với whipping cream, đảo đều nhẹ tay.",
-      content7: "Cho vào tủ lạnh, 30p – 1h lấy ra đảo đều.",
-      content8: "Như vậy 6-7 lần trong khoảng 8 tiếng.",
-      content9:
-        "Bạn có thể rắc thêm hạt ngũ cốc hoặc hoa quả cho món ăn thêm bắt mắt hơn!",
-    },
-    typeCuisine: "Ẩm thực",
-  },
-  {
-    idCuisine: 6,
-    urlCuisine: "xoi-man-saffron",
-    imgCuisine: {
-      src: "https://res.cloudinary.com/dkfg3xljc/image/upload/v1697864343/BeautyProject/%E1%BA%A2nh_ch%E1%BB%A5p_m%C3%A0n_h%C3%ACnh_2023-10-21_115806_bj8p3j.png",
-      alt: "",
-      width: 500,
-      height: 600,
-    },
-    tittleCuisine: "Xôi mặn saffron",
-    contentCuisine: {
-      contentTittle1: "Nguyên liệu",
-      content2:
-        "300ml whipping cream, 500ml sữa tươi, 200 gram đường, hương liệu vani, 10-15 sợi Saffron",
-      contentTittle3: "Cách làm :",
-      content4: "Ngâm saffron trong nước ấm 20 phút để nhụy hoa tan màu.",
-      content5:
-        "Đun sôi sữa, đổ vào bát, thêm nước saffron và hương liệu vani, khuấy đều. Sau đó thêm đường.",
-      content6:
-        "Làm nguội nhanh hỗn hợp bằng cách đặt hỗn hợp trong một bát đá lớn. Trộn hỗn hợp với whipping cream, đảo đều nhẹ tay.",
-      content7: "Cho vào tủ lạnh, 30p – 1h lấy ra đảo đều.",
-      content8: "Như vậy 6-7 lần trong khoảng 8 tiếng.",
-      content9:
-        "Bạn có thể rắc thêm hạt ngũ cốc hoặc hoa quả cho món ăn thêm bắt mắt hơn!",
+        "Nếu các bạn cũng là người ăn chay, đã quá quen thuộc với menu hầu hết các món rau luộc, xào hoặc các thực phẩm giả thì đừng nên bỏ qua công thức độc đáo của món ăn này nhé!",
+      content3:
+        "Mỳ Ý chay Saffron sẽ cung cấp đầy đủ dinh dưỡng và làm phong phú thêm cho menu ăn chay của bạn đó! Lưu ngay về máy để hôm nào trổ tài nhé!",
+      content4:
+        "Lưu ý để món ăn có hương thơm, màu sắc cũng như dưỡng chất từ Saffron, hãy chọn đúng 𝗦𝗮𝗳𝗳𝗿𝗼𝗻 𝗘𝘅𝘁𝗿𝗮 𝗦𝘂𝗽𝗲𝗿 𝗡𝗲𝗴𝗶𝗻 𝘁𝘂̛̀ 𝗖𝗵𝗮𝗿𝗺 𝗖𝗵𝗮𝗿𝗺 𝗦𝗮𝗳𝗳𝗿𝗼𝗻, nhà nhập khẩu Saffron chính ngạch từ Iran!",
     },
     typeCuisine: "Ẩm thực",
   },

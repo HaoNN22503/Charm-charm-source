@@ -5,6 +5,15 @@
   .Cuisine-profile-main-detail-content {
     width: 90%;
   }
+  .Cuisine-profile-main-detail-image-detail {
+    width: 80%;
+  }
+  .Cuisine-profile-main-detail-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   .Cuisine-profile-main-tittle {

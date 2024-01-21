@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Image from "next/image";
 import { CartContext } from "@/context/CartContext";
 import { ProductList } from "@/data/data";
@@ -23,7 +23,10 @@ import { handleAddToCart } from "@/utils/function";
 
 const DetailProduct = (
   { params }: { params: { url: string } },
-  profileItems: { imgProfileThumbNails: { src: any }[] }
+  profileItems: {
+    imgProfileThumbNails: { src: any }[];
+    capacities: { size: any; price: number }[];
+  }
 ) => {
   const router = useRouter();
   const { cart, setCart } = useContext(CartContext);
@@ -32,8 +35,17 @@ const DetailProduct = (
   const [name, setName] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [comment, setComment] = useState<string>("");
+  const [quantity, setQuantity] = useState<number>(1);
   const [reviews, setReviews] = useState<ReviewTypes[]>([]);
   const [mainSwiper, setMainSwiper] = useState<any>(null);
+  const [defaultSize, setDefaultSize] = useState<string>("");
+  const [defaultPrice, setDefaultPrice] = useState<number>();
+  const [selectedSize, setSelectedSize] = useState<string>(
+    profileItems.capacities && profileItems.capacities.length > 0
+      ? profileItems.capacities[0].size
+      : profileItems.capacities
+  );
+
   const [selectedThumbnail, setSelectedThumbnail] = useState<number | null>(
     null
   );
@@ -74,14 +86,23 @@ const DetailProduct = (
     setCommentShow(false);
   };
   const minNum = (item: ProductListTypes) => {
-    if (item.quantity > 1) {
-      item.quantity -= 1;
+    const selectedCapacity = item.capacities.find(
+      (cap) => cap.size === selectedSize
+    );
+    if (selectedCapacity && selectedCapacity.quantity > 1) {
+      selectedCapacity.quantity -= 1;
       setCart([...cart]);
     }
   };
+
   const plusNum = (item: ProductListTypes) => {
-    item.quantity += 1;
-    setCart([...cart]);
+    const selectedCapacity = item.capacities.find(
+      (cap) => cap.size === selectedSize
+    );
+    if (selectedCapacity) {
+      selectedCapacity.quantity += 1;
+      setCart([...cart]);
+    }
   };
 
   const handleThumbClick = (index: number) => {
@@ -97,6 +118,24 @@ const DetailProduct = (
   };
   const currentProductId = params.url;
   const relatedProducts = getRelatedProducts(currentProductId);
+  const handleSizeClick = (size: string) => {
+    setSelectedSize(size);
+  };
+  useEffect(() => {
+    if (
+      profileItems &&
+      profileItems.capacities &&
+      profileItems.capacities.length > 0
+    ) {
+      const firstSize = profileItems.capacities[0].size;
+      const firstPrice = profileItems.capacities[0].price;
+      setDefaultSize(firstSize);
+      setDefaultPrice(firstPrice);
+
+      // Check if selectedSize is already set, if not, set it to the first size
+      setSelectedSize((prevSelectedSize) => prevSelectedSize || firstSize);
+    }
+  }, [profileItems?.capacities, profileItems]);
   return (
     <div className="bg-[#a72020] py-[50px] product-detail-HAB__container">
       <div
@@ -113,7 +152,13 @@ const DetailProduct = (
       {ProductList.filter((profileItems: ProductListTypes) => {
         return profileItems.idProduct === params.url;
       }).map((profileItems: ProductListTypes) => {
-        const totalPrice = profileItems.priceProduct * profileItems.quantity;
+        const selectedCapacity = profileItems.capacities.find(
+          (cap) => cap.size === selectedSize
+        );
+        const totalPrice = selectedCapacity
+          ? selectedCapacity.price * quantity
+          : 0;
+
         return (
           <div
             key={profileItems.idProduct}
@@ -144,6 +189,7 @@ const DetailProduct = (
                         width={thumb.width}
                         height={thumb.height}
                         onClick={() => handleThumbClick(index)}
+                        className="flex justify-center items-center"
                       />
                     </SwiperSlide>
                   ))}
@@ -164,7 +210,7 @@ const DetailProduct = (
                         width={thumbnail.width}
                         height={thumbnail.height}
                         onClick={() => handleThumbClick(index)}
-                        className="rounded-[5px]"
+                        className="rounded-[5px] flex justify-center items-center"
                       />
                     </div>
                   ))}
@@ -177,15 +223,119 @@ const DetailProduct = (
               </p>
               <div className="product-detail-HAB-content-provide">
                 <div className="mt-[50px] text-[15.5px] text-black w-[100%] pb-[50px] product-detail-HAB-content-descreption">
-                  <div className="font-[550] text-[17px] ">Mô tả sản phẩm</div>
+                  <div className="font-[550] text-[17px] ">
+                    {profileItems.profileProduct.topicProfile}
+                  </div>
                   <p className="mt-[10px] text-justify product-detail-HAB-profile ">
-                    {profileItems.profileProduct}
+                    {profileItems.profileProduct.productProfile}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentProductProfile1}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentProductProfile2}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentProductProfile3}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify font-bold product-detail-HAB-profile ">
+                    {profileItems.profileProduct.tittleProfile1}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle1p1}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle1p2}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle1p3}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle1p4}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle1p5}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle1p6}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle1p7}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify font-bold product-detail-HAB-profile ">
+                    {profileItems.profileProduct.tittleProfile2}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle2p1}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle2p2}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle2p3}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle2p4}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle2p5}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle2p6}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle2p7}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify font-bold product-detail-HAB-profile ">
+                    {profileItems.profileProduct.tittleProfile3}
                   </p>
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle3p1}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle3p2}
+                  </p>{" "}
+                  <p className="mt-[10px] text-justify product-detail-HAB-profile ">
+                    {profileItems.profileProduct.contentTittle3p3}
+                  </p>{" "}
                 </div>
                 <div className="product-detail-HAB-price-quanlity">
-                  <p className="mt-[20px] font-[550] text-[25px] text-black product-detail-HAB-price">
-                    {totalPrice.toLocaleString("vi-VN")}đ
-                  </p>
+                  <div style={{ display: "flex" }}>
+                    {profileItems.capacities.map((cap) => (
+                      <div
+                        key={cap.size}
+                        onClick={() => {
+                          const firstSize = profileItems.capacities[0].size;
+                          const firstPrice = profileItems.capacities[0].price;
+                          setDefaultSize(firstSize);
+                          setDefaultPrice(firstPrice);
+                          handleSizeClick(cap.size);
+                        }}
+                        style={{
+                          padding: "10px",
+                          margin: "5px",
+                          border:
+                            selectedSize === cap.size
+                              ? "2px solid red"
+                              : "2px solid #ccc",
+                          borderRadius: "5px",
+                          cursor: "pointer",
+                        }}
+                      >
+                        {cap.size}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Hiển thị giá và dung lượng của dung lượng đã chọn */}
+                  {selectedSize && (
+                    <p className="font-[550] mt-[10px] text-[25px] text-black product-detail-HAB-price">
+                      {profileItems.capacities
+                        .find((cap) => cap.size === selectedSize)
+                        ?.price.toLocaleString("vi-VN")}
+                      VND/ lọ
+                    </p>
+                  )}
                   <div className="flex items-center mt-[20px] product-detail-HAB-addtoCart">
                     <div className="text-[25px] product-detail-HAB-btn-number">
                       <div className="flex items-center">
@@ -196,7 +346,8 @@ const DetailProduct = (
                           <AiOutlineMinus />
                         </p>
                         <p className="detail-product-number mr-[20px]">
-                          {profileItems.quantity}
+                          {/* Thay thế profileItems.quantity bằng selectedCapacity.quantity */}
+                          {selectedCapacity?.quantity || 0}
                         </p>
                         <p
                           onClick={() => plusNum(profileItems)}
@@ -208,12 +359,20 @@ const DetailProduct = (
                     </div>
                     <div
                       onClick={() => {
-                        handleAddToCart(
-                          cart,
-                          setCart,
-                          profileItems.idProduct,
-                          profileItems.quantity
+                        const selectedCapacity = profileItems.capacities.find(
+                          (cap) => cap.size === selectedSize
                         );
+
+                        if (selectedCapacity) {
+                          handleAddToCart(
+                            cart,
+                            setCart,
+                            profileItems.idProduct,
+                            selectedCapacity.quantity, // Sử dụng selectedCapacity.quantity thay vì profileItems.quantity
+                            [selectedCapacity],
+                            selectedSize
+                          );
+                        }
                       }}
                       className="ml-auto pt-[10px] pr-[40px] pl-[40px] pb-[10px] bg-[#611a1a] rounded-[5px] text-white cursor-pointer detail-product-add"
                     >
@@ -248,7 +407,7 @@ const DetailProduct = (
                   width={items.imgProfileThumbNails[0].width}
                   height={items.imgProfileThumbNails[0].height}
                   loading="lazy"
-                  className="w-[150px] object-fill order-product-all-container-items-image rounded-[10px]"
+                  className="w-[150px] object-fill flex justify-center items-center order-product-all-container-items-image rounded-[10px]"
                 />
               </div>
               {items.nameProduct.length > 15 ? (
@@ -263,12 +422,19 @@ const DetailProduct = (
               <div className="flex justify-between px-[10px] w-[100%] text-sm mt-3 order-product-all-container-items-btn">
                 <p
                   onClick={() => {
+                    // Set to defaultSize if not explicitly set
                     handleAddToCart(
                       cart,
                       setCart,
                       items.idProduct,
-                      items.quantity
+                      items.quantity,
+                      items.capacities,
+                      selectedSize || defaultSize // Use selectedSize if set, otherwise use defaultSize
                     );
+                    const firstSize = items.capacities[0].size;
+                    const firstPrice = items.capacities[0].price;
+                    setDefaultSize(firstSize);
+                    setDefaultPrice(firstPrice);
                   }}
                   className="cursor-pointer hover:underline order-product-all-container-add"
                 >
@@ -276,7 +442,7 @@ const DetailProduct = (
                 </p>
 
                 <p className="ml-auto order-product-all-container-items-price font-[600]">
-                  {items.priceProduct.toLocaleString("vi-VN")}đ
+                  {items.capacities[0].price.toLocaleString("vi-VN")}đ
                 </p>
               </div>
             </div>

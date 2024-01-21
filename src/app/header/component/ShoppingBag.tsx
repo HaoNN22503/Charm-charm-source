@@ -33,7 +33,7 @@ const ShoppingBag = ({
     // Check if cart is defined before using reduce
     if (cart) {
       return cart.reduce(
-        (total, item) => total + item.priceProduct * item.quantity,
+        (total, item) => total + item.capacities[0].price * item.quantity,
         0
       );
     }
@@ -114,7 +114,9 @@ const ShoppingBag = ({
                           <HiTrash size={20} className="text-[red]" />
                         </p>
                         <div className="text-[14px] font-[600]">
-                          <p>{item.priceProduct.toLocaleString("vi-VN")}đ</p>
+                          <p>
+                            {item.capacities[0].price.toLocaleString("vi-VN")}đ
+                          </p>
                         </div>
                       </div>
                     </div>

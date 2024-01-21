@@ -7,9 +7,21 @@ import logo from "@/assets/image/LogoH&B.png";
 import { HiMagnifyingGlass, HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoIosArrowForward } from "react-icons/io";
 import ShoppingBag from "./component/ShoppingBag";
-import { ProductListTypes } from "@/types/Interface";
+import {
+  BeautyListMainTypes,
+  BeautyListTypes,
+  CuisineListMainTypes,
+  CuisineListTypes,
+  ProductListTypes,
+} from "@/types/Interface";
 import { CartContext } from "@/context/CartContext";
-import { ProductList } from "@/data/data";
+import {
+  BeautyList,
+  BeautyListMain,
+  CuisineList,
+  CuisineListMain,
+  ProductList,
+} from "@/data/data";
 import { useRouter } from "next/navigation";
 import { FaBars } from "react-icons/fa6";
 import { AiOutlineClose, AiOutlineDown } from "react-icons/ai";
@@ -117,7 +129,6 @@ const HeaderHAB = () => {
   const handleItemClick = (item: ProductListTypes, index: number) => {
     setDropdownOpen(false);
     setSelectedItemIndex(index);
-    // router.push(`/product/${item.urlProduct}`);
   };
 
   return (
@@ -384,7 +395,7 @@ const HeaderHAB = () => {
             className={
               optionSecret
                 ? "text-[#f4aa2a] italic font-[550] option-intro-active"
-                : "option-intro"
+                : "option-intro cursor-pointer"
             }
           >
             Bí quyết
@@ -571,17 +582,86 @@ const HeaderHAB = () => {
                     </p>
                   </div>
                   <div className="w-[100%]  flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
-                    <div className="cursor-pointer hover:underline">
+                    <Link
+                      onClick={() => {
+                        setContactShow(false);
+                        setOptionSecret(false);
+                        setIntroShow(false);
+                        setHomepageShow(false);
+                        setOptionProduct(false);
+                        setProductShow(false);
+                        setOrderShow(false);
+                        setOrderNoneShow(false);
+                        setBeautyShow(false);
+                        setCuisineShow(true);
+                        setFeedbackShow(false);
+                        setPromotionShow(false);
+                      }}
+                      href="/learn/historyStory"
+                      className="cursor-pointer hover:underline"
+                    >
                       Câu chuyện lịch sử
-                    </div>
-                    <div className="cursor-pointer hover:underline">
-                      {" "}
+                    </Link>
+                    <Link
+                      href="/learn/healthyWay"
+                      onClick={() => {
+                        setContactShow(false);
+                        setOptionSecret(false);
+                        setIntroShow(false);
+                        setHomepageShow(false);
+                        setOptionProduct(false);
+                        setProductShow(false);
+                        setOrderShow(false);
+                        setOrderNoneShow(false);
+                        setBeautyShow(false);
+                        setCuisineShow(true);
+                        setFeedbackShow(false);
+                        setPromotionShow(false);
+                      }}
+                      className="cursor-pointer hover:underline"
+                    >
                       9 công dụng sức khỏe
-                    </div>
-                    <div className="cursor-pointer hover:underline">
+                    </Link>
+                    <Link
+                      href="/learn/information"
+                      onClick={() => {
+                        setContactShow(false);
+                        setOptionSecret(false);
+                        setIntroShow(false);
+                        setHomepageShow(false);
+                        setOptionProduct(false);
+                        setProductShow(false);
+                        setOrderShow(false);
+                        setOrderNoneShow(false);
+                        setBeautyShow(false);
+                        setCuisineShow(true);
+                        setFeedbackShow(false);
+                        setPromotionShow(false);
+                      }}
+                      className="cursor-pointer hover:underline"
+                    >
                       Thông tin tổng hợp
-                    </div>
-                    <div className="cursor-pointer hover:underline">Video</div>
+                    </Link>
+                    <Link
+                      href="/learn/inforVideo"
+                      onClick={() => {
+                        setContactShow(false);
+                        setOptionSecret(false);
+                        setIntroShow(false);
+                        setHomepageShow(false);
+                        setOptionProduct(false);
+                        setProductShow(false);
+                        setOrderShow(false);
+                        setOrderNoneShow(false);
+                        setBeautyShow(false);
+                        setCuisineShow(true);
+                        setFeedbackShow(false);
+                        setPromotionShow(false);
+                      }}
+                      className="cursor-pointer hover:underline"
+                    >
+                      Video
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -600,15 +680,52 @@ const HeaderHAB = () => {
                     </p>
                   </div>
                   <div className="w-[100%]  flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
-                    <div className="cursor-pointer hover:underline">
-                      Câu chuyện lịch sử
-                    </div>
-                    <div className="cursor-pointer hover:underline">
-                      9 công dụng sức khỏe
-                    </div>
-                    <div className="cursor-pointer hover:underline">
-                      Thông tin tổng hợp
-                    </div>
+                    {CuisineListMain.map((items: CuisineListMainTypes) => (
+                      <Link
+                        href={`/cuisine/cuisineMain/${items.idCuisine}`}
+                        key={items.idCuisine}
+                        className="cursor-pointer hover:underline"
+                        onClick={() => {
+                          setHomepageShow(false);
+                          setIntroShow(false);
+                          setOptionProduct(false);
+                          setOrderShow(false);
+                          setOrderNoneShow(false);
+                          setBeautyShow(false);
+                          setPromotionShow(false);
+                          setFeedbackShow(false);
+                          setContactShow(false);
+                          setCuisineShow(false);
+                          setProductShow(false);
+                          setOptionSecret(false);
+                        }}
+                      >
+                        {items.topicCuisine}
+                      </Link>
+                    ))}
+                    {CuisineList.slice(0, 2).map((items: CuisineListTypes) => (
+                      <Link
+                        href={`/cuisine/cuisineNomal/${items.idCuisine}`}
+                        key={items.idCuisine}
+                        className="cursor-pointer hover:underline"
+                        onClick={() => {
+                          setHomepageShow(false);
+                          setIntroShow(false);
+                          setOptionProduct(false);
+                          setOrderShow(false);
+                          setOrderNoneShow(false);
+                          setBeautyShow(false);
+                          setPromotionShow(false);
+                          setFeedbackShow(false);
+                          setContactShow(false);
+                          setCuisineShow(false);
+                          setProductShow(false);
+                          setOptionSecret(false);
+                        }}
+                      >
+                        {items.topicCuisine}
+                      </Link>
+                    ))}
                     <Link
                       href="/cuisine"
                       onClick={() => {
@@ -647,16 +764,52 @@ const HeaderHAB = () => {
                     </p>
                   </div>
                   <div className="w-[100%] flex flex-col text-[16px] leading-[1.5] pl-[5px] mt-[5px]">
-                    <div className="cursor-pointer hover:underline">
-                      Câu chuyện lịch sử
-                    </div>
-                    <div className="cursor-pointer hover:underline">
-                      {" "}
-                      9 công dụng sức khỏe
-                    </div>
-                    <div className="cursor-pointer hover:underline">
-                      Thông tin tổng hợp
-                    </div>
+                    {BeautyListMain.map((items: BeautyListMainTypes) => (
+                      <Link
+                        href={`/cuisine/cuisineNomal/${items.idBeauty}`}
+                        key={items.idBeauty}
+                        className="cursor-pointer hover:underline"
+                        onClick={() => {
+                          setHomepageShow(false);
+                          setIntroShow(false);
+                          setOptionProduct(false);
+                          setOrderShow(false);
+                          setOrderNoneShow(false);
+                          setBeautyShow(false);
+                          setPromotionShow(false);
+                          setFeedbackShow(false);
+                          setContactShow(false);
+                          setCuisineShow(false);
+                          setProductShow(false);
+                          setOptionSecret(false);
+                        }}
+                      >
+                        {items.topicBeauty}
+                      </Link>
+                    ))}
+                    {BeautyList.slice(0, 2).map((items: BeautyListTypes) => (
+                      <Link
+                        href={`/cuisine/cuisineNomal/${items.idBeauty}`}
+                        key={items.idBeauty}
+                        className="cursor-pointer hover:underline"
+                        onClick={() => {
+                          setHomepageShow(false);
+                          setIntroShow(false);
+                          setOptionProduct(false);
+                          setOrderShow(false);
+                          setOrderNoneShow(false);
+                          setBeautyShow(false);
+                          setPromotionShow(false);
+                          setFeedbackShow(false);
+                          setContactShow(false);
+                          setCuisineShow(false);
+                          setProductShow(false);
+                          setOptionSecret(false);
+                        }}
+                      >
+                        {items.topicBeauty}
+                      </Link>
+                    ))}
                     <Link
                       href="/beauty"
                       onClick={() => {

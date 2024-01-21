@@ -1,6 +1,18 @@
+@media (max-width: 1023px) {
+  .promotion-HAB-detail {
+    width: 30%;
+  }
+}
+@media (max-width: 767px) {
+  .promotion-HAB-detail {
+    width: 49%;
+  }
+  .promotion-HAB-show {
+    justify-content: space-evenly;
+  }
+}
 @media (max-width: 426px) {
   .promotion-HAB-detail {
-    margin: 0;
-    margin-top: 10px;
+    width: 80%;
   }
 }

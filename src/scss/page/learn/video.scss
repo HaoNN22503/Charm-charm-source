@@ -1,0 +1,52 @@
+@media (max-width: 1023px) {
+  .video-learnpage-video {
+    width: 80%;
+  }
+  .video-learnpage-content-container {
+    padding: 10px;
+  }
+  .video-info-container {
+    flex-direction: column;
+  }
+  .video-learnpage-content {
+    width: 100%;
+  }
+  .video-learnpage-video {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .video-learnpage-video-detail {
+    width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .video-learnpage-video {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .video-learnpage-video-detail {
+    width: 100%;
+  }
+  .video-learnpage-content-container {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .video-info-container {
+    flex-direction: column;
+  }
+  .video-learnpage-content {
+    width: 100%;
+  }
+  .video-learnpage-tittle {
+    font-size: 16px;
+  }
+  .video-learnpage-info-content {
+    width: 100%;
+  }
+  .video-learnpage-tittle-container {
+    font-size: 20px;
+  }
+}
